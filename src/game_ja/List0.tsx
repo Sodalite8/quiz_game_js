@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { SCREENS } from "../constants";
 
 
@@ -7,7 +7,7 @@ interface Props {
     setScreen: React.Dispatch<React.SetStateAction<number>>;
 }
 
-function Menu1(props: Props) {
+function List0(props: Props) {
     return (
         <>
         <h2 className="menu0_text">分類を選択</h2>
@@ -16,4 +16,4 @@ function Menu1(props: Props) {
     );
 }
 
-export default Menu1;
+export default List0;
