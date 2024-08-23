@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './App.css';
 import { SCREENS } from "./constants";
+import './App.css';
 import Title from "./game_ja/title";
+import Menu0 from './game_ja/menu0';
 
 
 function App() {
@@ -11,11 +12,11 @@ function App() {
             case SCREENS.TITLE:
                 return <Title screen={screen} setScreen={setScreen}/>;
             case SCREENS.OPTION:
-                return <></>;
+                return;
             case SCREENS.MENU0:
-                return <></>;
+                return <Menu0 screen={screen} setScreen={setScreen}/>;
             case SCREENS.GAME0:
-                return <></>;
+                return;
         }
     };
 
