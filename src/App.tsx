@@ -9,7 +9,7 @@ function App() {
     const renderScreen = () => {
         switch(screen) {
             case SCREENS.TITLE:
-                return <Title/>;
+                return <Title screen={screen} setScreen={setScreen}/>;
             case SCREENS.OPTION:
                 return <></>;
             case SCREENS.MENU0:
