@@ -1,4 +1,5 @@
 import React from 'react';
+import {useCookies} from "react-cookie";
 import { SCREENS, Options, INITIAL_OPTIONS } from "./constants";
 import './css/App.css';
 import Title from "./game_ja/Title";
@@ -11,6 +12,8 @@ import List0 from "./game_ja/List0";
 function App() {
     const [screen, setScreen] = React.useState<number>(SCREENS.TITLE);
     const [options, setOptions] = React.useState<Options>(INITIAL_OPTIONS);
+
+
     const renderScreen = () => {
         switch(screen) {
             case SCREENS.TITLE:
@@ -33,6 +36,5 @@ function App() {
         </>
     );
 }
-
 
 export default App;

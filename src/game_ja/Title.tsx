@@ -20,5 +20,4 @@ function Title(props: Props) {
     );
 }
 
-
 export default Title;
