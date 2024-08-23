@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { SCREENS } from "./constants";
 import './css/App.css';
 import Title from "./game_ja/title";
-import Option from "./game_ja/option"
-import Menu0 from './game_ja/menu0';
+import Option from "./game_ja/option";
+import Menu0 from "./game_ja/menu0";
 import Menu1 from "./game_ja/menu1";
+import Game0 from "./game_ja/game0"
 
 
 function App() {
@@ -18,9 +19,9 @@ function App() {
             case SCREENS.MENU0:
                 return <Menu0 screen={screen} setScreen={setScreen}/>;
             case SCREENS.MENU1:
-                return  <Menu1 screen={screen} setScreen={setScreen}/>;
+                return <Menu1 screen={screen} setScreen={setScreen}/>;
             case SCREENS.GAME0:
-                return;
+                return <Game0 screen={screen} setScreen={setScreen}/>;
         }
     };
 
