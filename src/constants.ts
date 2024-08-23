@@ -1,5 +1,6 @@
-const TITLE: number = 0;
-const OPTION: number = 1;
-const MENU0: number = 10;
-const GAME0: number = 20;
-
+export const SCREENS = {
+    TITLE: 0,
+    OPTION: 1,
+    MENU0: 10,
+    GAME0: 20
+} as const;
