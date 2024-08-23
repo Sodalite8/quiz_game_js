@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { SCREENS } from "./constants";
 import './css/App.css';
-import Title from "./game_ja/title";
-import Option from "./game_ja/option";
-import Menu0 from "./game_ja/menu0";
-import Menu1 from "./game_ja/menu1";
-import Game0 from "./game_ja/game0"
+import Title from "./game_ja/Title";
+import Option from "./game_ja/Option";
+import Menu0 from "./game_ja/Menu0";
+import Menu1 from "./game_ja/Menu1";
+import Game0 from "./game_ja/Game0";
 
 
 function App() {
