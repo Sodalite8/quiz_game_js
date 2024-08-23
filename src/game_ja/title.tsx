@@ -10,7 +10,7 @@ interface Props {
 function Title(props: Props) {
     return (
         <>
-        <h1 className='Title'>
+        <h1 className='title'>
             国旗クイズゲーム
         </h1>
         <button onClick={() => props.setScreen(SCREENS.MENU0)}>スタート</button>

@@ -7,13 +7,13 @@ interface Props {
     setScreen: React.Dispatch<React.SetStateAction<number>>;
 }
 
-function Menu0(props: Props) {
+function Option(props: Props) {
     return (
         <>
-        <h2 className="menu0_text">モードを選択</h2>
+        <h2 className="option_text">設定</h2>
         <button onClick={() => props.setScreen(SCREENS.TITLE)}>タイトルに戻る</button>
         </>
     );
 }
 
-export default Menu0;
+export default Option;
