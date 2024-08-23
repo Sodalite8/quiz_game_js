@@ -14,7 +14,7 @@ function Title(props: Props) {
             国旗クイズゲーム
         </h1>
         <button onClick={() => props.setScreen(SCREENS.MENU0)}>スタート</button>
-        <button onClick={() => props.setScreen(SCREENS.MENU1)}>図鑑</button>
+        <button onClick={() => props.setScreen(SCREENS.LIST0)}>図鑑</button>
         <button onClick={() => props.setScreen(SCREENS.OPTION)}>設定</button>
         </>
     );
