@@ -49,7 +49,6 @@ function Menu0(props: Props) {
             <div>
                 <button onClick={() => props.setScreen(SCREENS.TITLE)}>タイトルに戻る</button>
             </div>
-            <p>Test: {props.quiz_options.problems_num}</p>
         </>
     );
 }

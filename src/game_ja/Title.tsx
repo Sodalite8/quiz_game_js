@@ -10,12 +10,14 @@ interface Props {
 function Title(props: Props) {
     return (
         <>
-        <h1 className='title'>
-            国旗クイズゲーム
-        </h1>
-        <button onClick={() => props.setScreen(SCREENS.MENU0)}>スタート</button>
-        <button onClick={() => props.setScreen(SCREENS.LIST0)}>国旗リスト</button>
-        <button onClick={() => props.setScreen(SCREENS.OPTION)}>設定</button>
+            <h1 className='title'>
+                国旗クイズゲーム
+            </h1>
+            <div>
+                <button onClick={() => props.setScreen(SCREENS.MENU0)}>スタート</button>
+                <button onClick={() => props.setScreen(SCREENS.LIST0)}>国旗リスト</button>
+                <button onClick={() => props.setScreen(SCREENS.OPTION)}>設定</button>
+            </div>
         </>
     );
 }

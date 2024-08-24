@@ -10,8 +10,8 @@ interface Props {
 function Game0(props: Props) {
     return (
         <>
-        <h2 className="menu0_text">テスト</h2>
-        <button onClick={() => props.setScreen(SCREENS.TITLE)}>タイトルに戻る</button>
+            <h2 className="menu0_text">テスト</h2>
+            <button onClick={() => props.setScreen(SCREENS.TITLE)}>タイトルに戻る</button>
         </>
     );
 }

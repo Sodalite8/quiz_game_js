@@ -10,8 +10,8 @@ interface Props {
 function List0(props: Props) {
     return (
         <>
-        <h2 className="menu0_text">分類を選択</h2>
-        <button onClick={() => props.setScreen(SCREENS.TITLE)}>タイトルに戻る</button>
+            <h2 className="menu0_text">分類を選択</h2>
+            <button onClick={() => props.setScreen(SCREENS.TITLE)}>タイトルに戻る</button>
         </>
     );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {useCookies} from "react-cookie";
+import { useCookies } from "react-cookie";
 import { SCREENS, Options, INITIAL_OPTIONS, Quiz_Options, INITIAL_QUIZ_OPTIONS } from "./constants";
 import './css/App.css';
 import Title from "./game_ja/Title";
@@ -16,24 +16,24 @@ function App() {
 
 
     const renderScreen = () => {
-        switch(screen) {
+        switch (screen) {
             case SCREENS.TITLE:
-                return <Title screen={screen} setScreen={setScreen}/>;
+                return <Title screen={screen} setScreen={setScreen} />;
             case SCREENS.OPTION:
-                return <Option screen={screen} setScreen={setScreen} options={options} setOptions={setOptions}/>;
+                return <Option screen={screen} setScreen={setScreen} options={options} setOptions={setOptions} />;
             case SCREENS.MENU0:
-                return <Menu0 screen={screen} setScreen={setScreen} quiz_options={quiz_options} setQuizOptions={setQuizOptions}/>;
+                return <Menu0 screen={screen} setScreen={setScreen} quiz_options={quiz_options} setQuizOptions={setQuizOptions} />;
             case SCREENS.GAME0:
-                return <Game0 screen={screen} setScreen={setScreen}/>;
+                return <Game0 screen={screen} setScreen={setScreen} />;
             case SCREENS.LIST0:
-                return <List0 screen={screen} setScreen={setScreen}/>;
+                return <List0 screen={screen} setScreen={setScreen} />;
         }
     };
 
 
     return (
         <>
-        {renderScreen()}
+            {renderScreen()}
         </>
     );
 }

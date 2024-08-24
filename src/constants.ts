@@ -7,7 +7,7 @@ export const SCREENS = {
 } as const;
 
 
-export interface Options{
+export interface Options {
     music_volume: number;
     effect_volume: number;
     animation: boolean;
