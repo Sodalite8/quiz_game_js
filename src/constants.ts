@@ -18,3 +18,16 @@ export const INITIAL_OPTIONS: Options = {
     effect_volume: 100,
     animation: true
 }
+
+
+export interface Quiz_Options {
+    difficulty: string;
+    problems_num: number;
+}
+
+export const INITIAL_QUIZ_OPTIONS: Quiz_Options = {
+    difficulty: "easy",
+    problems_num: 10
+}
+
+
