@@ -47,6 +47,9 @@ function Menu0(props: Props) {
                 </div>
             </div>
             <div>
+                <button onClick={() => props.setScreen(SCREENS.GAME0)}>クイズ開始</button>
+            </div>
+            <div>
                 <button onClick={() => props.setScreen(SCREENS.TITLE)}>タイトルに戻る</button>
             </div>
         </>
