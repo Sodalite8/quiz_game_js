@@ -1,5 +1,5 @@
 import React from 'react';
-import { SCREENS } from "../constants";
+import { SCREENS } from "./constants";
 
 
 interface Props {
@@ -8,10 +8,23 @@ interface Props {
 }
 
 function Game0(props: Props) {
+    const exitQuiz = () => {
+        const ans: boolean = window.confirm("本当に終了しますか？");
+        if(ans) {
+            props.setScreen(SCREENS.TITLE);
+        }
+    };
+
+
     return (
         <>
             <h2 className="game0_text">ゲーム画面（工事中）</h2>
-            <button onClick={() => props.setScreen(SCREENS.TITLE)}>タイトルに戻る</button>
+            <div>
+                
+            </div>
+            <div>
+                <button onClick={exitQuiz}>タイトルに戻る</button>
+            </div>
         </>
     );
 }

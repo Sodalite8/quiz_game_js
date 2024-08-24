@@ -1,5 +1,5 @@
 import React from 'react';
-import { SCREENS } from "../constants";
+import { SCREENS } from "./constants";
 
 
 interface Props {
@@ -11,7 +11,12 @@ function List0(props: Props) {
     return (
         <>
             <h2 className="list0_text">分類を選択（工事中）</h2>
-            <button onClick={() => props.setScreen(SCREENS.TITLE)}>タイトルに戻る</button>
+            <div>
+                
+            </div>
+            <div>
+                <button onClick={() => props.setScreen(SCREENS.TITLE)}>タイトルに戻る</button>
+            </div>
         </>
     );
 }

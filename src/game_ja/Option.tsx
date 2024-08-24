@@ -1,5 +1,5 @@
 import React from 'react';
-import { SCREENS, Options, INITIAL_OPTIONS } from "../constants";
+import { SCREENS, Options, INITIAL_OPTIONS } from "./constants";
 
 
 interface Props {

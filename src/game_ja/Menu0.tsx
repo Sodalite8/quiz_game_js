@@ -1,5 +1,5 @@
 import React from 'react';
-import { Quiz_Options, SCREENS } from "../constants";
+import { Quiz_Options, SCREENS } from "./constants";
 
 
 interface Props {
