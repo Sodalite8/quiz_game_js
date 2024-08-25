@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCookies } from "react-cookie";
-import { SCREENS, Options, INITIAL_OPTIONS, Quiz_Options, INITIAL_QUIZ_OPTIONS } from "./game_ja/constants";
+import { SCREENS, Options, INITIAL_OPTIONS, QuizOptions, INITIAL_QUIZ_OPTIONS } from "./constants";
 import './css/App.css';
 import Title from "./game_ja/Title";
 import Option from "./game_ja/Option";
@@ -12,7 +12,7 @@ import List0 from "./game_ja/List0";
 function App() {
     const [screen, setScreen] = React.useState<number>(SCREENS.TITLE);
     const [options, setOptions] = React.useState<Options>(INITIAL_OPTIONS);
-    const [quiz_options, setQuizOptions] = React.useState<Quiz_Options>(INITIAL_QUIZ_OPTIONS);
+    const [quiz_options, setQuizOptions] = React.useState<QuizOptions>(INITIAL_QUIZ_OPTIONS);
 
 
     const renderScreen = () => {

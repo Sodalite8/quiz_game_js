@@ -1,5 +1,5 @@
 import React from 'react';
-import { SCREENS, Options, INITIAL_OPTIONS } from "./constants";
+import { SCREENS, Options, INITIAL_OPTIONS, OPTIONS_CONST } from "../constants";
 
 
 interface Props {
@@ -12,10 +12,31 @@ interface Props {
 function Option(props: Props) {
     const changeMusicVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
         const new_options: Options = { ...props.options, music_volume: parseInt(e.target.value) };
+
+        props.setOptions(new_options);
+    };
+    const validateMusicVolume = () => {
+        const new_options: Options = { ...props.options };
+        if (new_options.music_volume < OPTIONS_CONST.min_volume) {
+            new_options.music_volume = OPTIONS_CONST.min_volume;
+        }
+        else if (new_options.music_volume > OPTIONS_CONST.max_volume) {
+            new_options.music_volume = OPTIONS_CONST.max_volume;
+        }
         props.setOptions(new_options);
     };
     const changeEffectVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
         const new_options: Options = { ...props.options, effect_volume: parseInt(e.target.value) };
+        props.setOptions(new_options);
+    };
+    const validateEffectVolume = () => {
+        const new_options: Options = { ...props.options };
+        if (new_options.effect_volume < OPTIONS_CONST.min_volume) {
+            new_options.effect_volume = OPTIONS_CONST.min_volume;
+        }
+        else if (new_options.effect_volume > OPTIONS_CONST.max_volume) {
+            new_options.effect_volume = OPTIONS_CONST.max_volume;
+        }
         props.setOptions(new_options);
     };
     const enableAnimation = () => {
@@ -40,12 +61,12 @@ function Option(props: Props) {
                     <div>
                         BGM
                         <input type="range" name="ran_music_volume" min="0" max="100" step="1" value={props.options.music_volume} onChange={changeMusicVolume}></input>
-                        <input type="number" name="num_music_volume" min="0" max="100" step="1" value={props.options.music_volume} onChange={changeMusicVolume}></input>
+                        <input type="number" name="num_music_volume" min="0" max="100" step="1" value={props.options.music_volume} onChange={changeMusicVolume} onBlur={validateMusicVolume}></input>
                     </div>
                     <div>
                         効果音
                         <input type="range" name="ran_effect_volume" min="0" max="100" step="1" value={props.options.effect_volume} onChange={changeEffectVolume}></input>
-                        <input type="number" name="num_effect_volume" min="0" max="100" step="1" value={props.options.effect_volume} onChange={changeEffectVolume}></input>
+                        <input type="number" name="num_effect_volume" min="0" max="100" step="1" value={props.options.effect_volume} onChange={changeEffectVolume} onBlur={validateEffectVolume}></input>
                     </div>
                 </div>
                 <div>
