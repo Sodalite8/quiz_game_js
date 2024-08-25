@@ -1,5 +1,5 @@
 import React from 'react';
-import { INITIAL_QUIZ_SCORES, QuizOptions, QuizProblem, QuizScores, SCREENS } from "../constants";
+import { INITIAL_QUIZ_PROBLEM, INITIAL_QUIZ_SCORES, QuizOptions, QuizProblem, QuizScores, SCREENS } from "../constants";
 import Quiz from "./game0/Quiz";
 import Result from './game0/Result';
 import { createProblems } from './game0/createProblem';
@@ -15,7 +15,7 @@ interface Props {
 // Display the quiz
 function Game0(props: Props) {
     const [current_quiz, setCurrentQuiz] = React.useState<number>(0);
-    const [quiz_problems, setQuizProblems] = React.useState<QuizProblem[]>([]);
+    const [quiz_problems, setQuizProblems] = React.useState<QuizProblem[]>([INITIAL_QUIZ_PROBLEM]);
     const [quiz_scores, setQuizScores] = React.useState<QuizScores>(INITIAL_QUIZ_SCORES);
 
 
@@ -24,7 +24,7 @@ function Game0(props: Props) {
         if(current_quiz < props.quiz_options.problems_num) {
             return (
                 <>
-                    <Quiz current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz} />
+                    <Quiz current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz} quiz_problems={quiz_problems}/>
                 </>
             );
         }
@@ -57,7 +57,6 @@ function Game0(props: Props) {
     };
 
 
-    setQuizProblems(createProblems(props.quiz_options));
     return (
         <>
             <h2 className="game0_text">ゲーム画面（工事中）</h2>

@@ -1,9 +1,11 @@
 import React from "react";
+import { QuizProblem } from "../../constants";
 
 
 interface Props {
     current_quiz: number;
     setCurrentQuiz: React.Dispatch<React.SetStateAction<number>>;
+    quiz_problems: QuizProblem[];
 }
 
 
