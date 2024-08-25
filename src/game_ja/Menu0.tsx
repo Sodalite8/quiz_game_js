@@ -1,5 +1,6 @@
 import React from 'react';
 import { QuizOptions, QUIZ_OPTIONS_CONST, SCREENS } from "../constants";
+import { changeNumber, changeString, validateNumber } from '../func';
 
 
 interface Props {
@@ -11,23 +12,13 @@ interface Props {
 
 function Menu0(props: Props) {
     const changeDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const new_quiz_options: QuizOptions = { ...props.quiz_options, difficulty: e.target.value };
-        props.setQuizOptions(new_quiz_options);
+        changeString<QuizOptions>(props.quiz_options, "difficulty", e.target.value, props.setQuizOptions);
     };
     const changeProblemsNum = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const new_quiz_options: QuizOptions = { ...props.quiz_options, problems_num: parseInt(e.target.value) };
-        new_quiz_options.problems_num = (isNaN(new_quiz_options.problems_num)) ? props.quiz_options.problems_num : new_quiz_options.problems_num;
-        props.setQuizOptions(new_quiz_options);
+        changeNumber<QuizOptions>(props.quiz_options, "problems_num", e.target.value, props.setQuizOptions);
     };
     const validateProblemsNum = () => {
-        const new_quiz_options: QuizOptions = { ...props.quiz_options };
-        if (new_quiz_options.problems_num < QUIZ_OPTIONS_CONST.min_problems_num) {
-            new_quiz_options.problems_num = QUIZ_OPTIONS_CONST.min_problems_num;
-        }
-        else if (new_quiz_options.problems_num > QUIZ_OPTIONS_CONST.max_problems_num) {
-            new_quiz_options.problems_num = QUIZ_OPTIONS_CONST.max_problems_num;
-        }
-        props.setQuizOptions(new_quiz_options);
+        validateNumber<QuizOptions>(props.quiz_options, "problems_num", QUIZ_OPTIONS_CONST.max_problems_num, QUIZ_OPTIONS_CONST.min_problems_num, props.setQuizOptions);
     };
 
 
@@ -59,6 +50,9 @@ function Menu0(props: Props) {
             </div>
             <div>
                 <button onClick={() => props.setScreen(SCREENS.TITLE)}>タイトルに戻る</button>
+            </div>
+            <div>
+                Test: {props.quiz_options.problems_num}
             </div>
         </>
     );

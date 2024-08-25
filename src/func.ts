@@ -12,24 +12,38 @@ export const min = (a: number, b: number): number => {
 };
 
 
-// union of keys in T whose type is number
-type NumberKeysOf<T extends Object> = keyof {
-    [K in keyof T]: T[K] extends number ? K : never
-}[keyof T];
-
 // change obj[key] to value and update obj
-export const changeNumber = <T extends Object>(obj: T, setObj: React.Dispatch<React.SetStateAction<T>>, key: NumberKeysOf<T>, value: string): void => {
+export const changeNumber = <T extends Object>(obj: T, key: keyof T, value: string, setObj: React.Dispatch<React.SetStateAction<T>>): void => {
+    if (typeof obj[key] !== "number") {
+        throw new Error("The key's value is not number.");
+    }
+
     const new_obj: T = { ...obj };
     if (!isNaN(parseInt(value))) {
-        (new_obj[key as keyof T] as number) = parseInt(value);
+        (new_obj[key] as number) = parseInt(value);
     }
     setObj(new_obj);
 };
 
 // validate obj[key] and update obj
-export const validateNumber = <T extends Object>(obj: T, setObj: React.Dispatch<React.SetStateAction<T>>, key: NumberKeysOf<T>, max_val: number, min_val: number) => {
+export const validateNumber = <T extends Object>(obj: T, key: keyof T, max_val: number, min_val: number, setObj: React.Dispatch<React.SetStateAction<T>>) => {
+    if (typeof obj[key] !== "number") {
+        throw new Error("The key's value is not number.");
+    }
+
     const new_obj: T = { ...obj };
-    (obj[key as keyof T] as number) = max(obj[key as keyof T] as number, min_val);
-    (obj[key as keyof T] as number) = min(obj[key as keyof T] as number, max_val);
+    (new_obj[key] as number) = max(new_obj[key] as number, min_val);
+    (new_obj[key] as number) = min(new_obj[key] as number, max_val);
     setObj(new_obj);
-}
+};
+
+// change obj[key] to value and update obj
+export const changeString = <T extends Object>(obj: T, key: keyof T, value: string, setObj: React.Dispatch<React.SetStateAction<T>>): void => {
+    if (typeof obj[key] !== "string") {
+        throw new Error("The key's value is not string");
+    }
+
+    const new_obj: T = { ...obj };
+    (new_obj[key] as string) = value;
+    setObj(new_obj);
+};
