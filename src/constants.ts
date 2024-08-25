@@ -18,7 +18,7 @@ export const INITIAL_OPTIONS: Options = {
     music_volume: 100,
     effect_volume: 100,
     animation: true
-};
+} as const;
 
 // Game options constants
 export interface OptionsConst {
@@ -28,7 +28,7 @@ export interface OptionsConst {
 export const OPTIONS_CONST: OptionsConst = {
     max_volume: 100,
     min_volume: 0
-};
+} as const;
 
 
 // Quiz options
@@ -39,7 +39,7 @@ export interface QuizOptions {
 export const INITIAL_QUIZ_OPTIONS: QuizOptions = {
     difficulty: "easy",
     problems_num: 10
-};
+} as const;
 
 // Quiz options constants
 export interface QuizOptionsConst {
@@ -49,7 +49,7 @@ export interface QuizOptionsConst {
 export const QUIZ_OPTIONS_CONST: QuizOptionsConst = {
     max_problems_num: 40,
     min_problems_num: 10
-};
+} as const;
 
 
 // Quiz problem
@@ -62,7 +62,7 @@ export const INITIAL_QUIZ_PROBLEM: QuizProblem = {
     problem_id: 0,
     choice_ids: [],
     correct_choice: 0
-};
+} as const;
 
 
 // Quiz Scores
@@ -71,4 +71,4 @@ export interface QuizScores {
 }
 export const INITIAL_QUIZ_SCORES: QuizScores = {
     point: 0
-};
+} as const;
