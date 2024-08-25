@@ -11,7 +11,7 @@ function Game0(props: Props) {
     const exitQuiz = () => {
         const ans: boolean = window.confirm("本当に終了しますか？");
         if(ans) {
-            props.setScreen(SCREENS.TITLE);
+            props.setScreen(SCREENS.MENU0);
         }
     };
 
@@ -23,7 +23,7 @@ function Game0(props: Props) {
                 
             </div>
             <div>
-                <button onClick={exitQuiz}>タイトルに戻る</button>
+                <button onClick={exitQuiz}>クイズ終了する</button>
             </div>
         </>
     );
