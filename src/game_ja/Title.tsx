@@ -7,6 +7,8 @@ interface Props {
     setScreen: React.Dispatch<React.SetStateAction<number>>;
 }
 
+
+// Game title
 function Title(props: Props) {
     return (
         <>
@@ -21,5 +23,6 @@ function Title(props: Props) {
         </>
     );
 }
+
 
 export default Title;

@@ -10,7 +10,10 @@ interface Props {
     setOptions: React.Dispatch<React.SetStateAction<Options>>;
 }
 
+
+// Game option
 function Option(props: Props) {
+    // About music volume
     const changeMusicVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
         changeNumber<Options>(props.options, "music_volume", e.target.value, props.setOptions);
     };
@@ -18,6 +21,7 @@ function Option(props: Props) {
         validateNumber<Options>(props.options, "music_volume", OPTIONS_CONST.max_volume, OPTIONS_CONST.min_volume, props.setOptions);
     };
 
+    // About effect volume
     const changeEffectVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
         changeNumber<Options>(props.options, "effect_volume", e.target.value, props.setOptions);
     };
@@ -25,11 +29,13 @@ function Option(props: Props) {
         validateNumber<Options>(props.options, "effect_volume", OPTIONS_CONST.max_volume, OPTIONS_CONST.min_volume, props.setOptions);
     };
 
+    // About animation
     const enableAnimation = () => {
         const new_options: Options = { ...props.options, animation: !props.options.animation };
         props.setOptions(new_options);
     };
     
+    // Reset game options
     const resetOptions = () => {
         const ans: boolean = window.confirm("本当にリセットしますか？");
         if (ans == false) {
@@ -73,5 +79,6 @@ function Option(props: Props) {
         </>
     );
 }
+
 
 export default Option;

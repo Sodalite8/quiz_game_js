@@ -10,11 +10,15 @@ interface Props {
     setQuizOptions: React.Dispatch<React.SetStateAction<QuizOptions>>
 }
 
+
+// Quiz options menu
 function Menu0(props: Props) {
+    // About quiz difficulty
     const changeDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) => {
         changeString<QuizOptions>(props.quiz_options, "difficulty", e.target.value, props.setQuizOptions);
     };
     
+    // About the number of problems in the quiz
     const changeProblemsNum = (e: React.ChangeEvent<HTMLInputElement>) => {
         changeNumber<QuizOptions>(props.quiz_options, "problems_num", e.target.value, props.setQuizOptions);
     };
@@ -58,5 +62,6 @@ function Menu0(props: Props) {
         </>
     );
 }
+
 
 export default Menu0;

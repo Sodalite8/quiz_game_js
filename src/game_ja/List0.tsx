@@ -7,6 +7,8 @@ interface Props {
     setScreen: React.Dispatch<React.SetStateAction<number>>;
 }
 
+
+// Country flags` list
 function List0(props: Props) {
     return (
         <>
@@ -20,5 +22,6 @@ function List0(props: Props) {
         </>
     );
 }
+
 
 export default List0;

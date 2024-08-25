@@ -1,4 +1,4 @@
-// Screen Numbers
+// Screen numbers
 export const SCREENS = {
     TITLE: 0,
     OPTION: 1,

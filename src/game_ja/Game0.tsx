@@ -7,10 +7,13 @@ interface Props {
     setScreen: React.Dispatch<React.SetStateAction<number>>;
 }
 
+
+// Display the quiz
 function Game0(props: Props) {
     const [current_quiz, setCurrentQuiz] = React.useState<number>(0);
 
 
+    // About finishing the quiz in the middle
     const exitQuiz = () => {
         const ans: boolean = window.confirm("本当に終了しますか？");
         if(ans) {
@@ -31,5 +34,6 @@ function Game0(props: Props) {
         </>
     );
 }
+
 
 export default Game0;

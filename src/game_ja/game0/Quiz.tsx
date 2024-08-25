@@ -6,6 +6,8 @@ interface Props {
     setCurrentQuiz: React.Dispatch<React.SetStateAction<number>>;
 }
 
+
+// The unit of quiz game components like button and image
 function Quiz(props: Props) {
     return (
         <>
@@ -13,5 +15,6 @@ function Quiz(props: Props) {
         </>
     );
 }
+
 
 export default Quiz;
