@@ -50,3 +50,25 @@ export const QUIZ_OPTIONS_CONST: QuizOptionsConst = {
     max_problems_num: 40,
     min_problems_num: 10
 };
+
+
+// Quiz problem
+export interface QuizProblem {
+    problem_num: number;
+    correct_ans_num: number;
+    choices: number[];
+}
+export const INITIAL_QUIZ_PROBLEM: QuizProblem = {
+    problem_num: 0,
+    correct_ans_num: 0,
+    choices: []
+};
+
+
+// Quiz Scores
+export interface QuizScores {
+    point: number;
+}
+export const INITIAL_QUIZ_SCORES: QuizScores = {
+    point: 0
+};

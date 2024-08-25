@@ -1,21 +1,24 @@
 import React from 'react';
-import { QuizOptions } from '../../constants';
-import { changeNumber } from '../../func';
+import ProblemSection from './ProblemSection';
+import AnswerSection from './AnswerSection';
 
 
 interface Props {
     current_quiz: number;
     setCurrentQuiz: React.Dispatch<React.SetStateAction<number>>;
-    quiz_options: QuizOptions;
 }
 
 
 // The unit of quiz game components like button and image
 function Quiz(props: Props) {
-
-
     return (
         <>
+            <div>
+                <ProblemSection />
+            </div>
+            <div>
+                <AnswerSection current_quiz={props.current_quiz} setCurrentQuiz={props.setCurrentQuiz}/>
+            </div>
         </>
     );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
-import { QuizOptions, SCREENS } from "../constants";
+import { INITIAL_QUIZ_SCORES, QuizOptions, QuizProblem, QuizScores, SCREENS } from "../constants";
 import Quiz from "./game0/Quiz";
+import Result from './game0/Result';
 
 
 interface Props {
@@ -13,6 +14,8 @@ interface Props {
 // Display the quiz
 function Game0(props: Props) {
     const [current_quiz, setCurrentQuiz] = React.useState<number>(0);
+    const [quiz_problems, setQuizProblems] = React.useState<QuizProblem[]>([]);
+    const [quiz_scores, setQuizScores] = React.useState<QuizScores>(INITIAL_QUIZ_SCORES);
 
 
     // About rendering the quiz and changing problems
@@ -20,8 +23,7 @@ function Game0(props: Props) {
         if(current_quiz < props.quiz_options.problems_num) {
             return (
                 <>
-                    <button onClick={() => {setCurrentQuiz(current_quiz + 1)}}>次へ（テスト用）</button>
-                    問題番号（テスト）: {current_quiz}
+                    <Quiz current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz} />
                 </>
             );
         }
@@ -29,8 +31,7 @@ function Game0(props: Props) {
         else if(current_quiz === props.quiz_options.problems_num) {
             return (
                 <>
-                    <h2>結果発表</h2>
-                    <button onClick={() => {props.setScreen(SCREENS.MENU0)}}>問題設定に戻る</button>
+                    <Result screen={props.screen} setScreen={props.setScreen}/>
                 </>
             );
         }
@@ -39,6 +40,7 @@ function Game0(props: Props) {
             return (
                 <>
                     <h2>不正な問題番号に設定されています</h2>
+                    <button onClick={() => { props.setScreen(SCREENS.MENU0) }}></button>
                 </>
             );
         }
