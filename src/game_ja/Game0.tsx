@@ -8,6 +8,9 @@ interface Props {
 }
 
 function Game0(props: Props) {
+    const [current_quiz, setCurrentQuiz] = React.useState<number>(0);
+
+
     const exitQuiz = () => {
         const ans: boolean = window.confirm("本当に終了しますか？");
         if(ans) {
