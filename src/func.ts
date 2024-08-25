@@ -12,6 +12,12 @@ export const min = (a: number, b: number): number => {
 };
 
 
+// return random int in [min max]
+export const getRandomInt = (max: number, min: number): number => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 // change obj[key] to value and update obj
 export const changeNumber = <T extends Object>(obj: T, key: keyof T, value: string, setObj: React.Dispatch<React.SetStateAction<T>>): void => {
     if (typeof obj[key] !== "number") {
