@@ -14,6 +14,7 @@ function Menu0(props: Props) {
     const changeDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) => {
         changeString<QuizOptions>(props.quiz_options, "difficulty", e.target.value, props.setQuizOptions);
     };
+    
     const changeProblemsNum = (e: React.ChangeEvent<HTMLInputElement>) => {
         changeNumber<QuizOptions>(props.quiz_options, "problems_num", e.target.value, props.setQuizOptions);
     };

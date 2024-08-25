@@ -1,5 +1,6 @@
 import React from 'react';
 import { SCREENS, Options, INITIAL_OPTIONS, OPTIONS_CONST } from "../constants";
+import { changeNumber, validateNumber } from '../func';
 
 
 interface Props {
@@ -11,38 +12,24 @@ interface Props {
 
 function Option(props: Props) {
     const changeMusicVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const new_options: Options = { ...props.options, music_volume: parseInt(e.target.value) };
-
-        props.setOptions(new_options);
+        changeNumber<Options>(props.options, "music_volume", e.target.value, props.setOptions);
     };
     const validateMusicVolume = () => {
-        const new_options: Options = { ...props.options };
-        if (new_options.music_volume < OPTIONS_CONST.min_volume) {
-            new_options.music_volume = OPTIONS_CONST.min_volume;
-        }
-        else if (new_options.music_volume > OPTIONS_CONST.max_volume) {
-            new_options.music_volume = OPTIONS_CONST.max_volume;
-        }
-        props.setOptions(new_options);
+        validateNumber<Options>(props.options, "music_volume", OPTIONS_CONST.max_volume, OPTIONS_CONST.min_volume, props.setOptions);
     };
+
     const changeEffectVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const new_options: Options = { ...props.options, effect_volume: parseInt(e.target.value) };
-        props.setOptions(new_options);
+        changeNumber<Options>(props.options, "effect_volume", e.target.value, props.setOptions);
     };
     const validateEffectVolume = () => {
-        const new_options: Options = { ...props.options };
-        if (new_options.effect_volume < OPTIONS_CONST.min_volume) {
-            new_options.effect_volume = OPTIONS_CONST.min_volume;
-        }
-        else if (new_options.effect_volume > OPTIONS_CONST.max_volume) {
-            new_options.effect_volume = OPTIONS_CONST.max_volume;
-        }
-        props.setOptions(new_options);
+        validateNumber<Options>(props.options, "effect_volume", OPTIONS_CONST.max_volume, OPTIONS_CONST.min_volume, props.setOptions);
     };
+
     const enableAnimation = () => {
         const new_options: Options = { ...props.options, animation: !props.options.animation };
         props.setOptions(new_options);
     };
+    
     const resetOptions = () => {
         const ans: boolean = window.confirm("本当にリセットしますか？");
         if (ans == false) {
