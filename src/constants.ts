@@ -54,14 +54,14 @@ export const QUIZ_OPTIONS_CONST: QuizOptionsConst = {
 
 // Quiz problem
 export interface QuizProblem {
-    problem_num: number;
-    correct_ans_num: number;
-    choices: number[];
+    problem_id: number;
+    choice_ids: number[];
+    correct_choice: number;
 }
 export const INITIAL_QUIZ_PROBLEM: QuizProblem = {
-    problem_num: 0,
-    correct_ans_num: 0,
-    choices: []
+    problem_id: 0,
+    choice_ids: [],
+    correct_choice: 0
 };
 
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { INITIAL_QUIZ_SCORES, QuizOptions, QuizProblem, QuizScores, SCREENS } from "../constants";
 import Quiz from "./game0/Quiz";
 import Result from './game0/Result';
+import { createProblems } from './game0/createProblem';
 
 
 interface Props {
@@ -56,6 +57,7 @@ function Game0(props: Props) {
     };
 
 
+    setQuizProblems(createProblems(props.quiz_options));
     return (
         <>
             <h2 className="game0_text">ゲーム画面（工事中）</h2>
