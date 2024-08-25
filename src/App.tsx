@@ -26,7 +26,7 @@ function App() {
             case SCREENS.MENU0:
                 return <Menu0 screen={screen} setScreen={setScreen} quiz_options={quiz_options} setQuizOptions={setQuizOptions} />;
             case SCREENS.GAME0:
-                return <Game0 screen={screen} setScreen={setScreen} />;
+                return <Game0 screen={screen} setScreen={setScreen} quiz_options={quiz_options} />;
             case SCREENS.LIST0:
                 return <List0 screen={screen} setScreen={setScreen} />;
         }
