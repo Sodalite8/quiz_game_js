@@ -1,5 +1,5 @@
 import React from 'react';
-import { INITIAL_QUIZ_PROBLEM, INITIAL_QUIZ_SCORES, QuizOptions, QuizProblem, QuizScores, SCREENS } from "../constants";
+import { INITIAL_QUIZ_SCORES, QuizOptions, QuizProblem, QuizScores, SCREENS } from "../constants";
 import Quiz from "./game0/Quiz";
 import Result from './game0/Result';
 import QuizOption from './game0/QuizOption';
@@ -36,9 +36,9 @@ function Game0(props: Props) {
         else if (current_quiz >= 0 && current_quiz < props.quiz_options.problems_num) {
             return (
                 <>
-                    <Quiz screen={props.screen} setScreen={props.setScreen}
-                        current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz} 
-                        quiz_problems={quiz_problems} />
+                    <Quiz current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz} 
+                        quiz_problems={quiz_problems} setQuizProblems={setQuizProblems}
+                        quiz_scores={quiz_scores} setQuizScores={setQuizScores} />
                 </>
             );
         }
@@ -46,7 +46,9 @@ function Game0(props: Props) {
         else if (current_quiz === props.quiz_options.problems_num) {
             return (
                 <>
-                    <Result screen={props.screen} setScreen={props.setScreen} />
+                    <Result current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz}
+                        quiz_problems={quiz_problems} setQuizProblems={setQuizProblems}
+                        quiz_scores={quiz_scores} setQuizScores={setQuizScores} />
                 </>
             );
         }

@@ -18,10 +18,9 @@ export const createProblems = (quiz_options: QuizOptions): QuizProblem[] => {
             new_problem.choice_ids.push(getRandomInt(0, 99));
         }
         quiz_problems.push(new_problem);
-        console.log(i);
-        console.log(new_problem);
     }
 
 
+    console.log(quiz_problems);
     return quiz_problems;
 };

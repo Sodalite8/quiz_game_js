@@ -1,7 +1,6 @@
 import React from "react";
 import { QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../constants";
 import { changeString, changeNumber, validateNumber } from "../../func";
-import { start } from "repl";
 import { createProblems } from "./createProblem";
 
 
@@ -28,7 +27,7 @@ function QuizOption(props: Props) {
         changeNumber<QuizOptions>(props.quiz_options, "problems_num", e.target.value, props.setQuizOptions);
     };
     const validateProblemsNum = () => {
-        validateNumber<QuizOptions>(props.quiz_options, "problems_num", QUIZ_OPTIONS_CONST.max_problems_num, QUIZ_OPTIONS_CONST.min_problems_num, props.setQuizOptions);
+        validateNumber<QuizOptions>(props.quiz_options, "problems_num", QUIZ_OPTIONS_CONST.min_problems_num, QUIZ_OPTIONS_CONST.max_problems_num, props.setQuizOptions);
     };
 
 

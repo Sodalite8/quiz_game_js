@@ -1,15 +1,16 @@
 import React from 'react';
 import ProblemSection from './ProblemSection';
 import AnswerSection from './AnswerSection';
-import { QuizProblem, SCREENS } from '../../constants';
+import { INITIAL_QUIZ_SCORES, QuizProblem, QuizScores } from '../../constants';
 
 
 interface Props {
-    screen: number;
-    setScreen: React.Dispatch<React.SetStateAction<number>>;
     current_quiz: number;
     setCurrentQuiz: React.Dispatch<React.SetStateAction<number>>;
-    quiz_problems: QuizProblem[]
+    quiz_problems: QuizProblem[];
+    setQuizProblems: React.Dispatch<React.SetStateAction<QuizProblem[]>>;
+    quiz_scores: QuizScores;
+    setQuizScores: React.Dispatch<React.SetStateAction<QuizScores>>;
 }
 
 
@@ -19,9 +20,10 @@ function Quiz(props: Props) {
     const exitQuiz = () => {
         const ans: boolean = window.confirm("本当に終了しますか？");
         if (ans) {
-            props.setScreen(SCREENS.GAME0);
+            props.setCurrentQuiz(-1);
+            props.setQuizProblems([]);
+            props.setQuizScores(INITIAL_QUIZ_SCORES);
         }
-        console.log(props.current_quiz);
     };
 
 
@@ -31,7 +33,9 @@ function Quiz(props: Props) {
                 <ProblemSection current_quiz={props.current_quiz} quiz_problems={props.quiz_problems} />
             </div>
             <div>
-                <AnswerSection current_quiz={props.current_quiz} setCurrentQuiz={props.setCurrentQuiz} quiz_problems={props.quiz_problems} />
+                <AnswerSection current_quiz={props.current_quiz} setCurrentQuiz={props.setCurrentQuiz} 
+                    quiz_problems={props.quiz_problems}
+                    quiz_scores={props.quiz_scores} setQuizScores={props.setQuizScores} />
             </div>
             <div>
                 <button onClick={exitQuiz}>クイズを終了する</button>

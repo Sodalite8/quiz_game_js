@@ -18,7 +18,7 @@ function Option(props: Props) {
         changeNumber<Options>(props.options, "music_volume", e.target.value, props.setOptions);
     };
     const validateMusicVolume = () => {
-        validateNumber<Options>(props.options, "music_volume", OPTIONS_CONST.max_volume, OPTIONS_CONST.min_volume, props.setOptions);
+        validateNumber<Options>(props.options, "music_volume", OPTIONS_CONST.min_volume, OPTIONS_CONST.max_volume, props.setOptions);
     };
 
     // About effect volume
@@ -26,7 +26,7 @@ function Option(props: Props) {
         changeNumber<Options>(props.options, "effect_volume", e.target.value, props.setOptions);
     };
     const validateEffectVolume = () => {
-        validateNumber<Options>(props.options, "effect_volume", OPTIONS_CONST.max_volume, OPTIONS_CONST.min_volume, props.setOptions);
+        validateNumber<Options>(props.options, "effect_volume", OPTIONS_CONST.min_volume, OPTIONS_CONST.max_volume, props.setOptions);
     };
 
     // About animation

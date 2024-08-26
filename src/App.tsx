@@ -6,6 +6,7 @@ import Title from "./game_ja/Title";
 import Option from "./game_ja/Option";
 import Game0 from "./game_ja/Game0";
 import List0 from "./game_ja/List0";
+import Wait from './game_ja/Wait';
 
 
 // App, Top level of the Quiz Game
@@ -18,6 +19,8 @@ function App() {
     // change the screen by var screen
     const renderScreen = () => {
         switch (screen) {
+            case SCREENS.WAIT:
+                return <Wait />;
             case SCREENS.TITLE:
                 return <Title screen={screen} setScreen={setScreen} />;
             case SCREENS.OPTION:

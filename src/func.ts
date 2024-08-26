@@ -1,21 +1,21 @@
 import React from "react";
 
 
-// return maximum number in a and b
-export const max = (a: number, b: number): number => {
-    return ((a > b) ? a : b);
-};
-
 // return minimum number in a and b
 export const min = (a: number, b: number): number => {
     return ((a < b) ? a : b);
 };
 
+// return maximum number in a and b
+export const max = (a: number, b: number): number => {
+    return ((a > b) ? a : b);
+};
+
 
 // return random int in [min max]
-export const getRandomInt = (max: number, min: number): number => {
+export const getRandomInt = (min: number, max: number): number => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+};
 
 
 // change obj[key] to value and update obj
@@ -32,7 +32,7 @@ export const changeNumber = <T extends Object>(obj: T, key: keyof T, value: stri
 };
 
 // validate obj[key] and update obj
-export const validateNumber = <T extends Object>(obj: T, key: keyof T, max_val: number, min_val: number, setObj: React.Dispatch<React.SetStateAction<T>>) => {
+export const validateNumber = <T extends Object>(obj: T, key: keyof T, min_val: number, max_val: number, setObj: React.Dispatch<React.SetStateAction<T>>) => {
     if (typeof obj[key] !== "number") {
         throw new Error("The key's value is not number.");
     }
