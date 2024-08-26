@@ -1,5 +1,5 @@
 import React from 'react';
-import { INITIAL_QUIZ_SCORES, QuizOptions, QuizProblem, QuizScores, SCREENS } from "../constants";
+import { INITIAL_QUIZ_RESULTS, QuizOptions, QuizProblem, QuizResults, SCREENS } from "../constants";
 import Quiz from "./game0/Quiz";
 import Result from './game0/Result';
 import QuizOption from './game0/QuizOption';
@@ -17,7 +17,7 @@ interface Props {
 function Game0(props: Props) {
     const [current_quiz, setCurrentQuiz] = React.useState<number>(-1);
     const [quiz_problems, setQuizProblems] = React.useState<QuizProblem[]>([]);
-    const [quiz_scores, setQuizScores] = React.useState<QuizScores>(INITIAL_QUIZ_SCORES);
+    const [quiz_results, setQuizResults] = React.useState<QuizResults>(INITIAL_QUIZ_RESULTS);
 
 
     // About rendering the quiz and changing problems
@@ -38,7 +38,7 @@ function Game0(props: Props) {
                 <>
                     <Quiz current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz} 
                         quiz_problems={quiz_problems} setQuizProblems={setQuizProblems}
-                        quiz_scores={quiz_scores} setQuizScores={setQuizScores} />
+                        quiz_results={quiz_results} setQuizResults={setQuizResults} />
                 </>
             );
         }
@@ -49,7 +49,7 @@ function Game0(props: Props) {
                     <Result screen={props.screen} setScreen={props.setScreen}
                         current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz}
                         quiz_problems={quiz_problems} setQuizProblems={setQuizProblems}
-                        quiz_scores={quiz_scores} setQuizScores={setQuizScores} />
+                        quiz_results={quiz_results} setQuizResults={setQuizResults} />
                 </>
             );
         }

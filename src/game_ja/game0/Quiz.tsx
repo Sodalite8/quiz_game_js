@@ -1,7 +1,7 @@
 import React from 'react';
 import ProblemSection from './ProblemSection';
 import AnswerSection from './AnswerSection';
-import { INITIAL_QUIZ_SCORES, QuizProblem, QuizScores } from '../../constants';
+import { INITIAL_QUIZ_RESULTS, QuizProblem, QuizResults } from '../../constants';
 
 
 interface Props {
@@ -9,8 +9,8 @@ interface Props {
     setCurrentQuiz: React.Dispatch<React.SetStateAction<number>>;
     quiz_problems: QuizProblem[];
     setQuizProblems: React.Dispatch<React.SetStateAction<QuizProblem[]>>;
-    quiz_scores: QuizScores;
-    setQuizScores: React.Dispatch<React.SetStateAction<QuizScores>>;
+    quiz_results: QuizResults;
+    setQuizResults: React.Dispatch<React.SetStateAction<QuizResults>>;
 }
 
 
@@ -22,7 +22,7 @@ function Quiz(props: Props) {
         if (ans) {
             props.setCurrentQuiz(-1);
             props.setQuizProblems([]);
-            props.setQuizScores(INITIAL_QUIZ_SCORES);
+            props.setQuizResults(INITIAL_QUIZ_RESULTS);
         }
     };
 
@@ -35,7 +35,7 @@ function Quiz(props: Props) {
             <div>
                 <AnswerSection current_quiz={props.current_quiz} setCurrentQuiz={props.setCurrentQuiz} 
                     quiz_problems={props.quiz_problems}
-                    quiz_scores={props.quiz_scores} setQuizScores={props.setQuizScores} />
+                    quiz_results={props.quiz_results} setQuizResults={props.setQuizResults} />
             </div>
             <div>
                 <button onClick={exitQuiz}>クイズを終了する</button>

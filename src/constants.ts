@@ -66,9 +66,9 @@ export const INITIAL_QUIZ_PROBLEM: QuizProblem = {
 
 
 // Quiz Scores
-export interface QuizScores {
-    point: number;
+export interface QuizResults {
+    score: number;
 }
-export const INITIAL_QUIZ_SCORES: QuizScores = {
-    point: 0
+export const INITIAL_QUIZ_RESULTS: QuizResults = {
+    score: 0
 } as const;
