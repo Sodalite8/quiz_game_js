@@ -21,6 +21,5 @@ export const createProblems = (quiz_options: QuizOptions): QuizProblem[] => {
     }
 
 
-    console.log(quiz_problems);
     return quiz_problems;
 };
