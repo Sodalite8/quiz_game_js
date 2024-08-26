@@ -19,14 +19,19 @@ export const getRandomInt = (min: number, max: number): number => {
 
 
 // change obj[key] to value and update obj
-export const changeNumber = <T extends Object>(obj: T, key: keyof T, value: string, setObj: React.Dispatch<React.SetStateAction<T>>): void => {
+export const changeNumber = <T extends Object>(obj: T, key: keyof T, value: number | string, setObj: React.Dispatch<React.SetStateAction<T>>): void => {
     if (typeof obj[key] !== "number") {
         throw new Error("The key's value is not number.");
     }
 
     const new_obj: T = { ...obj };
-    if (!isNaN(parseInt(value))) {
-        (new_obj[key] as number) = parseInt(value);
+    if (typeof value === "number") {
+        (new_obj[key] as number) = value;
+    }
+    else if (typeof value === "string") {
+        if (!isNaN(parseInt(value))) {
+            (new_obj[key] as number) = parseInt(value);
+        }
     }
     setObj(new_obj);
 };
