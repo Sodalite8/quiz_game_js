@@ -1,17 +1,23 @@
 import React from "react";
-import { QUIZ_OPTIONS_CONST, QuizOptions, SCREENS } from "../../constants";
+import { QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../constants";
 import { changeString, changeNumber, validateNumber } from "../../func";
+import { start } from "repl";
+import { createProblems } from "./createProblem";
 
 
 interface Props {
     screen: number;
     setScreen: React.Dispatch<React.SetStateAction<number>>;
     quiz_options: QuizOptions;
-    setQuizOptions: React.Dispatch<React.SetStateAction<QuizOptions>>
+    setQuizOptions: React.Dispatch<React.SetStateAction<QuizOptions>>;
+    current_quiz: number;
+    setCurrentQuiz: React.Dispatch<React.SetStateAction<number>>;
+    quiz_problems: QuizProblem[];
+    setQuizProblems: React.Dispatch<React.SetStateAction<QuizProblem[]>>
 }
 
 
-function QuizProblem(props: Props) {
+function QuizOption(props: Props) {
     // About quiz difficulty
     const changeDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) => {
         changeString<QuizOptions>(props.quiz_options, "difficulty", e.target.value, props.setQuizOptions);
@@ -23,6 +29,13 @@ function QuizProblem(props: Props) {
     };
     const validateProblemsNum = () => {
         validateNumber<QuizOptions>(props.quiz_options, "problems_num", QUIZ_OPTIONS_CONST.max_problems_num, QUIZ_OPTIONS_CONST.min_problems_num, props.setQuizOptions);
+    };
+
+
+    // About creating the problems and starting the quiz
+    const startQuiz = () => {
+        createProblems(props.quiz_options);
+        props.setCurrentQuiz(0);
     };
 
 
@@ -50,7 +63,7 @@ function QuizProblem(props: Props) {
                 </div>
             </div>
             <div>
-                <button onClick={() => props.setScreen(SCREENS.GAME0)}>クイズ開始</button>
+                <button onClick={startQuiz}>クイズ開始</button>
             </div>
             <div>
                 <button onClick={() => props.setScreen(SCREENS.TITLE)}>タイトルに戻る</button>
@@ -60,4 +73,4 @@ function QuizProblem(props: Props) {
 }
 
 
-export default QuizProblem;
+export default QuizOption;

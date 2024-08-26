@@ -21,27 +21,32 @@ function Game0(props: Props) {
 
 
     // About rendering the quiz and changing problems
-    const renderQuiz = () => {
-        if(current_quiz == -1) {
+    const renderGame = () => {
+        if (current_quiz == -1) {
             return (
                 <>
-                    <QuizOption screen={props.screen} setScreen={props.setScreen} quiz_options={props.quiz_options} setQuizOptions={props.setQuizOptions} />
+                    <QuizOption screen={props.screen} setScreen={props.setScreen}
+                        quiz_options={props.quiz_options} setQuizOptions={props.setQuizOptions}
+                        current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz}
+                        quiz_problems={quiz_problems} setQuizProblems={setQuizProblems} />
                 </>
             );
         }
 
-        else if(current_quiz >= 0 && current_quiz < props.quiz_options.problems_num) {
+        else if (current_quiz >= 0 && current_quiz < props.quiz_options.problems_num) {
             return (
                 <>
-                    <Quiz current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz} quiz_problems={quiz_problems}/>
+                    <Quiz screen={props.screen} setScreen={props.setScreen}
+                        current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz} 
+                        quiz_problems={quiz_problems} />
                 </>
             );
         }
 
-        else if(current_quiz === props.quiz_options.problems_num) {
+        else if (current_quiz === props.quiz_options.problems_num) {
             return (
                 <>
-                    <Result screen={props.screen} setScreen={props.setScreen}/>
+                    <Result screen={props.screen} setScreen={props.setScreen} />
                 </>
             );
         }
@@ -57,23 +62,11 @@ function Game0(props: Props) {
     };
 
 
-    // About finishing the quiz in the middle
-    const exitQuiz = () => {
-        const ans: boolean = window.confirm("本当に終了しますか？");
-        if (ans) {
-            props.setScreen(SCREENS.GAME0);
-        }
-    };
-
-
     return (
         <>
             <h2 className="game0_text">ゲーム画面（工事中）</h2>
             <div>
-                {renderQuiz()}
-            </div>
-            <div>
-                <button onClick={exitQuiz}>クイズを終了する</button>
+                {renderGame()}
             </div>
         </>
     );
