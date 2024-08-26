@@ -1,4 +1,3 @@
-import React from "react";
 import { INITIAL_QUIZ_PROBLEM, QuizOptions, QuizProblem } from "../../constants";
 import { getRandomInt } from "../../func";
 

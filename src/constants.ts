@@ -2,9 +2,8 @@
 export const SCREENS = {
     TITLE: 0,
     OPTION: 1,
-    MENU0: 10,
-    GAME0: 20,
-    LIST0: 30
+    GAME0: 10,
+    LIST0: 20
 } as const;
 
 
@@ -62,7 +61,7 @@ export const INITIAL_QUIZ_PROBLEM: QuizProblem = {
     problem_id: 0,
     choice_ids: [],
     correct_choice: 0
-} as const;
+};
 
 
 // Quiz Scores

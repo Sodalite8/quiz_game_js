@@ -13,8 +13,8 @@ function Result(props: Props) {
         <>
             <h2>結果発表</h2>
             <div>
-                <button onClick={() => { props.setScreen(SCREENS.GAME0) }}>再挑戦</button>
-                <button onClick={() => { props.setScreen(SCREENS.MENU0) }}>問題設定に戻る</button>
+                {/* <button onClick={() => { props.setScreen(SCREENS.GAME0) }}>再挑戦</button> */}
+                <button onClick={() => { props.setScreen(SCREENS.GAME0) }}>問題設定に戻る</button>
             </div>
         </>
     );
