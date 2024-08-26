@@ -34,7 +34,7 @@ function QuizOption(props: Props) {
 
     // About creating the problems and starting the quiz
     const startQuiz = () => {
-        createProblems(props.quiz_options);
+        props.setQuizProblems(createProblems(props.quiz_options));
         props.setCurrentQuiz(0);
     };
 
