@@ -28,7 +28,7 @@ function Result(props: Props) {
             <h2>結果発表</h2>
             <div>
                 得点：{props.quiz_results.score} / {props.current_quiz}
-                正答率：{Math.round((props.quiz_results.score / props.current_quiz) * (10 ** 2)) / (10 ** 2) * 100}%
+                正答率：{Math.round((props.quiz_results.score * 100 / props.current_quiz) * (10 ** 2)) / (10 ** 2)}%
             </div>
             <div>
                 <button onClick={exitQuiz}>問題設定に戻る</button>
