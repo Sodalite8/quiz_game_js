@@ -46,7 +46,8 @@ function Game0(props: Props) {
         else if (current_quiz === props.quiz_options.problems_num) {
             return (
                 <>
-                    <Result current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz}
+                    <Result screen={props.screen} setScreen={props.setScreen}
+                        current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz}
                         quiz_problems={quiz_problems} setQuizProblems={setQuizProblems}
                         quiz_scores={quiz_scores} setQuizScores={setQuizScores} />
                 </>
@@ -57,7 +58,7 @@ function Game0(props: Props) {
             return (
                 <>
                     <h2>不正な問題番号に設定されています</h2>
-                    <button onClick={() => { props.setScreen(SCREENS.GAME0) }}></button>
+                    <button onClick={() => { props.setScreen(SCREENS.TITLE) }}></button>
                 </>
             );
         }
