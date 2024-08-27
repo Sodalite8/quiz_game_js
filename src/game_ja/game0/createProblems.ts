@@ -1,23 +1,30 @@
 import { INITIAL_QUIZ_PROBLEM, QuizOptions, QuizProblem } from "../../constants";
-import { getRandomInt } from "../../func";
+import { fisherYatesShuffle, getRandomInt } from "../../func";
 
 
 export const createProblems = (quiz_options: QuizOptions): QuizProblem[] => {
     const quiz_problems: QuizProblem[] = [];
+    const ids: number[] = [];
+    for (let i = 0; i < 200; i++) {
+        ids.push(i);
+    }
 
 
+    const shuffled_ids = fisherYatesShuffle<number>(ids);
+    let index = 0;
     for (let i = 0; i < quiz_options.problems_num; i++) {
-        const new_problem: QuizProblem = { ...INITIAL_QUIZ_PROBLEM, choice_ids: [ ...INITIAL_QUIZ_PROBLEM.choice_ids ] };
-        new_problem.problem_id = getRandomInt(0, 99);
+        const new_problem: QuizProblem = { ...INITIAL_QUIZ_PROBLEM, choice_ids: [...INITIAL_QUIZ_PROBLEM.choice_ids] }
+        new_problem.problem_id = shuffled_ids[index++];
         new_problem.correct_choice = getRandomInt(0, 3);
         for (let j = 0; j < 4; j++) {
             if (j === new_problem.correct_choice) {
                 new_problem.choice_ids.push(new_problem.problem_id);
                 continue;
             }
-            new_problem.choice_ids.push(getRandomInt(0, 99));
+
+            new_problem.choice_ids.push(shuffled_ids[index++]);
         }
-        quiz_problems.push(new_problem);
+        quiz_problems.push(new_problem)
     }
 
 

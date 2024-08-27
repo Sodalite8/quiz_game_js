@@ -1,6 +1,9 @@
 import React from "react";
 
 
+type Primitive = number | boolean | string | symbol | null | undefined;
+
+
 // return minimum number in a and b
 export const min = (a: number, b: number): number => {
     return ((a < b) ? a : b);
@@ -15,6 +18,17 @@ export const max = (a: number, b: number): number => {
 // return random int in [min max]
 export const getRandomInt = (min: number, max: number): number => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+
+// shuffle arr by Fisher-Yates algorithm
+export const fisherYatesShuffle = <T extends Primitive>(arr: T[]): T[] => {
+    const shuffled: T[] = [...arr];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(getRandomInt(0, i));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
 };
 
 
