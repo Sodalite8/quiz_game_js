@@ -10,20 +10,23 @@ export const createProblems = (quiz_options: QuizOptions): QuizProblem[] => {
     }
 
 
-    const shuffled_ids: number[] = fisherYatesShuffle<number>(ids);
-    const problem_ids: number[] = shuffled_ids.slice(0, quiz_options.problems_num);
-    const choice_ids: number[] = shuffled_ids.slice(quiz_options.problems_num);
+    const problem_ids: number[] = fisherYatesShuffle<number>(ids).slice(0, quiz_options.problems_num),
+    choice_ids: number[] = fisherYatesShuffle<number>(ids);
 
 
     let index = 0;
     for (let i = 0; i < quiz_options.problems_num; i++) {
         const new_problem: QuizProblem = { ...INITIAL_QUIZ_PROBLEM, choice_ids: [...INITIAL_QUIZ_PROBLEM.choice_ids] }
-        new_problem.problem_id = problem_ids[i];
         new_problem.correct_choice = getRandomInt(0, 3);
+        new_problem.problem_id = problem_ids[i];
         for (let j = 0; j < 4; j++) {
             if (j === new_problem.correct_choice) {
                 new_problem.choice_ids.push(new_problem.problem_id);
                 continue;
+            }
+
+            while (choice_ids[index] === new_problem.problem_id) {
+                index++;
             }
             new_problem.choice_ids.push(choice_ids[index++]);
         }
