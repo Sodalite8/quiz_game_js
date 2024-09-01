@@ -641,7 +641,7 @@
     },
     {
         "id": 80,
-        "available": true,
+        "available": false,
         "name": "エジプト王国",
         "period": "",
         "difficulty": 1,
@@ -649,7 +649,7 @@
     },
     {
         "id": 81,
-        "available": true,
+        "available": false,
         "name": "リビア共和国",
         "period": "",
         "difficulty": 1,
@@ -657,7 +657,7 @@
     },
     {
         "id": 82,
-        "available": true,
+        "available": false,
         "name": "スーダン共和国",
         "period": "",
         "difficulty": 2,
@@ -665,7 +665,7 @@
     },
     {
         "id": 83,
-        "available": true,
+        "available": false,
         "name": "リーフ共和国",
         "period": "",
         "difficulty": 2,
@@ -673,7 +673,7 @@
     },
     {
         "id": 84,
-        "available": true,
+        "available": false,
         "name": "エチオピア帝国",
         "period": "",
         "difficulty": 1,
@@ -681,7 +681,7 @@
     },
     {
         "id": 85,
-        "available": true,
+        "available": false,
         "name": "マリ連邦",
         "period": "",
         "difficulty": 1,
@@ -689,7 +689,7 @@
     },
     {
         "id": 86,
-        "available": true,
+        "available": false,
         "name": "オートボルタ共和国",
         "period": "",
         "difficulty": 2,
@@ -697,7 +697,7 @@
     },
     {
         "id": 87,
-        "available": true,
+        "available": false,
         "name": "南アフリカ連邦 / 南アフリカ共和国",
         "period": "",
         "difficulty": 1,
@@ -961,7 +961,7 @@
     },
     {
         "id": 120,
-        "available": true,
+        "available": false,
         "name": "アメリカ合衆国",
         "period": "",
         "difficulty": 0,
@@ -969,7 +969,7 @@
     },
     {
         "id": 121,
-        "available": true,
+        "available": false,
         "name": "アメリカ合衆国",
         "period": "",
         "difficulty": 0,
@@ -977,7 +977,7 @@
     },
     {
         "id": 122,
-        "available": true,
+        "available": false,
         "name": "中央アメリカ連邦共和国",
         "period": "",
         "difficulty": 1,
@@ -985,7 +985,7 @@
     },
     {
         "id": 123,
-        "available": true,
+        "available": false,
         "name": "コロンビア共和国",
         "period": "",
         "difficulty": 1,
@@ -993,7 +993,7 @@
     },
     {
         "id": 124,
-        "available": true,
+        "available": false,
         "name": "ヌエバ・グラナダ共和国 / グラナダ連合",
         "period": " ",
         "difficulty": 1,
@@ -1001,7 +1001,7 @@
     },
     {
         "id": 125,
-        "available": true,
+        "available": false,
         "name": "ブラジル帝国",
         "period": "",
         "difficulty": 0,
