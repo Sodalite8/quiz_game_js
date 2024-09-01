@@ -1,6 +1,7 @@
 import React from "react";
 import { QuizProblem, QuizResults } from "../../constants";
 import { changeNumber } from "../../func";
+import { FLAG_DATA_LIST } from "../../readFlagData";
 
 
 interface Props {
@@ -23,7 +24,7 @@ function AnswerSection(props: Props) {
 
     const answer_buttons = props.quiz_problems[props.current_quiz].choice_ids.map((id, index) => {
         return (
-            <button name={String(index)} onClick={answerProblem}>{id}</button>
+            <button name={String(index)} onClick={answerProblem}>{FLAG_DATA_LIST[id].name}({FLAG_DATA_LIST[id].period})</button>
         );
     });
 

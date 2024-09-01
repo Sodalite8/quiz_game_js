@@ -1,3 +1,6 @@
+import flags_data_json from "./flags/flags.json";
+
+
 // Screen numbers
 export const SCREENS = {
     WAIT: -1,
@@ -65,10 +68,29 @@ export const INITIAL_QUIZ_PROBLEM: QuizProblem = {
 };
 
 
-// Quiz Scores
+// Quiz Results
 export interface QuizResults {
     score: number;
 }
 export const INITIAL_QUIZ_RESULTS: QuizResults = {
     score: 0
+} as const;
+
+
+export interface FlagData {
+    id: number;
+    available: boolean,
+    name: string;
+    period: string;
+    difficulty: number;
+    category: number;
+}
+
+export interface FlagDataConst {
+    difficulty_num: number;
+    category_num: number;
+}
+export const FLAG_DATA_CONST: FlagDataConst = {
+    difficulty_num: 3,
+    category_num: 5
 } as const;

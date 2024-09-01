@@ -1,5 +1,4 @@
 import React from 'react';
-import test_img from "./flags/Test.png";
 import { QuizProblem } from '../../constants';
 
 
@@ -16,7 +15,7 @@ function ProblemSection(props: Props) {
                 <h2>この国は？</h2>
             </div>
             <div>
-                <h2>{props.quiz_problems[props.current_quiz].problem_id}</h2>
+                <img src={`./flags/flag${props.quiz_problems[props.current_quiz].problem_id}.png`} alt="problem_img"></img>
             </div>
         </>
     );

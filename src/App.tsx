@@ -7,7 +7,6 @@ import Option from "./game_ja/Option";
 import Game0 from "./game_ja/Game0";
 import List0 from "./game_ja/List0";
 import Wait from './game_ja/Wait';
-import { readFlagsData } from './game_ja/game0/readFlagsData';
 
 
 // App, Top level of the Quiz Game
@@ -37,7 +36,6 @@ function App() {
     return (
         <>
             {renderScreen()}
-            <button onClick={readFlagsData}></button>
         </>
     );
 }

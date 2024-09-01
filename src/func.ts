@@ -9,6 +9,7 @@ export const min = (a: number, b: number): number => {
     return ((a < b) ? a : b);
 };
 
+
 // return maximum number in a and b
 export const max = (a: number, b: number): number => {
     return ((a > b) ? a : b);
@@ -50,6 +51,7 @@ export const changeNumber = <T extends Object>(obj: T, key: keyof T, value: numb
     setObj(new_obj);
 };
 
+
 // validate obj[key] and update obj
 export const validateNumber = <T extends Object>(obj: T, key: keyof T, min_val: number, max_val: number, setObj: React.Dispatch<React.SetStateAction<T>>) => {
     if (typeof obj[key] !== "number") {
@@ -61,6 +63,7 @@ export const validateNumber = <T extends Object>(obj: T, key: keyof T, min_val: 
     (new_obj[key] as number) = min(new_obj[key] as number, max_val);
     setObj(new_obj);
 };
+
 
 // change obj[key] to value and update obj
 export const changeString = <T extends Object>(obj: T, key: keyof T, value: string, setObj: React.Dispatch<React.SetStateAction<T>>): void => {
