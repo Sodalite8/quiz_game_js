@@ -4,7 +4,7 @@
         "available": true,
         "name": "グレートブリテン王国",
         "period": "1707-1801",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -12,7 +12,7 @@
         "available": true,
         "name": "イングランド共和国",
         "period": "1649-1651",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -20,7 +20,7 @@
         "available": true,
         "name": "イングランド共和国",
         "period": "1651-1658",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -28,7 +28,7 @@
         "available": true,
         "name": "イングランド共和国",
         "period": "1658-1660",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -36,7 +36,7 @@
         "available": true,
         "name": "フランス王国",
         "period": "1643-1790",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -44,7 +44,7 @@
         "available": true,
         "name": "フランス立憲王国 / フランス共和国",
         "period": "1791-1794",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -52,7 +52,7 @@
         "available": true,
         "name": "ネーデルラント連邦共和国",
         "period": "1580-1795",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -60,7 +60,7 @@
         "available": true,
         "name": "神聖ローマ帝国",
         "period": "14C-15C",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -68,7 +68,7 @@
         "available": true,
         "name": "神聖ローマ帝国",
         "period": "15C-1806",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -76,7 +76,7 @@
         "available": true,
         "name": "オーストリア帝国 / オーストリア＝ハンガリー帝国",
         "period": "1804-1918",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -84,7 +84,7 @@
         "available": true,
         "name": "ドイツ帝国",
         "period": "1871-1918",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -92,7 +92,7 @@
         "available": true,
         "name": "教皇領",
         "period": "?-1808",
-        "difficulty": 1,
+        "level": 1,
         "category": 0
     },
     {
@@ -100,7 +100,7 @@
         "available": true,
         "name": "教皇領",
         "period": "1803-1825",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -108,7 +108,7 @@
         "available": true,
         "name": "教皇領",
         "period": "1825-1870",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -116,7 +116,7 @@
         "available": true,
         "name": "イタリア王国",
         "period": "1861-1946",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -124,7 +124,7 @@
         "available": true,
         "name": "ポルトガル王国",
         "period": "1830-1910",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -132,7 +132,7 @@
         "available": true,
         "name": "スペイン帝国",
         "period": "1505-1785",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -140,7 +140,7 @@
         "available": true,
         "name": "スペイン王国",
         "period": "1785-1873, 1875-1931",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -148,7 +148,7 @@
         "available": true,
         "name": "スペイン第一共和国",
         "period": "1873-1874",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -156,7 +156,7 @@
         "available": true,
         "name": "スペイン第二共和国",
         "period": "1931-1939",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -164,7 +164,7 @@
         "available": true,
         "name": "スウェーデン＝ノルウェー連合王国",
         "period": "1814-1905",
-        "difficulty": 1,
+        "level": 1,
         "category": 0
     },
     {
@@ -172,7 +172,7 @@
         "available": true,
         "name": "ギリシア王国",
         "period": "1863-1924, 1935-1973",
-        "difficulty": 1,
+        "level": 1,
         "category": 0
     },
     {
@@ -180,7 +180,7 @@
         "available": true,
         "name": "セルビア公国",
         "period": "1835-1882",
-        "difficulty": 1,
+        "level": 1,
         "category": 0
     },
     {
@@ -188,7 +188,7 @@
         "available": true,
         "name": "セルビア王国",
         "period": "1882-1918",
-        "difficulty": 1,
+        "level": 1,
         "category": 0
     },
     {
@@ -196,7 +196,7 @@
         "available": true,
         "name": "ユーゴスラビア王国",
         "period": "1918-1943",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -204,7 +204,7 @@
         "available": true,
         "name": "ポーランド＝リトアニア共和国",
         "period": "1605-1668",
-        "difficulty": 1,
+        "level": 1,
         "category": 0
     },
     {
@@ -212,7 +212,7 @@
         "available": true,
         "name": "ハンガリー王国",
         "period": "1919-1946",
-        "difficulty": 0,
+        "level": 0,
         "category": 0
     },
     {
@@ -220,7 +220,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -228,7 +228,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -236,7 +236,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -244,7 +244,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -252,7 +252,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -260,7 +260,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -268,7 +268,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -276,7 +276,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -284,7 +284,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -292,7 +292,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -300,7 +300,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -308,7 +308,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -316,7 +316,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -324,7 +324,7 @@
         "available": true,
         "name": "清",
         "period": "1889-1912",
-        "difficulty": 0,
+        "level": 0,
         "category": 1
     },
     {
@@ -332,7 +332,7 @@
         "available": true,
         "name": "中華民国",
         "period": "1912-1928",
-        "difficulty": 0,
+        "level": 0,
         "category": 1
     },
     {
@@ -340,7 +340,7 @@
         "available": true,
         "name": "中華帝国",
         "period": "1916-1916",
-        "difficulty": 0,
+        "level": 0,
         "category": 1
     },
     {
@@ -348,7 +348,7 @@
         "available": true,
         "name": "満州国",
         "period": "1932-1945",
-        "difficulty": 0,
+        "level": 0,
         "category": 1
     },
     {
@@ -356,7 +356,7 @@
         "available": true,
         "name": "大韓帝国",
         "period": "1897-1910",
-        "difficulty": 0,
+        "level": 0,
         "category": 1
     },
     {
@@ -364,7 +364,7 @@
         "available": true,
         "name": "ベトナム共和国",
         "period": "1948-1975",
-        "difficulty": 1,
+        "level": 1,
         "category": 1
     },
     {
@@ -372,7 +372,7 @@
         "available": true,
         "name": "キャンディ王国",
         "period": "?-1815",
-        "difficulty": 2,
+        "level": 2,
         "category": 1
     },
     {
@@ -380,7 +380,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -388,7 +388,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -396,7 +396,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -404,7 +404,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -412,7 +412,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -420,7 +420,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -428,7 +428,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -436,7 +436,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -444,7 +444,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -452,7 +452,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -460,7 +460,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -468,7 +468,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -476,7 +476,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -484,7 +484,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -492,7 +492,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -500,7 +500,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -508,7 +508,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -516,7 +516,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -524,7 +524,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -532,7 +532,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -540,7 +540,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -548,7 +548,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -556,7 +556,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -564,7 +564,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -572,7 +572,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -580,7 +580,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -588,7 +588,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -596,7 +596,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -604,7 +604,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -612,7 +612,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -620,7 +620,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -628,7 +628,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -636,7 +636,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -644,7 +644,7 @@
         "available": false,
         "name": "エジプト王国",
         "period": "",
-        "difficulty": 1,
+        "level": 1,
         "category": 2
     },
     {
@@ -652,7 +652,7 @@
         "available": false,
         "name": "リビア共和国",
         "period": "",
-        "difficulty": 1,
+        "level": 1,
         "category": 2
     },
     {
@@ -660,7 +660,7 @@
         "available": false,
         "name": "スーダン共和国",
         "period": "",
-        "difficulty": 2,
+        "level": 2,
         "category": 2
     },
     {
@@ -668,7 +668,7 @@
         "available": false,
         "name": "リーフ共和国",
         "period": "",
-        "difficulty": 2,
+        "level": 2,
         "category": 2
     },
     {
@@ -676,7 +676,7 @@
         "available": false,
         "name": "エチオピア帝国",
         "period": "",
-        "difficulty": 1,
+        "level": 1,
         "category": 2
     },
     {
@@ -684,7 +684,7 @@
         "available": false,
         "name": "マリ連邦",
         "period": "",
-        "difficulty": 1,
+        "level": 1,
         "category": 2
     },
     {
@@ -692,7 +692,7 @@
         "available": false,
         "name": "オートボルタ共和国",
         "period": "",
-        "difficulty": 2,
+        "level": 2,
         "category": 2
     },
     {
@@ -700,7 +700,7 @@
         "available": false,
         "name": "南アフリカ連邦 / 南アフリカ共和国",
         "period": "",
-        "difficulty": 1,
+        "level": 1,
         "category": 2
     },
     {
@@ -708,7 +708,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -716,7 +716,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -724,7 +724,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -732,7 +732,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -740,7 +740,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -748,7 +748,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -756,7 +756,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -764,7 +764,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -772,7 +772,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -780,7 +780,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -788,7 +788,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -796,7 +796,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -804,7 +804,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -812,7 +812,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -820,7 +820,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -828,7 +828,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -836,7 +836,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -844,7 +844,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -852,7 +852,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -860,7 +860,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -868,7 +868,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -876,7 +876,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -884,7 +884,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -892,7 +892,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -900,7 +900,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -908,7 +908,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -916,7 +916,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -924,7 +924,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -932,7 +932,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -940,7 +940,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -948,7 +948,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -956,7 +956,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -964,7 +964,7 @@
         "available": false,
         "name": "アメリカ合衆国",
         "period": "",
-        "difficulty": 0,
+        "level": 0,
         "category": 3
     },
     {
@@ -972,7 +972,7 @@
         "available": false,
         "name": "アメリカ合衆国",
         "period": "",
-        "difficulty": 0,
+        "level": 0,
         "category": 3
     },
     {
@@ -980,7 +980,7 @@
         "available": false,
         "name": "中央アメリカ連邦共和国",
         "period": "",
-        "difficulty": 1,
+        "level": 1,
         "category": 3
     },
     {
@@ -988,7 +988,7 @@
         "available": false,
         "name": "コロンビア共和国",
         "period": "",
-        "difficulty": 1,
+        "level": 1,
         "category": 3
     },
     {
@@ -996,7 +996,7 @@
         "available": false,
         "name": "ヌエバ・グラナダ共和国 / グラナダ連合",
         "period": " ",
-        "difficulty": 1,
+        "level": 1,
         "category": 3
     },
     {
@@ -1004,7 +1004,7 @@
         "available": false,
         "name": "ブラジル帝国",
         "period": "",
-        "difficulty": 0,
+        "level": 0,
         "category": 3
     },
     {
@@ -1012,7 +1012,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1020,7 +1020,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1028,7 +1028,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1036,7 +1036,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1044,7 +1044,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1052,7 +1052,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1060,7 +1060,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1068,7 +1068,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1076,7 +1076,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1084,7 +1084,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1092,7 +1092,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1100,7 +1100,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1108,7 +1108,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1116,7 +1116,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1124,7 +1124,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1132,7 +1132,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1140,7 +1140,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1148,7 +1148,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1156,7 +1156,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1164,7 +1164,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1172,7 +1172,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1180,7 +1180,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1188,7 +1188,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1196,7 +1196,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1204,7 +1204,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1212,7 +1212,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1220,7 +1220,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1228,7 +1228,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1236,7 +1236,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1244,7 +1244,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1252,7 +1252,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1260,7 +1260,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1268,7 +1268,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1276,7 +1276,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1284,7 +1284,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1292,7 +1292,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1300,7 +1300,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1308,7 +1308,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1316,7 +1316,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1324,7 +1324,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1332,7 +1332,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1340,7 +1340,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1348,7 +1348,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1356,7 +1356,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1364,7 +1364,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1372,7 +1372,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1380,7 +1380,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1388,7 +1388,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1396,7 +1396,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1404,7 +1404,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1412,7 +1412,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1420,7 +1420,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1428,7 +1428,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1436,7 +1436,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1444,7 +1444,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1452,7 +1452,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1460,7 +1460,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1468,7 +1468,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1476,7 +1476,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1484,7 +1484,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1492,7 +1492,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1500,7 +1500,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1508,7 +1508,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1516,7 +1516,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1524,7 +1524,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1532,7 +1532,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1540,7 +1540,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1548,7 +1548,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1556,7 +1556,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1564,7 +1564,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1572,7 +1572,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1580,7 +1580,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1588,7 +1588,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     },
     {
@@ -1596,7 +1596,7 @@
         "available": false,
         "name": "",
         "period": "",
-        "difficulty": -1,
+        "level": -1,
         "category": -1
     }
 ]

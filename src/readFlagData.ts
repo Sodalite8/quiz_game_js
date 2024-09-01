@@ -2,7 +2,7 @@ import { FLAG_DATA_CONST, FlagData } from "./constants";
 import flag_data_list_json from "./flags/flags.json";
 
 
-const readFlagDataByKey = (key: "difficulty" | "category", size: number): FlagData[][] => {
+const readFlagDataByKey = (key: "level" | "category", size: number): FlagData[][] => {
     const read_data: FlagData[][] = Array.from({ length: size }, () => []);
     flag_data_list_json.forEach(value => {
         if(value.available) {
@@ -10,9 +10,11 @@ const readFlagDataByKey = (key: "difficulty" | "category", size: number): FlagDa
         }
     });
 
+
     return read_data;
 };
 
+
 export const FLAG_DATA_LIST: FlagData[] = flag_data_list_json;
-export const FLAG_DATA_LIST_BY_DIFFICULTY: FlagData[][] = readFlagDataByKey("difficulty", FLAG_DATA_CONST.difficulty_num);
+export const FLAG_DATA_LIST_BY_LEVEL: FlagData[][] = readFlagDataByKey("level", FLAG_DATA_CONST.level_num);
 export const FLAG_DATA_LIST_BY_CATEGORY: FlagData[][] = readFlagDataByKey("category", FLAG_DATA_CONST.category_num);

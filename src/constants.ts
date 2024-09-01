@@ -84,16 +84,16 @@ export interface FlagData {
     available: boolean,
     name: string;
     period: string;
-    difficulty: number;
+    level: number;
     category: number;
 }
 
 
 export interface FlagDataConst {
-    difficulty_num: number;
+    level_num: number;
     category_num: number;
 }
 export const FLAG_DATA_CONST: FlagDataConst = {
-    difficulty_num: 3,
+    level_num: 3,
     category_num: 5
 } as const;
