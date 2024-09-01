@@ -23,6 +23,7 @@ export const INITIAL_OPTIONS: Options = {
     animation: true
 } as const;
 
+
 // Game options constants
 export interface OptionsConst {
     max_volume: number;
@@ -36,13 +37,14 @@ export const OPTIONS_CONST: OptionsConst = {
 
 // Quiz options
 export interface QuizOptions {
-    difficulty: string;
+    difficulty: number;
     problems_num: number;
 }
 export const INITIAL_QUIZ_OPTIONS: QuizOptions = {
-    difficulty: "easy",
+    difficulty: 2,
     problems_num: 10
 } as const;
+
 
 // Quiz options constants
 export interface QuizOptionsConst {
@@ -85,6 +87,7 @@ export interface FlagData {
     difficulty: number;
     category: number;
 }
+
 
 export interface FlagDataConst {
     difficulty_num: number;

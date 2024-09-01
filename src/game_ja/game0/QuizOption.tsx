@@ -19,7 +19,7 @@ interface Props {
 function QuizOption(props: Props) {
     // About quiz difficulty
     const changeDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        changeString<QuizOptions>(props.quiz_options, "difficulty", e.target.value, props.setQuizOptions);
+        changeNumber<QuizOptions>(props.quiz_options, "difficulty", e.target.value, props.setQuizOptions);
     };
 
     // About the number of problems in the quiz
@@ -29,7 +29,6 @@ function QuizOption(props: Props) {
     const validateProblemsNum = () => {
         validateNumber<QuizOptions>(props.quiz_options, "problems_num", QUIZ_OPTIONS_CONST.min_problems_num, QUIZ_OPTIONS_CONST.max_problems_num, props.setQuizOptions);
     };
-
 
     // About creating the problems and starting the quiz
     const startQuiz = () => {
@@ -45,10 +44,11 @@ function QuizOption(props: Props) {
                 難易度
                 <div>
                     <select name="sel_difficulty" value={props.quiz_options.difficulty} onChange={changeDifficulty}>
-                        <option value="easy">Easy</option>
-                        <option value="normal">Normal</option>
-                        <option value="hard">Hard</option>
-                        <option value="hardcore">Hardcore</option>
+                        <option value="0">Easycore</option>
+                        <option value="1">Easy</option>
+                        <option value="2">Normal</option>
+                        <option value="3">Hard</option>
+                        <option value="4">Hardcore</option>
                     </select>
                 </div>
                 問題数
