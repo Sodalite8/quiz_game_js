@@ -1,6 +1,3 @@
-import flags_data_json from "./flags/flags.json";
-
-
 // Screen numbers
 export const SCREENS = {
     WAIT: -1,
@@ -87,6 +84,14 @@ export interface FlagData {
     level: number;
     category: number;
 }
+export const INITIAL_FLAG_DATA: FlagData = {
+    id: -1,
+    available: false,
+    name: "",
+    period: "",
+    level: -1,
+    category: -1
+} as const;
 
 
 export interface FlagDataConst {
