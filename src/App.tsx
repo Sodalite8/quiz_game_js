@@ -26,7 +26,7 @@ function App() {
             case SCREENS.OPTION:
                 return <Option screen={screen} setScreen={setScreen} options={options} setOptions={setOptions} />;
             case SCREENS.GAME0:
-                return <Game0 screen={screen} setScreen={setScreen} quiz_options={quiz_options} setQuizOptions={setQuizOptions}/>;
+                return <Game0 screen={screen} setScreen={setScreen} quiz_options={quiz_options} setQuizOptions={setQuizOptions} />;
             case SCREENS.LIST0:
                 return <List0 screen={screen} setScreen={setScreen} />;
         }
@@ -39,5 +39,6 @@ function App() {
         </>
     );
 }
+
 
 export default App;
