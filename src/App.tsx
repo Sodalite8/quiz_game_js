@@ -1,7 +1,6 @@
 import React from 'react';
 import { useCookies } from "react-cookie";
 import { SCREENS, Options, INITIAL_OPTIONS, QuizOptions, INITIAL_QUIZ_OPTIONS } from "./constants";
-import './css/App.css';
 import Title from "./game_ja/Title";
 import Option from "./game_ja/Option";
 import Game0 from "./game_ja/Game0";
