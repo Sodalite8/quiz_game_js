@@ -33,9 +33,9 @@ function App() {
 
 
     return (
-        <>
+        <div>
             {renderScreen()}
-        </>
+        </div>
     );
 }
 
