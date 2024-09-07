@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCookies } from "react-cookie";
+import "./css/tailwind.css";
 import { SCREENS, Options, INITIAL_OPTIONS, QuizOptions, INITIAL_QUIZ_OPTIONS } from "./constants";
 import Title from "./game_ja/Title";
 import Option from "./game_ja/Option";

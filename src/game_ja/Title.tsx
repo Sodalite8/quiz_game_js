@@ -12,7 +12,7 @@ interface Props {
 function Title(props: Props) {
     return (
         <>
-            <h1 className='text-white'>
+            <h1>
                 国旗クイズゲーム
             </h1>
             <div>
