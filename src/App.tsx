@@ -34,7 +34,9 @@ function App() {
 
 
     return (
-        <div>
+        <div className='box-content w-game-width h-game-height bg-yellow-50
+            border-4 rounded-lg border-yellow-400 border-opacity-60
+            mx-auto my-8 relative'>
             {renderScreen()}
         </div>
     );
