@@ -1,5 +1,5 @@
 import React from "react"
-import { INITIAL_QUIZ_RESULTS, QuizProblem, QuizResults, SCREENS } from "../../constants";
+import { INITIAL_QUIZ_RESULTS, QuizProblem, QuizResults, SCREENS } from "../../_constants/constants";
 
 
 interface Props {

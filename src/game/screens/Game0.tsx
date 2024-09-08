@@ -1,8 +1,8 @@
 import React from 'react';
-import { INITIAL_QUIZ_RESULTS, QuizOptions, QuizProblem, QuizResults, SCREENS } from "../constants";
-import Quiz from "./game0/Quiz";
-import Result from './game0/Result';
-import QuizOption from './game0/QuizOption';
+import { INITIAL_QUIZ_RESULTS, QuizOptions, QuizProblem, QuizResults, SCREENS } from '../../_constants/constants';
+import Quiz from '../components/Quiz';
+import Result from '../components/Result';
+import QuizOption from '../components/QuizOption';
 
 
 interface Props {
@@ -67,7 +67,7 @@ function Game0(props: Props) {
 
     return (
         <>
-            <h2 className="game0_text">ゲーム画面（工事中）</h2>
+            <h2>ゲーム画面（工事中）</h2>
             <div>
                 {renderGame()}
             </div>

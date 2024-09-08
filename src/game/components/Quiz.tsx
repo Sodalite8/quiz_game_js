@@ -1,7 +1,7 @@
 import React from 'react';
 import ProblemSection from './ProblemSection';
 import AnswerSection from './AnswerSection';
-import { INITIAL_QUIZ_RESULTS, QuizProblem, QuizResults } from '../../constants';
+import { INITIAL_QUIZ_RESULTS, QuizProblem, QuizResults } from '../../_constants/constants';
 
 
 interface Props {

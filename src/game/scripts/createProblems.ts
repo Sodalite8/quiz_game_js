@@ -1,6 +1,6 @@
-import { QuizOptions, QuizProblem } from "../../constants";
-import { fisherYatesShuffle, getRandomInt } from "../../func";
-import { FLAG_DATA_LIST, FLAG_DATA_LIST_BY_CATEGORY, FLAG_DATA_LIST_BY_LEVEL } from "../../readFlagData";
+import { QuizOptions, QuizProblem } from "../../_constants/constants";
+import { fisherYatesShuffle, getRandomInt } from "../../_scripts/func";
+import { FLAG_DATA_LIST, FLAG_DATA_LIST_BY_CATEGORY, FLAG_DATA_LIST_BY_LEVEL } from "./readFlagData";
 
 
 const existSameNameInArray = (str: string, arr: string[]): boolean => {

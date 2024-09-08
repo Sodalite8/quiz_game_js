@@ -1,7 +1,7 @@
 import React from "react";
-import { QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../constants";
-import { changeString, changeNumber, validateNumber } from "../../func";
-import { createProblems } from "./createProblems";
+import { QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_constants/constants";
+import { changeString, changeNumber, validateNumber } from "../../_scripts/func";
+import { createProblems } from "../scripts/createProblems";
 
 
 interface Props {

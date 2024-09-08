@@ -1,5 +1,5 @@
 import React from 'react';
-import { SCREENS } from "../constants";
+import { SCREENS } from '../../_constants/constants';
 
 
 interface Props {

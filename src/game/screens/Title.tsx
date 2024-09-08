@@ -1,6 +1,6 @@
 import React from 'react';
-import "../css/tailwind.css";
-import { SCREENS } from "../constants";
+import '../../styles/tailwind.css';
+import { SCREENS } from '../../_constants/constants';
 
 
 interface Props {

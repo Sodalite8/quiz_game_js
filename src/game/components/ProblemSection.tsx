@@ -1,5 +1,5 @@
 import React from 'react';
-import { QuizProblem } from '../../constants';
+import { QuizProblem } from '../../_constants/constants';
 
 
 interface Props {
@@ -15,7 +15,7 @@ function ProblemSection(props: Props) {
                 <h2>この国は？</h2>
             </div>
             <div>
-                <img src={`./flags/flag${props.quiz_problems[props.current_quiz].problem_id}.png`} alt="problem_img"></img>
+                <img src={`./images/flags/flag${props.quiz_problems[props.current_quiz].problem_id}.png`} alt="problem_img"></img>
             </div>
         </>
     );

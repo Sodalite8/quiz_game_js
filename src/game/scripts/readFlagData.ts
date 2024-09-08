@@ -1,5 +1,5 @@
-import { FLAG_DATA_CONST, FlagData } from "./constants";
-import flag_data_list_json from "./flags/flags.json";
+import { FLAG_DATA_CONST, FlagData } from "../../_constants/constants";
+import flag_data_list_json from "../texts/flags.json";
 
 
 const readFlagDataByKey = (key: "level" | "category", size: number): FlagData[][] => {

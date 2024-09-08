@@ -1,12 +1,11 @@
 import React from 'react';
 import { useCookies } from "react-cookie";
-import "./css/tailwind.css";
-import { SCREENS, Options, INITIAL_OPTIONS, QuizOptions, INITIAL_QUIZ_OPTIONS } from "./constants";
-import Title from "./game_ja/Title";
-import Option from "./game_ja/Option";
-import Game0 from "./game_ja/Game0";
-import List0 from "./game_ja/List0";
-import Wait from './game_ja/Wait';
+import '../styles/tailwind.css';
+import { SCREENS, Options, INITIAL_OPTIONS, QuizOptions, INITIAL_QUIZ_OPTIONS } from "../_constants/constants";
+import Title from "./screens/Title";
+import Option from "./screens/Option";
+import Game0 from "./screens/Game0";
+import List0 from "./screens/List0";
 
 
 // App, Top level of the Quiz Game
@@ -19,8 +18,6 @@ function App() {
     // change the screen by var screen
     const renderScreen = () => {
         switch (screen) {
-            case SCREENS.WAIT:
-                return <Wait />;
             case SCREENS.TITLE:
                 return <Title screen={screen} setScreen={setScreen} />;
             case SCREENS.OPTION:

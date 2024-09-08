@@ -1,6 +1,6 @@
 import React from 'react';
-import { SCREENS, Options, INITIAL_OPTIONS, OPTIONS_CONST } from "../constants";
-import { changeNumber, validateNumber } from '../func';
+import { SCREENS, Options, INITIAL_OPTIONS, OPTIONS_CONST } from '../../_constants/constants';
+import { changeNumber, validateNumber } from '../../_scripts/func';
 
 
 interface Props {

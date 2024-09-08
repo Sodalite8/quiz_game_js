@@ -1,7 +1,7 @@
 import React from "react";
-import { QuizProblem, QuizResults } from "../../constants";
-import { changeNumber } from "../../func";
-import { FLAG_DATA_LIST } from "../../readFlagData";
+import { QuizProblem, QuizResults } from "../../_constants/constants";
+import { changeNumber } from "../../_scripts/func";
+import { FLAG_DATA_LIST } from "../scripts/readFlagData";
 
 
 interface Props {
