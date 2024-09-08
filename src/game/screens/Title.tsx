@@ -21,13 +21,19 @@ function Title(props: Props) {
             </div>
             <div className='absolute top-full h-1/2 w-full -translate-y-full'>
                 <button className='mx-auto my-12 block
-                    h-screen-button-height w-screen-button-width rounded-lg border-2 border-yellow-500'
+                    h-screen-button-height w-screen-button-width cursor-pointer 
+                    rounded-lg border-2 border-orange-300 bg-orange-400 text-2xl 
+                    font-bold text-white'
                     onClick={() => props.setScreen(SCREENS.GAME0)}>スタート</button>
                 <button className='mx-auto my-12 block
-                    h-screen-button-height w-screen-button-width'
+                    h-screen-button-height w-screen-button-width cursor-pointer 
+                    rounded-lg border-2 border-orange-300 bg-orange-400 text-2xl 
+                    font-bold text-white'
                     onClick={() => props.setScreen(SCREENS.LIST0)}>図鑑</button>
                 <button className='mx-auto my-12 block
-                    h-screen-button-height w-screen-button-width'
+                    h-screen-button-height w-screen-button-width cursor-pointer 
+                    rounded-lg border-2 border-orange-300 bg-orange-400 text-2xl 
+                    font-bold text-white'
                     onClick={() => props.setScreen(SCREENS.OPTION)}>ゲーム設定</button>
             </div>
         </>
