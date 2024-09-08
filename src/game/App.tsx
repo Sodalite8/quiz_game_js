@@ -38,7 +38,7 @@ function App() {
     return (
         <div className='relative mx-auto my-8 box-content
             h-game-height w-game-width rounded-lg border-4
-            border-yellow-400 border-opacity-60 bg-yellow-50'>
+            border-yellow-400/60 bg-yellow-50'>
             {renderScreen()}
         </div>
     );
