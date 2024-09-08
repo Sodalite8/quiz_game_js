@@ -12,7 +12,7 @@ interface Props {
 function List0(props: Props) {
     return (
         <>
-            <h2 className="list0_text">分類を選択（工事中）</h2>
+            <h2>分類を選択（工事中）</h2>
             <div>
                 
             </div>

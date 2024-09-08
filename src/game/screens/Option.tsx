@@ -47,8 +47,8 @@ function Option(props: Props) {
 
     return (
         <>
-            <h2 className="option_text">設定</h2>
-            <div className='options'>
+            <h2>設定</h2>
+            <div>
                 <div>
                     音量
                     <div>

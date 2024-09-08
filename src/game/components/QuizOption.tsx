@@ -1,6 +1,6 @@
 import React from "react";
 import { QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_constants/constants";
-import { changeString, changeNumber, validateNumber } from "../../_scripts/func";
+import { changeNumber, validateNumber } from "../../_scripts/func";
 import { createProblems } from "../scripts/createProblems";
 
 
@@ -40,7 +40,7 @@ function QuizOption(props: Props) {
 
     return (
         <>
-            <h2 className="menu0_text">問題設定</h2>
+            <h2>問題設定</h2>
             <div>
                 難易度
                 <div>

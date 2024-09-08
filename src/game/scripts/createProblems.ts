@@ -54,10 +54,10 @@ export const createProblems = (quiz_options: QuizOptions): QuizProblem[] => {
     problem_ids = fisherYatesShuffle<number>(problem_ids);
 
 
-    let correct_choices: number[] = Array.from(Array(quiz_options.problems_num), () => getRandomInt(0, 3));
+    const correct_choices: number[] = Array.from(Array(quiz_options.problems_num), () => getRandomInt(0, 3));
 
 
-    let choice_ids_list: number[][] = Array.from(Array(quiz_options.problems_num), () => Array(4).fill(0));
+    const choice_ids_list: number[][] = Array.from(Array(quiz_options.problems_num), () => Array(4).fill(0));
     problem_ids.forEach((value, i) => {
         const shuffled_list: number[] = fisherYatesShuffle<number>(flag_ids_by_category[FLAG_DATA_LIST[value].category]);
         let k = 0;

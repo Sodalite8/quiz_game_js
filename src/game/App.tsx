@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCookies } from "react-cookie";
+// import { useCookies } from "react-cookie";
 import '../styles/tailwind.css';
 import { SCREENS, Options, INITIAL_OPTIONS, QuizOptions, INITIAL_QUIZ_OPTIONS } from "../_constants/constants";
 import Title from "./screens/Title";
@@ -36,9 +36,9 @@ function App() {
 
 
     return (
-        <div className='box-content w-game-width h-game-height bg-yellow-50
-            border-4 rounded-lg border-yellow-400 border-opacity-60
-            mx-auto my-8 relative'>
+        <div className='relative mx-auto my-8 box-content
+            h-game-height w-game-width rounded-lg border-4
+            border-yellow-400 border-opacity-60 bg-yellow-50'>
             {renderScreen()}
         </div>
     );

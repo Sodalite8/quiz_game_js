@@ -35,7 +35,7 @@ export const fisherYatesShuffle = <T extends Primitive>(array: T[]): T[] => {
 
 
 // Change obj[key] to value and update obj
-export const changeNumber = <T extends Object>(obj: T, key: keyof T, value: number | string, setObj: React.Dispatch<React.SetStateAction<T>>): void => {
+export const changeNumber = <T extends object>(obj: T, key: keyof T, value: number | string, setObj: React.Dispatch<React.SetStateAction<T>>): void => {
     if (typeof obj[key] !== "number") {
         throw new Error("The key's value is not number.");
     }
@@ -54,7 +54,7 @@ export const changeNumber = <T extends Object>(obj: T, key: keyof T, value: numb
 
 
 // Validate obj[key] and update obj
-export const validateNumber = <T extends Object>(obj: T, key: keyof T, min_val: number, max_val: number, setObj: React.Dispatch<React.SetStateAction<T>>) => {
+export const validateNumber = <T extends object>(obj: T, key: keyof T, min_val: number, max_val: number, setObj: React.Dispatch<React.SetStateAction<T>>) => {
     if (typeof obj[key] !== "number") {
         throw new Error("The key's value is not number.");
     }
@@ -67,7 +67,7 @@ export const validateNumber = <T extends Object>(obj: T, key: keyof T, min_val: 
 
 
 // Change obj[key] to value and update obj
-export const changeString = <T extends Object>(obj: T, key: keyof T, value: string, setObj: React.Dispatch<React.SetStateAction<T>>): void => {
+export const changeString = <T extends object>(obj: T, key: keyof T, value: string, setObj: React.Dispatch<React.SetStateAction<T>>): void => {
     if (typeof obj[key] !== "string") {
         throw new Error("The key's value is not string");
     }

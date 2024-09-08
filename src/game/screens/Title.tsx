@@ -13,22 +13,22 @@ interface Props {
 function Title(props: Props) {
     return (
         <>
-            <div className='w-full h-1/3 absolute'>
-                <h1 className='block w-full text-6xl font-bold italic absolute 
-                top-16 mx-auto text-center'>
+            <div className='absolute h-1/3 w-full'>
+                <h1 className='absolute top-16 mx-auto block w-full text-center 
+                text-6xl font-bold italic'>
                     Old Flags Quiz
                 </h1>
             </div>
-            <div className='w-full h-1/2 absolute transform -translate-y-full top-full'>
-                <button className='block w-screen-button-width h-screen-button-height
-                    mx-auto my-12'
+            <div className='absolute top-full h-1/2 w-full -translate-y-full'>
+                <button className='mx-auto my-12 block
+                    h-screen-button-height w-screen-button-width rounded-lg border-2 border-yellow-500'
                     onClick={() => props.setScreen(SCREENS.GAME0)}>スタート</button>
-                <button className='block w-screen-button-width h-screen-button-height
-                    mx-auto my-12'
-                    onClick={() => props.setScreen(SCREENS.LIST0)}>国旗リスト</button>
-                <button className='block w-screen-button-width h-screen-button-height
-                    mx-auto my-12'
-                    onClick={() => props.setScreen(SCREENS.OPTION)}>設定</button>
+                <button className='mx-auto my-12 block
+                    h-screen-button-height w-screen-button-width'
+                    onClick={() => props.setScreen(SCREENS.LIST0)}>図鑑</button>
+                <button className='mx-auto my-12 block
+                    h-screen-button-height w-screen-button-width'
+                    onClick={() => props.setScreen(SCREENS.OPTION)}>ゲーム設定</button>
             </div>
         </>
     );
