@@ -54,7 +54,7 @@ export const QUIZ_OPTIONS_CONST: QuizOptionsConst = {
 } as const;
 
 
-// Quiz problem
+// Quiz problem format
 export interface QuizProblem {
     problem_id: number;
     choice_ids: number[];
@@ -67,7 +67,7 @@ export const INITIAL_QUIZ_PROBLEM: QuizProblem = {
 };
 
 
-// Quiz Results
+// Quiz results
 export interface QuizResults {
     score: number;
 }
@@ -76,6 +76,7 @@ export const INITIAL_QUIZ_RESULTS: QuizResults = {
 } as const;
 
 
+// Flag data format
 export interface FlagData {
     id: number;
     available: boolean,
@@ -94,6 +95,7 @@ export const INITIAL_FLAG_DATA: FlagData = {
 } as const;
 
 
+// Flag data constants
 export interface FlagDataConst {
     level_num: number;
     category_num: number;

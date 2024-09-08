@@ -1,30 +1,31 @@
 import React from "react";
 
 
+// The union of the primitive types
 type Primitive = number | boolean | string | symbol | null | undefined;
 
 
-// return minimum number in a and b
+// Return minimum number in a and b
 export const min = (a: number, b: number): number => {
     return ((a < b) ? a : b);
 };
 
 
-// return maximum number in a and b
+// Return maximum number in a and b
 export const max = (a: number, b: number): number => {
     return ((a > b) ? a : b);
 };
 
 
-// return random int in [min max]
+// Return random int in [min max]
 export const getRandomInt = (min: number, max: number): number => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 
-// shuffle arr by Fisher-Yates algorithm
-export const fisherYatesShuffle = <T extends Primitive>(arr: T[]): T[] => {
-    const shuffled: T[] = [...arr];
+// Shuffle array by Fisher-Yates algorithm
+export const fisherYatesShuffle = <T extends Primitive>(array: T[]): T[] => {
+    const shuffled: T[] = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(getRandomInt(0, i));
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
@@ -33,7 +34,7 @@ export const fisherYatesShuffle = <T extends Primitive>(arr: T[]): T[] => {
 };
 
 
-// change obj[key] to value and update obj
+// Change obj[key] to value and update obj
 export const changeNumber = <T extends Object>(obj: T, key: keyof T, value: number | string, setObj: React.Dispatch<React.SetStateAction<T>>): void => {
     if (typeof obj[key] !== "number") {
         throw new Error("The key's value is not number.");
@@ -52,7 +53,7 @@ export const changeNumber = <T extends Object>(obj: T, key: keyof T, value: numb
 };
 
 
-// validate obj[key] and update obj
+// Validate obj[key] and update obj
 export const validateNumber = <T extends Object>(obj: T, key: keyof T, min_val: number, max_val: number, setObj: React.Dispatch<React.SetStateAction<T>>) => {
     if (typeof obj[key] !== "number") {
         throw new Error("The key's value is not number.");
@@ -65,7 +66,7 @@ export const validateNumber = <T extends Object>(obj: T, key: keyof T, min_val: 
 };
 
 
-// change obj[key] to value and update obj
+// Change obj[key] to value and update obj
 export const changeString = <T extends Object>(obj: T, key: keyof T, value: string, setObj: React.Dispatch<React.SetStateAction<T>>): void => {
     if (typeof obj[key] !== "string") {
         throw new Error("The key's value is not string");
