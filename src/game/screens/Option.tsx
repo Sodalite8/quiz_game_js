@@ -11,7 +11,7 @@ interface Props {
 }
 
 
-// Game option
+// Game options
 function Option(props: Props) {
     // About music volume
     const changeMusicVolume = (e: React.ChangeEvent<HTMLInputElement>) => {

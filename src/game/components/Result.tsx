@@ -14,6 +14,7 @@ interface Props {
 }
 
 
+// Show the results of games
 function Result(props: Props) {
     // About finishing the quiz
     const exitQuiz = () => {

@@ -8,7 +8,7 @@ interface Props {
 }
 
 
-// Country flags` list
+// Old flags` lists
 function List0(props: Props) {
     return (
         <>

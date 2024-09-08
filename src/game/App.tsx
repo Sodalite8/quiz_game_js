@@ -8,23 +8,28 @@ import Game0 from "./screens/Game0";
 import List0 from "./screens/List0";
 
 
-// App, Top level of the Quiz Game
+// App, The top level component of the quiz game
 function App() {
+    /*
+    screen      : Screen number
+    options     : Game options (such as sound volume and animation)
+    quiz_options: Quiz options (such as difficulty and the number of problems)
+    */
     const [screen, setScreen] = React.useState<number>(SCREENS.TITLE);
     const [options, setOptions] = React.useState<Options>(INITIAL_OPTIONS);
     const [quiz_options, setQuizOptions] = React.useState<QuizOptions>(INITIAL_QUIZ_OPTIONS);
 
 
-    // change the screen by var screen
+    // Change the screen by var screen
     const renderScreen = () => {
         switch (screen) {
-            case SCREENS.TITLE:
+            case SCREENS.TITLE:     // game title
                 return <Title screen={screen} setScreen={setScreen} />;
-            case SCREENS.OPTION:
+            case SCREENS.OPTION:    // game options
                 return <Option screen={screen} setScreen={setScreen} options={options} setOptions={setOptions} />;
-            case SCREENS.GAME0:
+            case SCREENS.GAME0:     // quiz
                 return <Game0 screen={screen} setScreen={setScreen} quiz_options={quiz_options} setQuizOptions={setQuizOptions} />;
-            case SCREENS.LIST0:
+            case SCREENS.LIST0:     // flags lists
                 return <List0 screen={screen} setScreen={setScreen} />;
         }
     };

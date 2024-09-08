@@ -16,6 +16,7 @@ interface Props {
 }
 
 
+// Quiz options
 function QuizOption(props: Props) {
     // About quiz difficulty
     const changeDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) => {

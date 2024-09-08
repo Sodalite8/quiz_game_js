@@ -13,6 +13,7 @@ interface Props {
 }
 
 
+// Place the buttons to answer the problems
 function AnswerSection(props: Props) {
     const answerProblem = (e: React.MouseEvent<HTMLButtonElement>) => {
         if (parseInt(e.currentTarget.name) === props.quiz_problems[props.current_quiz].correct_choice) {

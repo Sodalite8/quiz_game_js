@@ -8,6 +8,7 @@ interface Props {
 }
 
 
+// Show problems images
 function ProblemSection(props: Props) {
     return (
         <>

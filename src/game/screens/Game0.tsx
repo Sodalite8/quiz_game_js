@@ -13,14 +13,19 @@ interface Props {
 }
 
 
-// Display the quiz
+// Display the quiz game
 function Game0(props: Props) {
+    /*
+    current_quiz    : The current quiz number
+    quiz_problems   : The problems of the current game
+    quiz_results    : The results of the current game
+    */
     const [current_quiz, setCurrentQuiz] = React.useState<number>(-1);
     const [quiz_problems, setQuizProblems] = React.useState<QuizProblem[]>([]);
     const [quiz_results, setQuizResults] = React.useState<QuizResults>(INITIAL_QUIZ_RESULTS);
 
 
-    // About rendering the quiz and changing problems
+    // About rendering the quiz options and changing problems
     const renderGame = () => {
         if (current_quiz == -1) {
             return (
@@ -36,7 +41,7 @@ function Game0(props: Props) {
         else if (current_quiz >= 0 && current_quiz < props.quiz_options.problems_num) {
             return (
                 <>
-                    <Quiz current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz} 
+                    <Quiz current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz}
                         quiz_problems={quiz_problems} setQuizProblems={setQuizProblems}
                         quiz_results={quiz_results} setQuizResults={setQuizResults} />
                 </>
