@@ -13,7 +13,14 @@ interface Props {
 function List0(props: Props) {
     return (
         <>
-            <h2>分類を選択（工事中）</h2>
+            <div className='absolute flex h-32 w-full items-center 
+                justify-center border-b-4 border-yellow-400/60'>
+                <h2 className='text-4xl font-bold'>
+                    図鑑
+                </h2>
+            </div>
+
+            
             <div>
                 
             </div>

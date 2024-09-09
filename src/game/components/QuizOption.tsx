@@ -24,6 +24,7 @@ function QuizOption(props: Props) {
         changeNumber<QuizOptions>(props.quiz_options, "difficulty", e.target.value, props.setQuizOptions);
     };
 
+
     // About the number of problems in the quiz
     const changeProblemsNum = (e: React.ChangeEvent<HTMLInputElement>) => {
         changeNumber<QuizOptions>(props.quiz_options, "problems_num", e.target.value, props.setQuizOptions);
@@ -31,6 +32,7 @@ function QuizOption(props: Props) {
     const validateProblemsNum = () => {
         validateNumber<QuizOptions>(props.quiz_options, "problems_num", QUIZ_OPTIONS_CONST.min_problems_num, QUIZ_OPTIONS_CONST.max_problems_num, props.setQuizOptions);
     };
+
 
     // About creating the problems and starting the quiz
     const startQuiz = () => {
@@ -41,7 +43,14 @@ function QuizOption(props: Props) {
 
     return (
         <>
-            <h2>問題設定</h2>
+            <div className='absolute flex h-32 w-full items-center 
+                justify-center border-b-4 border-yellow-400/60'>
+                <h2 className='text-4xl font-bold'>
+                    クイズ設定
+                </h2>
+            </div>
+
+
             <div>
                 難易度
                 <div>

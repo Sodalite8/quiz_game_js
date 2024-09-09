@@ -72,7 +72,6 @@ function Game0(props: Props) {
 
     return (
         <>
-            <h2>ゲーム画面（工事中）</h2>
             <div>
                 {renderGame()}
             </div>
