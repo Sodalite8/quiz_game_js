@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/tailwind.css';
 import { SCREENS } from '../../_constants/constants';
-import TitleScreenButton from '../components/TitleScreenButton';
+import TitleScreenButton from '../components/LargeButton';
 
 
 interface Props {
@@ -26,12 +26,15 @@ function Title(props: Props) {
                 flex-col items-center justify-center py-4'>
                 <div className='flex w-full flex-col items-center 
                     justify-center'>
-                    <TitleScreenButton setScreen={props.setScreen}
-                        screen_num={SCREENS.GAME0} btn_name="スタート" />
-                    <TitleScreenButton setScreen={props.setScreen}
-                        screen_num={SCREENS.LIST0} btn_name="図鑑" />
-                    <TitleScreenButton setScreen={props.setScreen}
-                        screen_num={SCREENS.OPTION} btn_name="ゲーム設定" />
+                    <TitleScreenButton 
+                        btn_func={() => props.setScreen(SCREENS.GAME0)} 
+                        btn_name="スタート" />
+                    <TitleScreenButton 
+                        btn_func={() => props.setScreen(SCREENS.LIST0)} 
+                        btn_name="図鑑" />
+                    <TitleScreenButton 
+                        btn_func={() => props.setScreen(SCREENS.OPTION)} 
+                        btn_name="ゲーム設定" />
                 </div>
             </div>
         </>

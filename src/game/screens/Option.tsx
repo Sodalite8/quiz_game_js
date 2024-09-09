@@ -1,7 +1,7 @@
 import React from 'react';
 import { SCREENS, Options, INITIAL_OPTIONS, OPTIONS_CONST } from '../../_constants/constants';
 import { changeNumber, validateNumber } from '../../_scripts/func';
-import NormalScreenButton from '../components/NormalScreenButton';
+import NormalScreenButton from '../components/MediumButton';
 
 
 interface Props {
@@ -71,9 +71,9 @@ function Option(props: Props) {
                     <div className='pb-2'>
                         BGM
                         <input type="range" name="ran_music_volume"
-                        min="0" max="100" step="1"
-                        value={props.options.music_volume}
-                        onChange={changeMusicVolume}></input>
+                            min="0" max="100" step="1"
+                            value={props.options.music_volume}
+                            onChange={changeMusicVolume}></input>
                         <input type="number" name="num_music_volume"
                             min="0" max="100" step="1"
                             value={props.options.music_volume}
@@ -111,10 +111,7 @@ function Option(props: Props) {
                 </div>
 
 
-                <div className='flex h-16 w-full flex-col 
-                    items-center justify-center'></div>
-
-                <div className='my-4 flex w-full flex-col 
+                <div className='mt-12 flex w-full flex-col 
                     items-center justify-center'>
                     <div className='flex w-full items-center justify-center'>
                         <button onClick={resetOptions}>ゲーム設定をリセット</button>
@@ -127,8 +124,9 @@ function Option(props: Props) {
                 flex-col items-center justify-center border-t-4 
                 border-yellow-400/60'>
                 <div className='flex w-full items-center justify-center py-4'>
-                    <NormalScreenButton setScreen={props.setScreen}
-                        screen_num={SCREENS.TITLE} btn_name='タイトルに戻る' />
+                    <NormalScreenButton 
+                        btn_func={() => props.setScreen(SCREENS.TITLE)} 
+                        btn_name='タイトルに戻る' />
                 </div>
             </div>
         </>
