@@ -2,6 +2,7 @@ import React from "react";
 import { QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_constants/constants";
 import { changeNumber, validateNumber } from "../../_scripts/func";
 import { createProblems } from "../scripts/createProblems";
+import MediumButton from "./MediumButton";
 
 
 interface Props {
@@ -65,8 +66,16 @@ function QuizOption(props: Props) {
             <div>
                 <button onClick={startQuiz}>クイズ開始</button>
             </div>
-            <div>
-                <button onClick={() => props.setScreen(SCREENS.TITLE)}>タイトルに戻る</button>
+
+            
+            <div className='absolute top-full flex w-full -translate-y-full 
+                flex-col items-center justify-center border-t-4 
+                border-yellow-400/60'>
+                <div className='flex w-full items-center justify-center py-4'>
+                    <MediumButton 
+                        btn_func={() => props.setScreen(SCREENS.TITLE)} 
+                        btn_name='タイトルに戻る' />
+                </div>
             </div>
         </>
     );

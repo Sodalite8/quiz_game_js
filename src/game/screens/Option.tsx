@@ -1,7 +1,7 @@
 import React from 'react';
 import { SCREENS, Options, INITIAL_OPTIONS, OPTIONS_CONST } from '../../_constants/constants';
 import { changeNumber, validateNumber } from '../../_scripts/func';
-import NormalScreenButton from '../components/MediumButton';
+import MediumButton from '../components/MediumButton';
 
 
 interface Props {
@@ -124,7 +124,7 @@ function Option(props: Props) {
                 flex-col items-center justify-center border-t-4 
                 border-yellow-400/60'>
                 <div className='flex w-full items-center justify-center py-4'>
-                    <NormalScreenButton 
+                    <MediumButton 
                         btn_func={() => props.setScreen(SCREENS.TITLE)} 
                         btn_name='タイトルに戻る' />
                 </div>

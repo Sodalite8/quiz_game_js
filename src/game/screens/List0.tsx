@@ -1,5 +1,6 @@
 import React from 'react';
 import { SCREENS } from '../../_constants/constants';
+import MediumButton from '../components/MediumButton';
 
 
 interface Props {
@@ -16,8 +17,16 @@ function List0(props: Props) {
             <div>
                 
             </div>
-            <div>
-                <button onClick={() => props.setScreen(SCREENS.TITLE)}>タイトルに戻る</button>
+
+
+            <div className='absolute top-full flex w-full -translate-y-full 
+                flex-col items-center justify-center border-t-4 
+                border-yellow-400/60'>
+                <div className='flex w-full items-center justify-center py-4'>
+                    <MediumButton 
+                        btn_func={() => props.setScreen(SCREENS.TITLE)} 
+                        btn_name='タイトルに戻る' />
+                </div>
             </div>
         </>
     );
