@@ -6,8 +6,10 @@ module.exports = {
             spacing: {
                 "game-width": "640px",
                 "game-height": "800px",
-                "screen-button-width": "320px",
-                "screen-button-height": "64px",
+                "title-screen-btn-w": "320px",
+                "title-screen-btn-h": "64px",
+                "normal-screen-btn-w": "240px",
+                "normal-screen-btn-h": "48px",
             },
         },
     },

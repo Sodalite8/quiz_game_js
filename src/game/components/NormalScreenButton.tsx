@@ -8,13 +8,13 @@ interface Props {
 }
 
 
-function ScreenButton(props: Props) {
+function NormalButton(props: Props) {
     return (
         <>
-            <button className='mx-auto my-12 block
-                h-screen-button-height w-screen-button-width cursor-pointer 
-                rounded-lg border-2 border-orange-300 bg-orange-400 text-2xl 
-                font-bold text-white' 
+            <button className='m-4 block h-normal-screen-btn-h
+                w-normal-screen-btn-w cursor-pointer rounded-lg 
+                border-2 border-orange-300 bg-orange-400 text-xl font-bold 
+                text-white' 
                 onClick={() => { props.setScreen(props.screen_num) }}>
                 {props.btn_name}
             </button>
@@ -23,4 +23,4 @@ function ScreenButton(props: Props) {
 }
 
 
-export default ScreenButton;
+export default NormalButton;
