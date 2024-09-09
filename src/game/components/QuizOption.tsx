@@ -62,6 +62,8 @@ function QuizOption(props: Props) {
                         <option value="4">Hardcore</option>
                     </select>
                 </div>
+
+                
                 問題数
                 <div>
                     <input type="range" name="ran_problems_num"
