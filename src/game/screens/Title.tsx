@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/tailwind.css';
 import { SCREENS } from '../../_constants/constants';
+import ScreenButton from '../components/ScreenButton';
 
 
 interface Props {
@@ -15,26 +16,14 @@ function Title(props: Props) {
         <>
             <div className='absolute h-1/3 w-full'>
                 <h1 className='absolute top-16 mx-auto block w-full text-center 
-                text-6xl font-bold italic'>
+                    text-6xl font-bold italic'>
                     Old Flags Quiz
                 </h1>
             </div>
             <div className='absolute top-full h-1/2 w-full -translate-y-full'>
-                <button className='mx-auto my-12 block
-                    h-screen-button-height w-screen-button-width cursor-pointer 
-                    rounded-lg border-2 border-orange-300 bg-orange-400 text-2xl 
-                    font-bold text-white'
-                    onClick={() => props.setScreen(SCREENS.GAME0)}>スタート</button>
-                <button className='mx-auto my-12 block
-                    h-screen-button-height w-screen-button-width cursor-pointer 
-                    rounded-lg border-2 border-orange-300 bg-orange-400 text-2xl 
-                    font-bold text-white'
-                    onClick={() => props.setScreen(SCREENS.LIST0)}>図鑑</button>
-                <button className='mx-auto my-12 block
-                    h-screen-button-height w-screen-button-width cursor-pointer 
-                    rounded-lg border-2 border-orange-300 bg-orange-400 text-2xl 
-                    font-bold text-white'
-                    onClick={() => props.setScreen(SCREENS.OPTION)}>ゲーム設定</button>
+                <ScreenButton setScreen={props.setScreen} screen_num={SCREENS.GAME0} btn_name="スタート" />
+                <ScreenButton setScreen={props.setScreen} screen_num={SCREENS.LIST0} btn_name="図鑑" />
+                <ScreenButton setScreen={props.setScreen} screen_num={SCREENS.OPTION} btn_name="ゲーム設定" />
             </div>
         </>
     );
