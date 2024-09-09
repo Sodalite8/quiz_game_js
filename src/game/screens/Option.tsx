@@ -51,7 +51,7 @@ function Option(props: Props) {
 
     return (
         <>
-            <div className='absolute flex h-32 w-full items-center 
+            <div className='relative flex h-32 w-full items-center 
                 justify-center border-b-4 border-yellow-400/60'>
                 <h2 className='text-4xl font-bold'>
                     ゲーム設定
@@ -59,7 +59,7 @@ function Option(props: Props) {
             </div>
 
 
-            <div className='absolute top-32 flex w-full flex-col 
+            <div className='relative flex w-full flex-col 
                 items-center justify-center py-4'>
                 <div className='mb-4 flex w-full flex-col 
                     items-center justify-center'>

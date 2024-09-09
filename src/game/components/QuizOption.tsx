@@ -43,7 +43,7 @@ function QuizOption(props: Props) {
 
     return (
         <>
-            <div className='absolute flex h-32 w-full items-center 
+            <div className='relative flex h-32 w-full items-center 
                 justify-center border-b-4 border-yellow-400/60'>
                 <h2 className='text-4xl font-bold'>
                     クイズ設定

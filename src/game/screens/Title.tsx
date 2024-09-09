@@ -14,7 +14,7 @@ interface Props {
 function Title(props: Props) {
     return (
         <>
-            <div className='absolute flex h-48 w-full items-center 
+            <div className='relative flex h-48 w-full items-center 
                 justify-center'>
                 <h1 className='text-6xl font-bold italic'>
                     Old Flags Quiz
