@@ -55,7 +55,7 @@ export function LargeButton(props: Props) {
     return (
         <>
             <button className='m-8 block w-large-btn-w cursor-pointer 
-                rounded-lg border-2 border-orange-300  bg-orange-400 
+                rounded-lg border-2 border-orange-300 bg-orange-400 
                 py-4 text-2xl font-bold text-white' 
                 onClick={props.click}>
                 {insertLineBreak(props.text)}

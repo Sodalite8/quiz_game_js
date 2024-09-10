@@ -2,6 +2,7 @@ import React from 'react';
 import { SCREENS, Options, INITIAL_OPTIONS, OPTIONS_CONST } from '../../_constants/constants';
 import { changeNumber, validateNumber } from '../../_scripts/func';
 import { MediumButton, SmallButton } from '../components/Buttons';
+import { RangeAndNumber } from '../components/Ranges';
 
 
 interface Props {
@@ -60,37 +61,31 @@ function Option(props: Props) {
 
 
             <div className='relative flex w-full flex-col 
-                items-center justify-center py-4'>
-                <div className='mb-4 flex w-full flex-col 
+                items-center justify-center p-4'>
+                <div className='flex w-full flex-col 
                     items-center justify-center'>
-                    <div className='mb-4 flex w-full items-center justify-center'>
+                    <div className='flex w-full items-center justify-center p-4'>
                         <h3 className='text-2xl font-bold'>
                             音量
                         </h3>
                     </div>
-                    <div className='mb-2'>
-                        BGM
-                        <input type="range" name="ran_music_volume"
-                            min="0" max="100" step="1"
+                    <div className='flex w-full items-center justify-between p-4'>
+                        <span className='block'>
+                            BGM
+                        </span>
+                        <RangeAndNumber min={0} max={100} step={1}
                             value={props.options.music_volume}
-                            onChange={changeMusicVolume} />
-                        <input type="number" name="num_music_volume"
-                            min="0" max="100" step="1"
-                            value={props.options.music_volume}
-                            onChange={changeMusicVolume}
-                            onBlur={validateMusicVolume} />
+                            change={changeMusicVolume}
+                            blur={validateMusicVolume} />
                     </div>
-                    <div className='mt-2'>
-                        効果音
-                        <input type="range" name="ran_effect_volume"
-                            min="0" max="100" step="1"
+                    <div className='flex w-full items-center justify-between p-4'>
+                        <span className='block'>
+                            効果音
+                        </span>
+                        <RangeAndNumber min={0} max={100} step={1}
                             value={props.options.effect_volume}
-                            onChange={changeEffectVolume} />
-                        <input type="number" name="num_effect_volume"
-                            min="0" max="100" step="1"
-                            value={props.options.effect_volume}
-                            onChange={changeEffectVolume}
-                            onBlur={validateEffectVolume} />
+                            change={changeEffectVolume}
+                            blur={validateEffectVolume} />
                     </div>
                 </div>
 
@@ -111,11 +106,11 @@ function Option(props: Props) {
                 </div> */}
 
 
-                <div className='mt-12 flex w-full flex-col 
-                    items-center justify-center'>
+                <div className='mt-8 flex w-full flex-col items-center 
+                    justify-center p-4'>
                     <div className='flex w-full items-center justify-center'>
-                        <SmallButton 
-                            click={resetOptions} 
+                        <SmallButton
+                            click={resetOptions}
                             text={'ゲーム設定\nリセット'} />
                     </div>
                 </div>
@@ -124,12 +119,10 @@ function Option(props: Props) {
 
             <div className='absolute top-full flex w-full -translate-y-full 
                 flex-col items-center justify-center border-t-4 
-                border-yellow-400/60'>
-                <div className='flex w-full items-center justify-center py-4'>
-                    <MediumButton 
-                        click={() => props.setScreen(SCREENS.TITLE)} 
-                        text='タイトルに戻る' />
-                </div>
+                border-yellow-400/60 p-4'>
+                <MediumButton
+                    click={() => props.setScreen(SCREENS.TITLE)}
+                    text='タイトルに戻る' />
             </div>
         </>
     );
