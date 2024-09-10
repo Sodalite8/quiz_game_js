@@ -108,11 +108,9 @@ function Option(props: Props) {
 
                 <div className='mt-8 flex w-full flex-col items-center 
                     justify-center p-4'>
-                    <div className='flex w-full items-center justify-center'>
-                        <SmallButton
-                            click={resetOptions}
-                            text={'ゲーム設定\nリセット'} />
-                    </div>
+                    <SmallButton
+                        click={resetOptions}
+                        text={'ゲーム設定\nリセット'} />
                 </div>
             </div>
 
