@@ -60,16 +60,18 @@ function Option(props: Props) {
             </div>
 
 
-            <div className='relative flex w-full flex-col 
-                items-center justify-center p-4'>
-                <div className='flex w-full flex-col 
-                    items-center justify-center'>
-                    <div className='flex w-full items-center justify-center p-4'>
+            <div className='relative flex w-full flex-col items-center 
+                justify-center p-4'>
+                <div className='flex w-full flex-col items-center 
+                    justify-center'>
+                    <div className='flex w-full items-center justify-center 
+                        p-4'>
                         <h3 className='text-2xl font-bold'>
                             音量
                         </h3>
                     </div>
-                    <div className='flex w-full items-center justify-between p-4'>
+                    <div className='flex w-full items-center justify-between 
+                        p-4'>
                         <span className='block'>
                             BGM
                         </span>
@@ -78,7 +80,8 @@ function Option(props: Props) {
                             change={changeMusicVolume}
                             blur={validateMusicVolume} />
                     </div>
-                    <div className='flex w-full items-center justify-between p-4'>
+                    <div className='flex w-full items-center justify-between 
+                        p-4'>
                         <span className='block'>
                             効果音
                         </span>

@@ -3,6 +3,7 @@ import { QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_co
 import { changeNumber, validateNumber } from "../../_scripts/func";
 import { createProblems } from "../scripts/createProblems";
 import { MediumButton } from "./Buttons";
+import { RangeAndNumber } from "./Ranges";
 
 
 interface Props {
@@ -51,9 +52,13 @@ function QuizOption(props: Props) {
             </div>
 
 
-            <div>
-                難易度
-                <div>
+            <div className="relative flex w-full flex-col items-center 
+                justify-center p-4">
+                <div className="flex w-full flex-col items-center
+                    justify-center p-4">
+                    <span>
+                        難易度
+                    </span>
                     <select name="sel_difficulty" value={props.quiz_options.difficulty} onChange={changeDifficulty}>
                         <option value="0">Easycore</option>
                         <option value="1">Easy</option>
@@ -63,30 +68,32 @@ function QuizOption(props: Props) {
                     </select>
                 </div>
 
-                
-                問題数
-                <div>
-                    <input type="range" name="ran_problems_num"
-                        min={QUIZ_OPTIONS_CONST.min_problems_num} max={QUIZ_OPTIONS_CONST.max_problems_num} step="1"
-                        value={props.quiz_options.problems_num} onChange={changeProblemsNum}></input>
-                    <input type="number" name="num_problems_num"
-                        min={QUIZ_OPTIONS_CONST.min_problems_num} max={QUIZ_OPTIONS_CONST.max_problems_num} step="1"
-                        value={props.quiz_options.problems_num} onChange={changeProblemsNum} onBlur={validateProblemsNum}></input>
+
+                <div className="flex w-full flex-col items-center
+                    justify-center p-4">
+                    <span>
+                        問題数
+                    </span>
+                    <RangeAndNumber min={QUIZ_OPTIONS_CONST.min_problems_num}
+                        max={QUIZ_OPTIONS_CONST.max_problems_num} step={1}
+                        value={props.quiz_options.problems_num}
+                        change={changeProblemsNum}
+                        blur={validateProblemsNum} />
                 </div>
-            </div>
-            <div>
-                <button onClick={startQuiz}>クイズ開始</button>
+
+                <div className="mt-8 flex w-full flex-col
+                    items-center justify-center p-4">
+                    <button onClick={startQuiz}>クイズ開始</button>
+                </div>
             </div>
 
-            
+
             <div className='absolute top-full flex w-full -translate-y-full 
                 flex-col items-center justify-center border-t-4 
-                border-yellow-400/60'>
-                <div className='flex w-full items-center justify-center py-4'>
-                    <MediumButton 
-                        click={() => props.setScreen(SCREENS.TITLE)} 
-                        text='タイトルに戻る' />
-                </div>
+                border-yellow-400/60 p-4'>
+                <MediumButton
+                    click={() => props.setScreen(SCREENS.TITLE)}
+                    text='タイトルに戻る' />
             </div>
         </>
     );
