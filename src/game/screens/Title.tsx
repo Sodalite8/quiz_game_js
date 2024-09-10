@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/tailwind.css';
 import { SCREENS } from '../../_constants/constants';
 import { LargeButton } from '../components/Buttons';
 
