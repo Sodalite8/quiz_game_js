@@ -2,13 +2,17 @@ import React from "react";
 
 
 interface Props {
-    btn_func: React.MouseEventHandler<HTMLButtonElement> | undefined;
-    btn_name: string;
+    text: string | undefined;
+    click: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
 
-const insertLineBreak = (str: string) => {
-    const strs = str.split('\n').map((item, index) => {
+const insertLineBreak = (str: string | undefined) => {
+    if(str === undefined) {
+        return null;
+    }
+
+    const strs = (str as string).split('\n').map((item, index) => {
         return (
             <React.Fragment key={index}>
                 {item}<br />
@@ -25,8 +29,8 @@ export function SmallButton(props: Props) {
             <button className='m-2 w-small-btn-w cursor-pointer 
                 rounded-lg border-2 border-orange-300 bg-orange-400 
                 p-1 text-lg font-bold text-white' 
-                onClick={props.btn_func}>
-                {insertLineBreak(props.btn_name)}
+                onClick={props.click}>
+                {insertLineBreak(props.text)}
             </button>
         </>
     );
@@ -39,8 +43,8 @@ export function MediumButton(props: Props) {
             <button className='m-4 block w-medium-btn-w cursor-pointer 
                 rounded-lg border-2 border-orange-300 bg-orange-400 
                 py-2 text-xl font-bold text-white' 
-                onClick={props.btn_func}>
-                {insertLineBreak(props.btn_name)}
+                onClick={props.click}>
+                {insertLineBreak(props.text)}
             </button>
         </>
     );
@@ -53,8 +57,8 @@ export function LargeButton(props: Props) {
             <button className='m-8 block w-large-btn-w cursor-pointer 
                 rounded-lg border-2 border-orange-300  bg-orange-400 
                 py-4 text-2xl font-bold text-white' 
-                onClick={props.btn_func}>
-                {insertLineBreak(props.btn_name)}
+                onClick={props.click}>
+                {insertLineBreak(props.text)}
             </button>
         </>
     );

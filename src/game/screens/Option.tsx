@@ -33,10 +33,10 @@ function Option(props: Props) {
 
 
     // About animation
-    const enableAnimation = () => {
-        const new_options: Options = { ...props.options, animation: !props.options.animation };
-        props.setOptions(new_options);
-    };
+    // const enableAnimation = () => {
+    //     const new_options: Options = { ...props.options, animation: !props.options.animation };
+    //     props.setOptions(new_options);
+    // };
 
 
     // Reset game options
@@ -63,12 +63,12 @@ function Option(props: Props) {
                 items-center justify-center py-4'>
                 <div className='mb-4 flex w-full flex-col 
                     items-center justify-center'>
-                    <div className='flex w-full items-center justify-center pb-4'>
+                    <div className='mb-4 flex w-full items-center justify-center'>
                         <h3 className='text-2xl font-bold'>
                             音量
                         </h3>
                     </div>
-                    <div className='pb-2'>
+                    <div className='mb-2'>
                         BGM
                         <input type="range" name="ran_music_volume"
                             min="0" max="100" step="1"
@@ -80,7 +80,7 @@ function Option(props: Props) {
                             onChange={changeMusicVolume}
                             onBlur={validateMusicVolume} />
                     </div>
-                    <div className='pt-2'>
+                    <div className='mt-2'>
                         効果音
                         <input type="range" name="ran_effect_volume"
                             min="0" max="100" step="1"
@@ -95,7 +95,7 @@ function Option(props: Props) {
                 </div>
 
 
-                <div className='my-4 flex w-full flex-col 
+                {/* <div className='my-4 flex w-full flex-col 
                     items-center justify-center'>
                     <div className='flex w-full items-center justify-center pb-4'>
                         <h3 className='text-2xl font-bold'>
@@ -108,14 +108,15 @@ function Option(props: Props) {
                             checked={props.options.animation}
                             onChange={enableAnimation} />
                     </div>
-                </div>
+                </div> */}
 
 
                 <div className='mt-12 flex w-full flex-col 
                     items-center justify-center'>
                     <div className='flex w-full items-center justify-center'>
                         <SmallButton 
-                            btn_func={resetOptions} btn_name={'ゲーム設定\nリセット'} />
+                            click={resetOptions} 
+                            text={'ゲーム設定\nリセット'} />
                     </div>
                 </div>
             </div>
@@ -126,8 +127,8 @@ function Option(props: Props) {
                 border-yellow-400/60'>
                 <div className='flex w-full items-center justify-center py-4'>
                     <MediumButton 
-                        btn_func={() => props.setScreen(SCREENS.TITLE)} 
-                        btn_name='タイトルに戻る' />
+                        click={() => props.setScreen(SCREENS.TITLE)} 
+                        text='タイトルに戻る' />
                 </div>
             </div>
         </>

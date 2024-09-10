@@ -27,14 +27,14 @@ function Title(props: Props) {
                 <div className='flex w-full flex-col items-center 
                     justify-center'>
                     <LargeButton 
-                        btn_func={() => props.setScreen(SCREENS.GAME0)} 
-                        btn_name="スタート" />
+                        click={() => props.setScreen(SCREENS.GAME0)} 
+                        text="スタート" />
                     <LargeButton 
-                        btn_func={() => props.setScreen(SCREENS.LIST0)} 
-                        btn_name="図鑑" />
+                        click={() => props.setScreen(SCREENS.LIST0)} 
+                        text="図鑑" />
                     <LargeButton 
-                        btn_func={() => props.setScreen(SCREENS.OPTION)} 
-                        btn_name="ゲーム設定" />
+                        click={() => props.setScreen(SCREENS.OPTION)} 
+                        text="ゲーム設定" />
                 </div>
             </div>
         </>

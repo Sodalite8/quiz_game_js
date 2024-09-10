@@ -84,8 +84,8 @@ function QuizOption(props: Props) {
                 border-yellow-400/60'>
                 <div className='flex w-full items-center justify-center py-4'>
                     <MediumButton 
-                        btn_func={() => props.setScreen(SCREENS.TITLE)} 
-                        btn_name='タイトルに戻る' />
+                        click={() => props.setScreen(SCREENS.TITLE)} 
+                        text='タイトルに戻る' />
                 </div>
             </div>
         </>
