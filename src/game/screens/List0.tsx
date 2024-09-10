@@ -1,6 +1,6 @@
 import React from 'react';
 import { SCREENS } from '../../_constants/constants';
-import MediumButton from '../components/MediumButton';
+import { MediumButton } from '../components/Buttons';
 
 
 interface Props {

@@ -2,7 +2,7 @@ import React from "react";
 import { QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_constants/constants";
 import { changeNumber, validateNumber } from "../../_scripts/func";
 import { createProblems } from "../scripts/createProblems";
-import MediumButton from "./MediumButton";
+import { MediumButton } from "./Buttons";
 
 
 interface Props {

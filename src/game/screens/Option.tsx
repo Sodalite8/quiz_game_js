@@ -1,7 +1,7 @@
 import React from 'react';
 import { SCREENS, Options, INITIAL_OPTIONS, OPTIONS_CONST } from '../../_constants/constants';
 import { changeNumber, validateNumber } from '../../_scripts/func';
-import MediumButton from '../components/MediumButton';
+import { MediumButton, SmallButton } from '../components/Buttons';
 
 
 interface Props {
@@ -73,24 +73,24 @@ function Option(props: Props) {
                         <input type="range" name="ran_music_volume"
                             min="0" max="100" step="1"
                             value={props.options.music_volume}
-                            onChange={changeMusicVolume}></input>
+                            onChange={changeMusicVolume} />
                         <input type="number" name="num_music_volume"
                             min="0" max="100" step="1"
                             value={props.options.music_volume}
                             onChange={changeMusicVolume}
-                            onBlur={validateMusicVolume}></input>
+                            onBlur={validateMusicVolume} />
                     </div>
                     <div className='pt-2'>
                         効果音
                         <input type="range" name="ran_effect_volume"
                             min="0" max="100" step="1"
                             value={props.options.effect_volume}
-                            onChange={changeEffectVolume}></input>
+                            onChange={changeEffectVolume} />
                         <input type="number" name="num_effect_volume"
                             min="0" max="100" step="1"
                             value={props.options.effect_volume}
                             onChange={changeEffectVolume}
-                            onBlur={validateEffectVolume}></input>
+                            onBlur={validateEffectVolume} />
                     </div>
                 </div>
 
@@ -106,7 +106,7 @@ function Option(props: Props) {
                         アニメーションの有効化
                         <input type="checkbox" name="check_enable_animation"
                             checked={props.options.animation}
-                            onChange={enableAnimation}></input>
+                            onChange={enableAnimation} />
                     </div>
                 </div>
 
@@ -114,7 +114,8 @@ function Option(props: Props) {
                 <div className='mt-12 flex w-full flex-col 
                     items-center justify-center'>
                     <div className='flex w-full items-center justify-center'>
-                        <button onClick={resetOptions}>ゲーム設定をリセット</button>
+                        <SmallButton 
+                            btn_func={resetOptions} btn_name={'ゲーム設定\nリセット'} />
                     </div>
                 </div>
             </div>
