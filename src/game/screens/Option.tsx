@@ -72,7 +72,7 @@ function Option(props: Props) {
                     </div>
                     <div className='flex w-full items-center justify-between 
                         p-4'>
-                        <span className='block'>
+                        <span className='text-lg'>
                             BGM
                         </span>
                         <RangeAndNumber min={0} max={100} step={1}
@@ -82,7 +82,7 @@ function Option(props: Props) {
                     </div>
                     <div className='flex w-full items-center justify-between 
                         p-4'>
-                        <span className='block'>
+                        <span className='text-lg'>
                             効果音
                         </span>
                         <RangeAndNumber min={0} max={100} step={1}
