@@ -53,10 +53,10 @@ function QuizOption(props: Props) {
 
 
             <div className="relative flex w-full flex-col items-center 
-                justify-center p-4">
+                justify-center px-8">
                 <div className="flex w-full flex-col items-center
                     justify-center p-4">
-                    <span className="text-lg p-2">
+                    <span className="p-2 text-lg">
                         難易度
                     </span>
                     <select name="sel_difficulty" value={props.quiz_options.difficulty} onChange={changeDifficulty}>
@@ -71,7 +71,7 @@ function QuizOption(props: Props) {
 
                 <div className="flex w-full flex-col items-center
                     justify-center p-4">
-                    <span className="text-lg p-2">
+                    <span className="p-2 text-lg">
                         問題数
                     </span>
                     <RangeAndNumber min={QUIZ_OPTIONS_CONST.min_problems_num}

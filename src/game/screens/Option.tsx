@@ -61,7 +61,7 @@ function Option(props: Props) {
 
 
             <div className='relative flex w-full flex-col items-center 
-                justify-center p-4'>
+                justify-center px-8'>
                 <div className='flex w-full flex-col items-center 
                     justify-center'>
                     <div className='flex w-full items-center justify-center 

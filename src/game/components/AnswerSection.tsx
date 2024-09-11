@@ -31,11 +31,9 @@ function AnswerSection(props: Props) {
 
 
     return (
-        <>
+        <div className="mt-16 grid grid-cols-2 gap-4 p-4">
             {answer_buttons}
-            問題番号（テスト）: {props.current_quiz}
-            スコア（テスト）: {props.quiz_results.score}
-        </>
+        </div>
     );
 }
 

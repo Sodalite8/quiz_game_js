@@ -28,19 +28,22 @@ function Quiz(props: Props) {
 
 
     return (
-        <>
-            <div>
-                <ProblemSection current_quiz={props.current_quiz} quiz_problems={props.quiz_problems} />
-            </div>
-            <div>
-                <AnswerSection current_quiz={props.current_quiz} setCurrentQuiz={props.setCurrentQuiz} 
+        <div className='flex'>
+            <div className='relative flex h-96 flex-col px-8'>
+                <ProblemSection current_quiz={props.current_quiz}
+                    quiz_problems={props.quiz_problems} />
+                <AnswerSection current_quiz={props.current_quiz}
+                    setCurrentQuiz={props.setCurrentQuiz}
                     quiz_problems={props.quiz_problems}
-                    quiz_results={props.quiz_results} setQuizResults={props.setQuizResults} />
+                    quiz_results={props.quiz_results} 
+                    setQuizResults={props.setQuizResults} />
             </div>
-            <div>
+            <div className='absolute top-full flex w-full -translate-y-full 
+                items-center justify-center border-t-4 border-yellow-400/60 
+                p-4'>
                 <button onClick={exitQuiz}>クイズを終了する</button>
             </div>
-        </>
+        </div>
     );
 }
 

@@ -11,14 +11,18 @@ interface Props {
 // Show problems images
 function ProblemSection(props: Props) {
     return (
-        <>
-            <div>
-                <h2>この国は？</h2>
+        <div className='flex flex-col items-center'>
+            <div className='flex w-full items-center justify-center p-4'>
+                <h3 className='text-2xl font-bold'>
+                    問題{props.current_quiz + 1}
+                </h3>
             </div>
-            <div>
-                <img src={`./images/flags/flag${props.quiz_problems[props.current_quiz].problem_id}.png`} alt="problem_img"></img>
+            <div className='flex h-96 w-full items-center justify-center border-4'>
+                <img className='' 
+                    src={`./images/flags/flag${props.quiz_problems[props.current_quiz].problem_id}.png`} 
+                    alt="problem_img" />
             </div>
-        </>
+        </div>
     );
 }
 

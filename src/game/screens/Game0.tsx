@@ -72,9 +72,7 @@ function Game0(props: Props) {
 
     return (
         <>
-            <div>
-                {renderGame()}
-            </div>
+            {renderGame()}
         </>
     );
 }
