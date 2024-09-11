@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import "./styles/tailwind.css";
 import App from './game/App';
 import reportWebVitals from './reportWebVitals';
-import TestPage from './test_page/TestPage';
 
 
 const root = ReactDOM.createRoot(
@@ -12,7 +11,6 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <App />
-        <TestPage />
     </React.StrictMode>
 );
 

@@ -2,12 +2,12 @@ import React from "react";
 
 
 interface Props {
-    min: number | string | undefined;
-    max: number | string | undefined;
-    step: number | string | undefined;
-    value: number | string | undefined;
-    change: React.ChangeEventHandler<HTMLInputElement> | undefined;
-    blur: React.FocusEventHandler<HTMLInputElement> | undefined;
+    min?: number | string | undefined;
+    max?: number | string | undefined;
+    step?: number | string | undefined;
+    value?: number | string | undefined;
+    change?: React.ChangeEventHandler<HTMLInputElement> | undefined;
+    blur?: React.FocusEventHandler<HTMLInputElement> | undefined;
 }
 
 

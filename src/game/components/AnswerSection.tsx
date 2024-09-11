@@ -2,6 +2,7 @@ import React from "react";
 import { QuizProblem, QuizResults } from "../../_constants/constants";
 import { changeNumber } from "../../_scripts/func";
 import { FLAG_DATA_LIST } from "../scripts/readFlagData";
+import { AnswerButton } from "./Buttons";
 
 
 interface Props {
@@ -25,13 +26,19 @@ function AnswerSection(props: Props) {
 
     const answer_buttons = props.quiz_problems[props.current_quiz].choice_ids.map((id, index) => {
         return (
-            <button name={String(index)} onClick={answerProblem}>{FLAG_DATA_LIST[id].name}({FLAG_DATA_LIST[id].period})</button>
+            <>
+                <AnswerButton name={String(index)}
+                    click={answerProblem} 
+                    text={`${FLAG_DATA_LIST[id].name}(${FLAG_DATA_LIST[id].period})`} />
+            </>
+            
+            
         );
     });
 
-
+            
     return (
-        <div className="mt-16 grid grid-cols-2 gap-4 p-4">
+        <div className="m-auto grid grid-cols-2 gap-x-16 gap-y-4 p-4">
             {answer_buttons}
         </div>
     );

@@ -1,5 +1,6 @@
 import React from "react"
 import { INITIAL_QUIZ_RESULTS, QuizProblem, QuizResults, SCREENS } from "../../_constants/constants";
+import { MediumButton } from "./Buttons";
 
 
 interface Props {
@@ -26,14 +27,45 @@ function Result(props: Props) {
 
     return (
         <>
-            <h2>結果発表</h2>
-            <div>
-                得点：{props.quiz_results.score} / {props.current_quiz}
-                正答率：{Math.round((props.quiz_results.score * 100 / props.current_quiz) * (10 ** 2)) / (10 ** 2)}%
+            <div className="relative flex h-32 w-full items-center 
+                justify-center border-b-4 border-yellow-400/60">
+                <h2 className="text-4xl font-bold">
+                    リザルト
+                </h2>
             </div>
-            <div>
-                <button onClick={exitQuiz}>問題設定に戻る</button>
-                <button onClick={() => { props.setScreen(SCREENS.TITLE) }}>タイトルに戻る</button>
+
+
+            <div className="relative flex w-full items-center 
+                justify-around px-8">
+                <div className="flex flex-col items-center justify-center p-4">
+                    <h3 className="p-2 text-2xl font-bold">
+                        スコア
+                    </h3>
+                    <h2 className="p-2 text-4xl font-bold">
+                        {props.quiz_results.score} / {props.current_quiz}
+                    </h2>
+                </div>
+                <div className="flex flex-col items-center justify-center p-4">
+                    <span className="p-2 text-2xl font-bold">
+                        正答率
+                    </span>
+                    <h3 className="p-2 text-4xl font-bold">
+                        {Math.round((props.quiz_results.score * 100 / props.current_quiz) * (10 ** 2)) / (10 ** 2)}%
+                    </h3>
+                </div>
+            </div>
+
+
+
+            <div className='absolute top-full flex w-full -translate-y-full 
+                items-center justify-center border-t-4 border-yellow-400/60 
+                p-4'>
+                <MediumButton
+                    click={exitQuiz}
+                    text="問題設定に戻る" />
+                <MediumButton
+                    click={() => props.setScreen(SCREENS.TITLE)}
+                    text='タイトルに戻る' />
             </div>
         </>
     );

@@ -2,6 +2,7 @@ import React from 'react';
 import ProblemSection from './ProblemSection';
 import AnswerSection from './AnswerSection';
 import { INITIAL_QUIZ_RESULTS, QuizProblem, QuizResults } from '../../_constants/constants';
+import { SmallButton } from './Buttons';
 
 
 interface Props {
@@ -28,8 +29,8 @@ function Quiz(props: Props) {
 
 
     return (
-        <div className='flex'>
-            <div className='relative flex h-96 flex-col px-8'>
+        <>
+            <div className='relative flex w-full flex-col px-8'>
                 <ProblemSection current_quiz={props.current_quiz}
                     quiz_problems={props.quiz_problems} />
                 <AnswerSection current_quiz={props.current_quiz}
@@ -38,12 +39,15 @@ function Quiz(props: Props) {
                     quiz_results={props.quiz_results} 
                     setQuizResults={props.setQuizResults} />
             </div>
+
+
             <div className='absolute top-full flex w-full -translate-y-full 
                 items-center justify-center border-t-4 border-yellow-400/60 
                 p-4'>
-                <button onClick={exitQuiz}>クイズを終了する</button>
+                <SmallButton click={exitQuiz}
+                    text='クイズを終了' />
             </div>
-        </div>
+        </>
     );
 }
 
