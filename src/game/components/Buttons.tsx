@@ -1,5 +1,5 @@
 import React from "react";
-import { play_normal_btn } from "../scripts/loadSound";
+import useSound from "use-sound";
 
 
 const insertLineBreak = (str: string | undefined) => {
@@ -26,8 +26,11 @@ interface Props {
 
 
 export function SmallButton(props: Props) {
+    const [playNormalBtn] = useSound("./audio/normal_btn.mp3");
+
+
     const clickSmallButton = () => {
-        play_normal_btn();
+        playNormalBtn();
         if(props.click !== undefined) {
             props.click();
         }
@@ -48,8 +51,11 @@ export function SmallButton(props: Props) {
 
 
 export function MediumButton(props: Props) {
-    const clickMediumButton = () => {
-        play_normal_btn();
+    const [playNormalBtn] = useSound("./audio/normal_btn.mp3");
+
+
+    const clickMediumButton = () => {    
+        playNormalBtn();
         if(props.click !== undefined) {
             props.click();
         }
@@ -70,9 +76,12 @@ export function MediumButton(props: Props) {
 
 
 export function LargeButton(props: Props) {
+    const [playNormalBtn] = useSound("./audio/normal_btn.mp3");
+
+
     const clickLargeButton = () => {
         console.log("音がなります")
-        play_normal_btn();
+        playNormalBtn();
         if(props.click !== undefined) {
             props.click();
         }
