@@ -3,6 +3,7 @@ import { QuizProblem, QuizResults } from "../../_constants/constants";
 import { changeNumber, waitFor } from "../../_scripts/func";
 import { FLAG_DATA_LIST } from "../scripts/readFlagData";
 import { AnswerButton } from "./Buttons";
+import useSound from "use-sound";
 
 
 interface Props {
@@ -18,14 +19,20 @@ interface Props {
 function AnswerSection(props: Props) {
     const [answered, setAnswered] = React.useState<boolean>(false);
     const [correct, setCorrect] = React.useState<boolean>(false);
+    const [playCorrectAnswer] = useSound("./audio/correct_answer.mp3"),
+        [plyaWrongAnswer] = useSound("./audio/wrong_answer.mp3");
 
 
     const answerProblem = async (e: React.MouseEvent<HTMLButtonElement>) => {
         const ans = parseInt(e.currentTarget.name);
 
         if (ans === props.quiz_problems[props.current_quiz].correct_choice) {
-            setCorrect(true);
             changeNumber(props.quiz_results, "score", props.quiz_results.score + 1, props.setQuizResults);
+            setCorrect(true);
+            playCorrectAnswer();
+        }
+        else {
+            plyaWrongAnswer();
         }
         setAnswered(true);
         await waitFor(800);
