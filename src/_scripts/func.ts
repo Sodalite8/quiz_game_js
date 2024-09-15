@@ -76,3 +76,12 @@ export const changeString = <T extends object>(obj: T, key: keyof T, value: stri
     (new_obj[key] as string) = value;
     setObj(new_obj);
 };
+
+
+export const waitFor = (millisec: number) => {
+    return new Promise<void>((resolve) => {
+        setTimeout(() => {
+            resolve();
+        }, millisec);
+    });
+};

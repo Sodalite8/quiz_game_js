@@ -104,7 +104,6 @@ export function LargeButton(props: Props) {
 interface Props1 {
     text?: string;
     name?: string;
-    result_img?: string;
     click?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -119,7 +118,6 @@ export function AnswerButton(props: Props1) {
                 onClick={props.click}>
                 {insertLineBreak(props.text)}
             </button>
-            {false && <img src={props.result_img} alt="result_img" />}
         </div>
     );
 }
