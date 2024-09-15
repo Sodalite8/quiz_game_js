@@ -1,8 +1,8 @@
 import React from 'react';
 import { INITIAL_QUIZ_RESULTS, QuizOptions, QuizProblem, QuizResults, SCREENS } from '../../_constants/constants';
-import Quiz from '../components/Quiz';
-import Result from '../components/Result';
-import QuizOption from '../components/QuizOption';
+import Quiz from '../quiz/Quiz';
+import Result from '../quiz/Result';
+import QuizOption from '../quiz/QuizOption';
 
 
 interface Props {
