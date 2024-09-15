@@ -59,7 +59,7 @@ function AnswerSection(props: Props) {
             {answer_buttons}
             {answered &&
                 <img src={((correct) ? "./images/ui/correct.svg" : "./images/ui/incorrect.svg")} 
-                alt="result_img" />}
+                    alt="result_img" />}
         </div>
     );
 }

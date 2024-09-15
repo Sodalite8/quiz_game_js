@@ -1,5 +1,4 @@
 import React from "react";
-import useSound from "use-sound";
 
 
 const insertLineBreak = (str: string | undefined) => {
@@ -26,23 +25,12 @@ interface Props {
 
 
 export function SmallButton(props: Props) {
-    const [playNormalBtn] = useSound("./audio/normal_btn.mp3");
-
-
-    const clickSmallButton = () => {
-        playNormalBtn();
-        if(props.click !== undefined) {
-            props.click();
-        }
-    }
-
-
     return (
         <>
             <button className='m-2 w-small-btn-w cursor-pointer 
                 rounded-lg border-2 border-orange-300 bg-orange-400 
                 p-1 text-lg font-bold text-white'
-                onClick={clickSmallButton}>
+                onClick={props.click}>
                 {insertLineBreak(props.text)}
             </button>
         </>
@@ -51,23 +39,12 @@ export function SmallButton(props: Props) {
 
 
 export function MediumButton(props: Props) {
-    const [playNormalBtn] = useSound("./audio/normal_btn.mp3");
-
-
-    const clickMediumButton = () => {    
-        playNormalBtn();
-        if(props.click !== undefined) {
-            props.click();
-        }
-    }
-
-
     return (
         <>
             <button className='m-4 block w-medium-btn-w cursor-pointer 
                 rounded-lg border-2 border-orange-300 bg-orange-400 
                 p-2 text-xl font-bold text-white'
-                onClick={clickMediumButton}>
+                onClick={props.click}>
                 {insertLineBreak(props.text)}
             </button>
         </>
@@ -76,24 +53,12 @@ export function MediumButton(props: Props) {
 
 
 export function LargeButton(props: Props) {
-    const [playNormalBtn] = useSound("./audio/normal_btn.mp3");
-
-
-    const clickLargeButton = () => {
-        console.log("音がなります")
-        playNormalBtn();
-        if(props.click !== undefined) {
-            props.click();
-        }
-    }
-
-
     return (
         <>
             <button className='m-8 block w-large-btn-w cursor-pointer 
                 rounded-lg border-2 border-orange-300 bg-orange-400 
                 p-4 text-2xl font-bold text-white'
-                onClick={clickLargeButton}>
+                onClick={props.click}>
                 {insertLineBreak(props.text)}
             </button>
         </>
