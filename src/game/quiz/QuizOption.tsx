@@ -2,8 +2,8 @@ import React from "react";
 import { QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_constants/constants";
 import { changeNumber, validateNumber } from "../../_scripts/func";
 import { createProblems } from "../scripts/createProblems";
-import { MediumButton } from "./Buttons";
-import { RangeAndNumber } from "./Ranges";
+import { MediumButton } from "../components/Buttons";
+import { RangeAndNumber } from "../components/Ranges";
 
 
 interface Props {

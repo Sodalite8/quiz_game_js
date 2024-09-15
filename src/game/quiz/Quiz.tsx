@@ -1,8 +1,8 @@
 import React from 'react';
-import ProblemSection from './ProblemSection';
-import AnswerSection from './AnswerSection';
+import ProblemSection from '../components/ProblemSection';
+import AnswerSection from '../components/AnswerSection';
 import { INITIAL_QUIZ_RESULTS, QuizProblem, QuizResults } from '../../_constants/constants';
-import { SmallButton } from './Buttons';
+import { SmallButton } from '../components/Buttons';
 
 
 interface Props {

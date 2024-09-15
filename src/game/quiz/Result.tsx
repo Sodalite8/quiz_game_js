@@ -1,6 +1,6 @@
 import React from "react"
 import { INITIAL_QUIZ_RESULTS, QuizProblem, QuizResults, SCREENS } from "../../_constants/constants";
-import { MediumButton } from "./Buttons";
+import { MediumButton } from "../components/Buttons";
 
 
 interface Props {
