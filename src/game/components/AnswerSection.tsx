@@ -12,13 +12,15 @@ interface Props {
     quiz_problems: QuizProblem[];
     quiz_results: QuizResults;
     setQuizResults: React.Dispatch<React.SetStateAction<QuizResults>>;
+    answered: boolean;
+    setAnswered: React.Dispatch<React.SetStateAction<boolean>>;
+    correct: boolean;
+    setCorrect: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 
 // Place the buttons to answer the problems
 function AnswerSection(props: Props) {
-    const [answered, setAnswered] = React.useState<boolean>(false);
-    const [correct, setCorrect] = React.useState<boolean>(false);
     const [playCorrectAnswer] = useSound("./audio/correct_answer.mp3"),
         [plyaWrongAnswer] = useSound("./audio/wrong_answer.mp3");
 
@@ -28,17 +30,17 @@ function AnswerSection(props: Props) {
 
         if (ans === props.quiz_problems[props.current_quiz].correct_choice) {
             changeNumber(props.quiz_results, "score", props.quiz_results.score + 1, props.setQuizResults);
-            setCorrect(true);
+            props.setCorrect(true);
             playCorrectAnswer();
         }
         else {
             plyaWrongAnswer();
         }
-        setAnswered(true);
+        props.setAnswered(true);
         await waitFor(1000);
 
-        setAnswered(false);
-        setCorrect(false);
+        props.setAnswered(false);
+        props.setCorrect(false);
         props.setCurrentQuiz(props.current_quiz + 1);
     };
 
@@ -49,7 +51,7 @@ function AnswerSection(props: Props) {
                 <AnswerButton key={4 * props.current_quiz + index} 
                     text={`${FLAG_DATA_LIST[id].name}(${FLAG_DATA_LIST[id].period})`} 
                     name={String(index)} 
-                    disable={answered} 
+                    disable={props.answered} 
                     click={answerProblem} />
             </>
         );
@@ -62,9 +64,9 @@ function AnswerSection(props: Props) {
                 {answer_buttons}
             </div>
             <div className="absolute">
-                {answered &&
+                {props.answered &&
                     <img className="size-64"
-                        src={((correct) ? "./images/ui/correct.svg" : "./images/ui/incorrect.svg")}
+                        src={((props.correct) ? "./images/ui/correct.svg" : "./images/ui/incorrect.svg")}
                         alt="result_img" />}
             </div>
         </div>

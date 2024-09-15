@@ -20,6 +20,7 @@ const insertLineBreak = (str: string | undefined) => {
 interface Props {
     text?: string;
     name?: string;
+    disable?: boolean;
     click?: () => void;
 }
 
@@ -29,7 +30,8 @@ export function SmallButton(props: Props) {
         <>
             <button className='m-2 w-small-btn-w cursor-pointer 
                 rounded-lg border-2 border-orange-300 bg-orange-400 
-                p-1 text-lg font-bold text-white'
+                p-1 text-lg font-bold text-white' 
+                disabled={props.disable} 
                 onClick={props.click}>
                 {insertLineBreak(props.text)}
             </button>
@@ -43,7 +45,8 @@ export function MediumButton(props: Props) {
         <>
             <button className='m-4 block w-medium-btn-w cursor-pointer 
                 rounded-lg border-2 border-orange-300 bg-orange-400 
-                p-2 text-xl font-bold text-white'
+                p-2 text-xl font-bold text-white' 
+                disabled={props.disable} 
                 onClick={props.click}>
                 {insertLineBreak(props.text)}
             </button>
@@ -57,7 +60,8 @@ export function LargeButton(props: Props) {
         <>
             <button className='m-8 block w-large-btn-w cursor-pointer 
                 rounded-lg border-2 border-orange-300 bg-orange-400 
-                p-4 text-2xl font-bold text-white'
+                p-4 text-2xl font-bold text-white' 
+                disabled={props.disable} 
                 onClick={props.click}>
                 {insertLineBreak(props.text)}
             </button>

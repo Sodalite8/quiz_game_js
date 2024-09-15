@@ -17,6 +17,10 @@ interface Props {
 
 // The unit of quiz game components like button and image
 function Quiz(props: Props) {
+    const [answered, setAnswered] = React.useState<boolean>(false);
+    const [correct, setCorrect] = React.useState<boolean>(false);
+
+
     // About finishing the quiz in the middle
     const exitQuiz = () => {
         const ans: boolean = window.confirm("本当に終了しますか？");
@@ -37,14 +41,19 @@ function Quiz(props: Props) {
                     setCurrentQuiz={props.setCurrentQuiz}
                     quiz_problems={props.quiz_problems}
                     quiz_results={props.quiz_results} 
-                    setQuizResults={props.setQuizResults} />
+                    setQuizResults={props.setQuizResults} 
+                    answered={answered} 
+                    setAnswered={setAnswered}
+                    correct={correct}
+                    setCorrect={setCorrect} />
             </div>
 
 
             <div className='absolute top-full flex w-full -translate-y-full 
                 items-center justify-center border-t-4 border-yellow-400/60 
                 p-4'>
-                <SmallButton click={exitQuiz}
+                <SmallButton disable={answered}
+                    click={exitQuiz}
                     text='クイズを終了' />
             </div>
         </>
