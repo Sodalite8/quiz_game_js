@@ -104,13 +104,14 @@ export function LargeButton(props: Props) {
 interface Props1 {
     text?: string;
     name?: string;
+    result_img?: string;
     click?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 
 export function AnswerButton(props: Props1) {
     return (
-        <>
+        <div>
             <button className="m-2 block h-answer-btn-h w-answer-btn-w 
                 cursor-pointer rounded-lg border-2 border-orange-300 
                 bg-orange-400 p-2 text-xl font-bold text-white"
@@ -118,7 +119,8 @@ export function AnswerButton(props: Props1) {
                 onClick={props.click}>
                 {insertLineBreak(props.text)}
             </button>
-        </>
+            {false && <img src={props.result_img} alt="result_img" />}
+        </div>
     );
 }
 

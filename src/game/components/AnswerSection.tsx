@@ -28,15 +28,15 @@ function AnswerSection(props: Props) {
         return (
             <>
                 <AnswerButton name={String(index)}
-                    click={answerProblem} 
-                    text={`${FLAG_DATA_LIST[id].name}(${FLAG_DATA_LIST[id].period})`} />
+                    click={answerProblem}
+                    text={`${FLAG_DATA_LIST[id].name}(${FLAG_DATA_LIST[id].period})`}
+                    result_img={((index === props.quiz_problems[props.current_quiz].correct_choice) ? 
+                    "./images/ui/correct.svg" : "./images/ui/incorrect.svg")} />
             </>
-            
-            
         );
     });
 
-            
+
     return (
         <div className="m-auto grid grid-cols-2 gap-x-16 gap-y-4 p-4">
             {answer_buttons}
