@@ -35,7 +35,7 @@ function AnswerSection(props: Props) {
             plyaWrongAnswer();
         }
         setAnswered(true);
-        await waitFor(800);
+        await waitFor(1000);
 
         setAnswered(false);
         setCorrect(false);
@@ -46,21 +46,29 @@ function AnswerSection(props: Props) {
     const answer_buttons = props.quiz_problems[props.current_quiz].choice_ids.map((id, index) => {
         return (
             <>
-                <AnswerButton name={String(index)}
-                    click={answerProblem}
-                    text={`${FLAG_DATA_LIST[id].name}(${FLAG_DATA_LIST[id].period})`} />
+                <AnswerButton key={4 * props.current_quiz + index} 
+                    text={`${FLAG_DATA_LIST[id].name}(${FLAG_DATA_LIST[id].period})`} 
+                    name={String(index)} 
+                    disable={answered} 
+                    click={answerProblem} />
             </>
         );
     });
 
 
     return (
-        <div className="m-auto grid grid-cols-2 gap-x-16 gap-y-4 p-4">
-            {answer_buttons}
-            {answered &&
-                <img src={((correct) ? "./images/ui/correct.svg" : "./images/ui/incorrect.svg")} 
-                    alt="result_img" />}
+        <div className="relative flex flex-col items-center justify-center p-4">
+            <div className="grid grid-cols-2 gap-x-16 gap-y-4">
+                {answer_buttons}
+            </div>
+            <div className="absolute">
+                {answered &&
+                    <img className="size-64"
+                        src={((correct) ? "./images/ui/correct.svg" : "./images/ui/incorrect.svg")}
+                        alt="result_img" />}
+            </div>
         </div>
+
     );
 }
 

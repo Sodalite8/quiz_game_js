@@ -30,7 +30,7 @@ function Quiz(props: Props) {
 
     return (
         <>
-            <div className='relative flex w-full flex-col px-8'>
+            <div className='relative flex w-full flex-col items-center px-8'>
                 <ProblemSection current_quiz={props.current_quiz}
                     quiz_problems={props.quiz_problems} />
                 <AnswerSection current_quiz={props.current_quiz}

@@ -69,6 +69,7 @@ export function LargeButton(props: Props) {
 interface Props1 {
     text?: string;
     name?: string;
+    disable?: boolean;
     click?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -78,8 +79,9 @@ export function AnswerButton(props: Props1) {
         <div>
             <button className="m-2 block h-answer-btn-h w-answer-btn-w 
                 cursor-pointer rounded-lg border-2 border-orange-300 
-                bg-orange-400 p-2 text-xl font-bold text-white"
-                name={props.name}
+                bg-orange-400 p-2 text-xl font-bold text-white" 
+                name={props.name} 
+                disabled={props.disable} 
                 onClick={props.click}>
                 {insertLineBreak(props.text)}
             </button>

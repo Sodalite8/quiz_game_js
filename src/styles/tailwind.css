@@ -557,6 +557,26 @@ video {
   top: 100%;
 }
 
+.-top-7 {
+  top: -1.75rem;
+}
+
+.-top-6 {
+  top: -1.5rem;
+}
+
+.-top-4 {
+  top: -1rem;
+}
+
+.-top-2 {
+  top: -0.5rem;
+}
+
+.-top-1 {
+  top: -0.25rem;
+}
+
 .m-2 {
   margin: 0.5rem;
 }
@@ -567,10 +587,6 @@ video {
 
 .m-8 {
   margin: 2rem;
-}
-
-.m-auto {
-  margin: auto;
 }
 
 .mx-auto {
@@ -606,6 +622,11 @@ video {
 
 .grid {
   display: grid;
+}
+
+.size-64 {
+  width: 16rem;
+  height: 16rem;
 }
 
 .h-32 {
