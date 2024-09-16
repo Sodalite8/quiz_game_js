@@ -16,12 +16,12 @@ interface Props {
 // Game options
 function Option(props: Props) {
     // About music volume
-    const changeMusicVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
-        changeNumber<Options>(props.options, "music_volume", e.target.value, props.setOptions);
-    };
-    const validateMusicVolume = () => {
-        validateNumber<Options>(props.options, "music_volume", OPTIONS_CONST.min_volume, OPTIONS_CONST.max_volume, props.setOptions);
-    };
+    // const changeMusicVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     changeNumber<Options>(props.options, "music_volume", e.target.value, props.setOptions);
+    // };
+    // const validateMusicVolume = () => {
+    //     validateNumber<Options>(props.options, "music_volume", OPTIONS_CONST.min_volume, OPTIONS_CONST.max_volume, props.setOptions);
+    // };
 
 
     // About effect volume
@@ -34,10 +34,10 @@ function Option(props: Props) {
 
 
     // About animation
-    // const enableAnimation = () => {
-    //     const new_options: Options = { ...props.options, animation: !props.options.animation };
-    //     props.setOptions(new_options);
-    // };
+    const enableAnimation = () => {
+        const new_options: Options = { ...props.options, animation: !props.options.animation };
+        props.setOptions(new_options);
+    };
 
 
     // Reset game options
@@ -70,7 +70,7 @@ function Option(props: Props) {
                             音量
                         </h3>
                     </div>
-                    <div className='flex w-full items-center justify-between 
+                    {/* <div className='flex w-full items-center justify-between 
                         p-4'>
                         <span className='text-lg'>
                             BGM
@@ -79,7 +79,7 @@ function Option(props: Props) {
                             value={props.options.music_volume}
                             change={changeMusicVolume}
                             blur={validateMusicVolume} />
-                    </div>
+                    </div> */}
                     <div className='flex w-full items-center justify-between 
                         p-4'>
                         <span className='text-lg'>
@@ -93,7 +93,7 @@ function Option(props: Props) {
                 </div>
 
 
-                {/* <div className='my-4 flex w-full flex-col 
+                <div className='my-4 flex w-full flex-col 
                     items-center justify-center'>
                     <div className='flex w-full items-center justify-center pb-4'>
                         <h3 className='text-2xl font-bold'>
@@ -106,7 +106,7 @@ function Option(props: Props) {
                             checked={props.options.animation}
                             onChange={enableAnimation} />
                     </div>
-                </div> */}
+                </div>
 
 
                 <div className='mt-8 flex w-full flex-col items-center 
