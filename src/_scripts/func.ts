@@ -96,7 +96,7 @@ export const changeValues = <T extends object>(obj: T,
             }
 
             else {
-                if(isNaN(parseInt(values[index] as string))) {
+                if(!isNaN(parseInt(values[index] as string))) {
                     (new_obj[key] as number) = parseInt(values[index] as string);
                 }
             }

@@ -1,6 +1,6 @@
 import React from "react";
 import { QuizOptions, QuizProblem, QuizResults } from "../../_constants/constants";
-import { changeNumber, changeValues, roundBy, waitFor } from "../../_scripts/func";
+import { changeValues, roundBy, waitFor } from "../../_scripts/func";
 import { FLAG_DATA_LIST } from "../scripts/readFlagData";
 import { AnswerButton } from "./Buttons";
 import useSound from "use-sound";
@@ -30,7 +30,7 @@ function AnswerSection(props: Props) {
         const ans = parseInt(e.currentTarget.name);
 
         if (ans === props.quiz_problems[props.current_quiz].correct_choice) {
-            changeValues(props.quiz_results, props.setQuizResults,
+            changeValues<QuizResults>(props.quiz_results, props.setQuizResults,
                 ["score", "correct_answer_rate"],
                 [props.quiz_results.score + 1,
                 roundBy((props.quiz_results.score + 1) * 100 / (props.quiz_options.problems_num), 2)]);
@@ -70,7 +70,7 @@ function AnswerSection(props: Props) {
             </div>
             <div className="absolute">
                 {props.answered &&
-                    <img className="size-64"
+                    <img className="size-64 opacity-80"
                         src={((props.correct) ? "./images/ui/correct.svg" : "./images/ui/incorrect.svg")}
                         alt="result_img" />}
             </div>

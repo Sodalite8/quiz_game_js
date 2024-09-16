@@ -1,6 +1,6 @@
 import React from "react";
 import { QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_constants/constants";
-import { changeNumber, validateNumber } from "../../_scripts/func";
+import { changeNumber, changeValues, validateNumber } from "../../_scripts/func";
 import { createProblems } from "../scripts/createProblems";
 import { MediumButton } from "../components/Buttons";
 import { RangeAndNumber } from "../components/Ranges";
@@ -22,7 +22,8 @@ interface Props {
 function QuizOption(props: Props) {
     // About quiz difficulty
     const changeDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        changeNumber<QuizOptions>(props.quiz_options, "difficulty", e.target.value, props.setQuizOptions);
+        changeValues<QuizOptions>(props.quiz_options, props.setQuizOptions, 
+            ["difficulty"], [e.target.value]);
     };
 
 
