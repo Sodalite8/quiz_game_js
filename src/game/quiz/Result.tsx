@@ -1,6 +1,7 @@
 import React from "react"
 import { INITIAL_QUIZ_RESULTS, QuizProblem, QuizResults, SCREENS } from "../../_constants/constants";
 import { MediumButton } from "../components/Buttons";
+import useSound from "use-sound";
 
 
 interface Props {
@@ -50,7 +51,7 @@ function Result(props: Props) {
                         正答率
                     </span>
                     <h3 className="p-2 text-4xl font-bold">
-                        {Math.round((props.quiz_results.score * 100 / props.current_quiz) * (10 ** 2)) / (10 ** 2)}%
+                        {props.quiz_results.correct_answer_rate}%
                     </h3>
                 </div>
             </div>

@@ -41,7 +41,8 @@ function Game0(props: Props) {
         else if (current_quiz >= 0 && current_quiz < props.quiz_options.problems_num) {
             return (
                 <>
-                    <Quiz current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz}
+                    <Quiz quiz_options={props.quiz_options}
+                        current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz}
                         quiz_problems={quiz_problems} setQuizProblems={setQuizProblems}
                         quiz_results={quiz_results} setQuizResults={setQuizResults} />
                 </>

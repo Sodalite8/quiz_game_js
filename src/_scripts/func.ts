@@ -78,6 +78,51 @@ export const changeString = <T extends object>(obj: T, key: keyof T, value: stri
 };
 
 
+export const changeValues = <T extends object>(obj: T,
+    setObj: React.Dispatch<React.SetStateAction<T>>,
+    keys: (keyof T)[], values: (number | string | boolean)[]) => {
+    const new_obj: T = { ...obj };
+
+    keys.forEach((key, index) => {
+        const type_key = typeof new_obj[key], type_value = typeof values[index];
+
+        if (type_key === "number") {
+            if(type_value !== "number" && type_value !== "string") {
+                throw new Error("The input value is not number or string");
+            }
+
+            else if (type_value === "number") {
+                (new_obj[key] as number) = (values[index] as number);
+            }
+
+            else {
+                if(isNaN(parseInt(values[index] as string))) {
+                    (new_obj[key] as number) = parseInt(values[index] as string);
+                }
+            }
+        }
+
+        else if (type_key === "boolean") {
+            if (type_value !== "boolean") {
+                throw new Error("The input value is not boolean.");
+            }
+
+            (new_obj[key] as boolean) = (values[index] as boolean);
+        }
+
+        else if (type_key === "string") {
+            if (type_value !== "string") {
+                throw new Error("The input value is not string.");
+            }
+
+            (new_obj[key] as string) = (values[index] as string);
+        }
+    });
+
+    setObj(new_obj);
+};
+
+
 export const waitFor = (millisec: number) => {
     return new Promise<void>((resolve) => {
         setTimeout(() => {
@@ -85,3 +130,9 @@ export const waitFor = (millisec: number) => {
         }, millisec);
     });
 };
+
+
+export const roundBy = (num: number, place: number) => {
+    Math.round(place);
+    return Math.round(num * (10 ** 2)) / (10 ** 2);
+}

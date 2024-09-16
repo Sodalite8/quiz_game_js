@@ -70,9 +70,11 @@ export const INITIAL_QUIZ_PROBLEM: QuizProblem = {
 // Quiz results
 export interface QuizResults {
     score: number;
+    correct_answer_rate: number;
 }
 export const INITIAL_QUIZ_RESULTS: QuizResults = {
-    score: 0
+    score: 0,
+    correct_answer_rate: 0
 } as const;
 
 

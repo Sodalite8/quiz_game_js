@@ -1,12 +1,13 @@
 import React from "react";
-import { QuizProblem, QuizResults } from "../../_constants/constants";
-import { changeNumber, waitFor } from "../../_scripts/func";
+import { QuizOptions, QuizProblem, QuizResults } from "../../_constants/constants";
+import { changeNumber, changeValues, roundBy, waitFor } from "../../_scripts/func";
 import { FLAG_DATA_LIST } from "../scripts/readFlagData";
 import { AnswerButton } from "./Buttons";
 import useSound from "use-sound";
 
 
 interface Props {
+    quiz_options: QuizOptions;
     current_quiz: number;
     setCurrentQuiz: React.Dispatch<React.SetStateAction<number>>;
     quiz_problems: QuizProblem[];
@@ -22,19 +23,22 @@ interface Props {
 // Place the buttons to answer the problems
 function AnswerSection(props: Props) {
     const [playCorrectAnswer] = useSound("./audio/correct_answer.mp3"),
-        [plyaWrongAnswer] = useSound("./audio/wrong_answer.mp3");
+        [playWrongAnswer] = useSound("./audio/wrong_answer.mp3");
 
 
     const answerProblem = async (e: React.MouseEvent<HTMLButtonElement>) => {
         const ans = parseInt(e.currentTarget.name);
 
         if (ans === props.quiz_problems[props.current_quiz].correct_choice) {
-            changeNumber(props.quiz_results, "score", props.quiz_results.score + 1, props.setQuizResults);
+            changeValues(props.quiz_results, props.setQuizResults,
+                ["score", "correct_answer_rate"],
+                [props.quiz_results.score + 1,
+                roundBy((props.quiz_results.score + 1) * 100 / (props.quiz_options.problems_num), 2)]);
             props.setCorrect(true);
             playCorrectAnswer();
         }
         else {
-            plyaWrongAnswer();
+            playWrongAnswer();
         }
         props.setAnswered(true);
         await waitFor(1000);
@@ -42,16 +46,17 @@ function AnswerSection(props: Props) {
         props.setAnswered(false);
         props.setCorrect(false);
         props.setCurrentQuiz(props.current_quiz + 1);
+        console.log(props.quiz_results);
     };
 
 
     const answer_buttons = props.quiz_problems[props.current_quiz].choice_ids.map((id, index) => {
         return (
             <>
-                <AnswerButton key={4 * props.current_quiz + index} 
-                    text={`${FLAG_DATA_LIST[id].name}(${FLAG_DATA_LIST[id].period})`} 
-                    name={String(index)} 
-                    disable={props.answered} 
+                <AnswerButton key={4 * props.current_quiz + index}
+                    text={`${FLAG_DATA_LIST[id].name}(${FLAG_DATA_LIST[id].period})`}
+                    name={String(index)}
+                    disable={props.answered}
                     click={answerProblem} />
             </>
         );
