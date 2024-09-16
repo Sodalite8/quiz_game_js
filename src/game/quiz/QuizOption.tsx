@@ -1,6 +1,6 @@
 import React from "react";
 import { QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_constants/constants";
-import { changeNumber, changeValues, validateNumber } from "../../_scripts/func";
+import { changeValues, validateNumber } from "../../_scripts/func";
 import { createProblems } from "../scripts/createProblems";
 import { MediumButton } from "../components/Buttons";
 import { RangeAndNumber } from "../components/Ranges";
@@ -23,16 +23,19 @@ function QuizOption(props: Props) {
     // About quiz difficulty
     const changeDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) => {
         changeValues<QuizOptions>(props.quiz_options, props.setQuizOptions, 
-            ["difficulty"], [e.target.value]);
+            ["difficulty"], [parseInt(e.target.value)]);
     };
 
 
     // About the number of problems in the quiz
     const changeProblemsNum = (e: React.ChangeEvent<HTMLInputElement>) => {
-        changeNumber<QuizOptions>(props.quiz_options, "problems_num", e.target.value, props.setQuizOptions);
+        if(!isNaN(parseInt(e.target.value))) {
+            changeValues<QuizOptions>(props.quiz_options, props.setQuizOptions, 
+                ["problems_num"], [parseInt(e.target.value)]);
+        }
     };
     const validateProblemsNum = () => {
-        validateNumber<QuizOptions>(props.quiz_options, "problems_num", QUIZ_OPTIONS_CONST.min_problems_num, QUIZ_OPTIONS_CONST.max_problems_num, props.setQuizOptions);
+        validateNumber<QuizOptions>(props.quiz_options, props.setQuizOptions, "problems_num", QUIZ_OPTIONS_CONST.min_problems_num, QUIZ_OPTIONS_CONST.max_problems_num);
     };
 
 

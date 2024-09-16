@@ -1,6 +1,6 @@
 import React from 'react';
 import { SCREENS, Options, INITIAL_OPTIONS, OPTIONS_CONST } from '../../_constants/constants';
-import { changeNumber, validateNumber } from '../../_scripts/func';
+import { changeValues, validateNumber } from '../../_scripts/func';
 import { MediumButton, SmallButton } from '../components/Buttons';
 import { RangeAndNumber } from '../components/Ranges';
 
@@ -17,26 +17,32 @@ interface Props {
 function Option(props: Props) {
     // About music volume
     // const changeMusicVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     changeNumber<Options>(props.options, "music_volume", e.target.value, props.setOptions);
+    //     if (!isNaN(parseInt(e.target.value))) {
+    //         changeValues<Options>(props.options, props.setOptions,
+    //             ["music_volume"], [parseInt(e.target.value)]);
+    //     }
     // };
     // const validateMusicVolume = () => {
-    //     validateNumber<Options>(props.options, "music_volume", OPTIONS_CONST.min_volume, OPTIONS_CONST.max_volume, props.setOptions);
+    //     validateNumber<Options>(props.options, props.setOptions, "music_volume", OPTIONS_CONST.min_volume, OPTIONS_CONST.max_volume);
     // };
 
 
     // About effect volume
     const changeEffectVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
-        changeNumber<Options>(props.options, "effect_volume", e.target.value, props.setOptions);
+        if (!isNaN(parseInt(e.target.value))) {
+            changeValues<Options>(props.options, props.setOptions,
+                ["effect_volume"], [parseInt(e.target.value)]);
+        }
     };
     const validateEffectVolume = () => {
-        validateNumber<Options>(props.options, "effect_volume", OPTIONS_CONST.min_volume, OPTIONS_CONST.max_volume, props.setOptions);
+        validateNumber<Options>(props.options, props.setOptions, "effect_volume", OPTIONS_CONST.min_volume, OPTIONS_CONST.max_volume);
     };
 
 
     // About animation
     const enableAnimation = () => {
-        const new_options: Options = { ...props.options, animation: !props.options.animation };
-        props.setOptions(new_options);
+        changeValues<Options>(props.options, props.setOptions, 
+            ["animation"], [!props.options.animation]);
     };
 
 
