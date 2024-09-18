@@ -1,5 +1,5 @@
 import React from 'react';
-import { INITIAL_QUIZ_RESULTS, QuizOptions, QuizProblem, QuizResults, SCREENS } from '../../_constants/constants';
+import { INITIAL_QUIZ_RESULTS, Options, QuizOptions, QuizProblem, QuizResults, SCREENS } from '../../_constants/constants';
 import Quiz from '../quiz/Quiz';
 import Result from '../quiz/Result';
 import QuizOption from '../quiz/QuizOption';
@@ -8,6 +8,7 @@ import QuizOption from '../quiz/QuizOption';
 interface Props {
     screen: number;
     setScreen: React.Dispatch<React.SetStateAction<number>>;
+    options: Options;
     quiz_options: QuizOptions;
     setQuizOptions: React.Dispatch<React.SetStateAction<QuizOptions>>;
 }
@@ -41,7 +42,8 @@ function Game0(props: Props) {
         else if (current_quiz >= 0 && current_quiz < props.quiz_options.problems_num) {
             return (
                 <>
-                    <Quiz quiz_options={props.quiz_options}
+                    <Quiz options={props.options} 
+                        quiz_options={props.quiz_options}
                         current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz}
                         quiz_problems={quiz_problems} setQuizProblems={setQuizProblems}
                         quiz_results={quiz_results} setQuizResults={setQuizResults} />

@@ -1,11 +1,12 @@
 import React from 'react';
 import ProblemSection from '../components/ProblemSection';
 import AnswerSection from '../components/AnswerSection';
-import { INITIAL_QUIZ_RESULTS, QuizOptions, QuizProblem, QuizResults } from '../../_constants/constants';
+import { INITIAL_QUIZ_RESULTS, Options, QuizOptions, QuizProblem, QuizResults } from '../../_constants/constants';
 import { SmallButton } from '../components/Buttons';
 
 
 interface Props {
+    options: Options;
     quiz_options: QuizOptions;
     current_quiz: number;
     setCurrentQuiz: React.Dispatch<React.SetStateAction<number>>;
@@ -38,7 +39,8 @@ function Quiz(props: Props) {
             <div className='relative flex w-full flex-col items-center px-8'>
                 <ProblemSection current_quiz={props.current_quiz}
                     quiz_problems={props.quiz_problems} />
-                <AnswerSection quiz_options={props.quiz_options} 
+                <AnswerSection options={props.options} 
+                    quiz_options={props.quiz_options} 
                     current_quiz={props.current_quiz}
                     setCurrentQuiz={props.setCurrentQuiz}
                     quiz_problems={props.quiz_problems}

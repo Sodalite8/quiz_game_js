@@ -26,9 +26,12 @@ function App() {
             case SCREENS.TITLE:     // Game title
                 return <Title screen={screen} setScreen={setScreen} />;
             case SCREENS.OPTION:    // Game options
-                return <Option screen={screen} setScreen={setScreen} options={options} setOptions={setOptions} />;
+                return <Option screen={screen} setScreen={setScreen} 
+                    options={options} setOptions={setOptions} />;
             case SCREENS.GAME0:     // Quiz
-                return <Game0 screen={screen} setScreen={setScreen} quiz_options={quiz_options} setQuizOptions={setQuizOptions} />;
+                return <Game0 screen={screen} setScreen={setScreen} 
+                    options={options} 
+                    quiz_options={quiz_options} setQuizOptions={setQuizOptions} />;
             case SCREENS.LIST0:     // Flags lists
                 return <List0 screen={screen} setScreen={setScreen} />;
         }

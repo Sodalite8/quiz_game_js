@@ -1,5 +1,5 @@
 import React from "react";
-import { QuizOptions, QuizProblem, QuizResults } from "../../_constants/constants";
+import { Options, OPTIONS_CONST, QuizOptions, QuizProblem, QuizResults } from "../../_constants/constants";
 import { changeValues, roundBy, waitFor } from "../../_scripts/func";
 import { FLAG_DATA_LIST } from "../scripts/readFlagData";
 import { AnswerButton } from "./Buttons";
@@ -7,6 +7,7 @@ import useSound from "use-sound";
 
 
 interface Props {
+    options: Options;
     quiz_options: QuizOptions;
     current_quiz: number;
     setCurrentQuiz: React.Dispatch<React.SetStateAction<number>>;
@@ -22,8 +23,10 @@ interface Props {
 
 // Place the buttons to answer the problems
 function AnswerSection(props: Props) {
-    const [playCorrectAnswer] = useSound("./audio/correct_answer.mp3"),
-        [playWrongAnswer] = useSound("./audio/wrong_answer.mp3");
+    const [playCorrectAnswer] = useSound("./audio/correct_answer.mp3",
+        { volume: props.options.effect_volume / OPTIONS_CONST.max_volume }),
+        [playWrongAnswer] = useSound("./audio/wrong_answer.mp3",
+            { volume: props.options.effect_volume / OPTIONS_CONST.max_volume });
 
 
     const answerProblem = async (e: React.MouseEvent<HTMLButtonElement>) => {
