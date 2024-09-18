@@ -71,6 +71,13 @@ export const changeValues = <T extends object>(obj: T,
 };
 
 
+export const limitToRange = (num: number, min_val: number, max_val: number) => {
+    num = max(num, min_val);
+    num = min(num, max_val);
+    return num;
+}
+
+
 // Validate obj[key] and update obj
 export const validateNumber = <T extends object>(obj: T, 
     setObj: React.Dispatch<React.SetStateAction<T>>, key: keyof T, 

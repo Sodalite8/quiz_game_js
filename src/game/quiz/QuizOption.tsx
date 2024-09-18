@@ -1,9 +1,9 @@
 import React from "react";
 import { QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_constants/constants";
-import { changeValues, validateNumber } from "../../_scripts/func";
+import { changeValues, limitToRange } from "../../_scripts/func";
 import { createProblems } from "../scripts/createProblems";
 import { MediumButton } from "../components/Buttons";
-import { RangeAndNumber } from "../components/Ranges";
+import { RangeAndText } from "../components/Ranges";
 
 
 interface Props {
@@ -20,22 +20,48 @@ interface Props {
 
 // Quiz options
 function QuizOption(props: Props) {
+    const [temp_problems_num, setTempProblemsNum] =
+        React.useState<string>(String(props.quiz_options.problems_num));
+
+
     // About quiz difficulty
     const changeDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        changeValues<QuizOptions>(props.quiz_options, props.setQuizOptions, 
+        changeValues<QuizOptions>(props.quiz_options, props.setQuizOptions,
             ["difficulty"], [parseInt(e.target.value)]);
     };
 
 
     // About the number of problems in the quiz
-    const changeProblemsNum = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if(!isNaN(parseInt(e.target.value))) {
-            changeValues<QuizOptions>(props.quiz_options, props.setQuizOptions, 
-                ["problems_num"], [parseInt(e.target.value)]);
+    const changeProblemsNumInRange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const input_str: string = e.target.value,
+            input_num: number = parseInt(e.target.value);
+
+        changeValues<QuizOptions>(props.quiz_options, props.setQuizOptions,
+            ["problems_num"], [input_num]);
+        setTempProblemsNum(input_str);
+    };
+    const changeProblemsNumInText = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const input: string = e.target.value;
+
+        if (/^\d*$/.test(input)) {
+            setTempProblemsNum(input);
         }
     };
-    const validateProblemsNum = () => {
-        validateNumber<QuizOptions>(props.quiz_options, props.setQuizOptions, "problems_num", QUIZ_OPTIONS_CONST.min_problems_num, QUIZ_OPTIONS_CONST.max_problems_num);
+    const validateProblemsNumInText = () => {
+        let input_str: string = temp_problems_num,
+            input_num: number = parseInt(temp_problems_num);
+
+        if (isNaN(input_num)) {
+            setTempProblemsNum(String(props.quiz_options.problems_num));
+            return;
+        }
+
+        input_num = limitToRange(input_num, QUIZ_OPTIONS_CONST.min_problems_num,
+            QUIZ_OPTIONS_CONST.max_problems_num);
+        input_str = String(input_num);
+        changeValues<QuizOptions>(props.quiz_options, props.setQuizOptions,
+            ["problems_num"], [input_num]);
+        setTempProblemsNum(input_str);
     };
 
 
@@ -78,11 +104,13 @@ function QuizOption(props: Props) {
                     <span className="p-2 text-lg font-bold">
                         問題数
                     </span>
-                    <RangeAndNumber min={QUIZ_OPTIONS_CONST.min_problems_num}
+                    <RangeAndText min={QUIZ_OPTIONS_CONST.min_problems_num}
                         max={QUIZ_OPTIONS_CONST.max_problems_num} step={1}
-                        value={props.quiz_options.problems_num}
-                        change={changeProblemsNum}
-                        blur={validateProblemsNum} />
+                        range_value={props.quiz_options.problems_num}
+                        range_change={changeProblemsNumInRange}
+                        text_value={temp_problems_num}
+                        text_change={changeProblemsNumInText}
+                        text_blur={validateProblemsNumInText} />
                 </div>
 
                 <div className="mt-8 flex w-full flex-col

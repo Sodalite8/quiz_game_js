@@ -1,8 +1,8 @@
 import React from 'react';
 import { SCREENS, Options, INITIAL_OPTIONS, OPTIONS_CONST } from '../../_constants/constants';
-import { changeValues, validateNumber } from '../../_scripts/func';
+import { changeValues, limitToRange } from '../../_scripts/func';
 import { MediumButton, SmallButton } from '../components/Buttons';
-import { RangeAndNumber } from '../components/Ranges';
+import { RangeAndText } from '../components/Ranges';
 
 
 interface Props {
@@ -15,6 +15,10 @@ interface Props {
 
 // Game options
 function Option(props: Props) {
+    const [temp_effect_volume, setTempEffectVolume] =
+        React.useState<string>(String(props.options.effect_volume));
+
+
     // About music volume
     // const changeMusicVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
     //     if (!isNaN(parseInt(e.target.value))) {
@@ -28,20 +32,42 @@ function Option(props: Props) {
 
 
     // About effect volume
-    const changeEffectVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (!isNaN(parseInt(e.target.value))) {
-            changeValues<Options>(props.options, props.setOptions,
-                ["effect_volume"], [parseInt(e.target.value)]);
+    const changeEffectVolumeInRange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const input_str: string = e.target.value,
+            input_num: number = parseInt(e.target.value);
+
+        changeValues<Options>(props.options, props.setOptions,
+            ["effect_volume"], [input_num]);
+        setTempEffectVolume(input_str);
+    };
+    const changeEffectVolumeInText = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const input: string = e.target.value;
+
+        if (/^\d*$/.test(input)) {
+            setTempEffectVolume(input);
         }
     };
-    const validateEffectVolume = () => {
-        validateNumber<Options>(props.options, props.setOptions, "effect_volume", OPTIONS_CONST.min_volume, OPTIONS_CONST.max_volume);
+    const validateEffectVolumeInText = () => {
+        let input_str: string = temp_effect_volume,
+            input_num: number = parseInt(temp_effect_volume);
+
+        if (isNaN(input_num)) {
+            setTempEffectVolume(String(props.options.effect_volume));
+            return;
+        }
+
+        input_num = limitToRange(input_num, OPTIONS_CONST.min_volume,
+            OPTIONS_CONST.max_volume);
+        input_str = String(input_num);
+        changeValues<Options>(props.options, props.setOptions,
+            ["effect_volume"], [input_num]);
+        setTempEffectVolume(input_str);
     };
 
 
     // About animation
     const enableAnimation = () => {
-        changeValues<Options>(props.options, props.setOptions, 
+        changeValues<Options>(props.options, props.setOptions,
             ["animation"], [!props.options.animation]);
     };
 
@@ -91,10 +117,12 @@ function Option(props: Props) {
                         <span className='text-lg'>
                             効果音
                         </span>
-                        <RangeAndNumber min={0} max={100} step={1}
-                            value={props.options.effect_volume}
-                            change={changeEffectVolume}
-                            blur={validateEffectVolume} />
+                        <RangeAndText min={0} max={100} step={1}
+                            range_value={props.options.effect_volume}
+                            range_change={changeEffectVolumeInRange}
+                            text_value={temp_effect_volume}
+                            text_change={changeEffectVolumeInText}
+                            text_blur={validateEffectVolumeInText} />
                     </div>
                 </div>
 

@@ -5,25 +5,25 @@ interface Props {
     min?: number | string;
     max?: number | string;
     step?: number | string;
-    value?: number | string;
-    change?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    blur?: () => void;
+    range_value?: number;
+    range_change?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    range_blur?: () => void;
+    text_value?: string;
+    text_change?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    text_blur?: () => void;
 }
 
 
-export function RangeAndNumber(props: Props) {
+export function RangeAndText(props: Props) {
     return (
         <div>
-            <input type="range" className="[&>] h-4 
-                w-64 cursor-pointer 
-                appearance-none rounded-lg border-2 border-orange-400/60 bg-transparent accent-orange-400" 
+            <input type="range" 
                 min={props.min} max={props.max} step={props.step} 
-                value={props.value} 
-                onChange={props.change} />
-            <input type="number" className="" 
-                min={props.min} max={props.max} step={props.step} 
-                value={props.value} 
-                onChange={props.change} onBlur={props.blur} />
+                value={props.range_value} onChange={props.range_change} 
+                onBlur={props.range_blur} />
+            <input type="text" 
+                value={props.text_value} onChange={props.text_change} 
+                onBlur={props.text_blur} />
         </div>
     );
 }
