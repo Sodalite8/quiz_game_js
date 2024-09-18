@@ -27,8 +27,8 @@ export interface OptionsConst {
     min_volume: number;
 }
 export const OPTIONS_CONST: OptionsConst = {
-    max_volume: 100,
-    min_volume: 0
+    min_volume: 0,
+    max_volume: 100
 } as const;
 
 

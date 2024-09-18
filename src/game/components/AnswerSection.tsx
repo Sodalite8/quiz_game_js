@@ -46,7 +46,6 @@ function AnswerSection(props: Props) {
         props.setAnswered(false);
         props.setCorrect(false);
         props.setCurrentQuiz(props.current_quiz + 1);
-        console.log(props.quiz_results);
     };
 
 
