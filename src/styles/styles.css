@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .animation-button {
+        box-shadow: 0px 4px orangered;
+    }
+
+    .animation-button:active {
+        box-shadow: none;
+        position: relative;
+        top: 4px;
+    }
+}

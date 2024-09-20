@@ -18,13 +18,5 @@ module.exports = {
             },
         },
     },
-    plugins: [
-        function ({ addUtilities }) {
-            addUtilities({
-                '.normal-range-slider::-webkit-slider-thumb': {
-                    
-                }
-            })
-        }
-    ],
+    plugins: [],
 }
