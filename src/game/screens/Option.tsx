@@ -147,7 +147,8 @@ function Option(props: Props) {
                     justify-center p-4'>
                     <SmallButton
                         click={resetOptions}
-                        text={'ゲーム設定\nリセット'} />
+                        text={'ゲーム設定\nリセット'} 
+                        animation={props.options.animation} />
                 </div>
             </div>
 
@@ -157,7 +158,8 @@ function Option(props: Props) {
                 border-yellow-400/60 p-4'>
                 <MediumButton
                     click={() => props.setScreen(SCREENS.TITLE)}
-                    text='タイトルに戻る' />
+                    text='タイトルに戻る'
+                    animation={props.options.animation} />
             </div>
         </>
     );

@@ -1,11 +1,12 @@
 import React from "react"
-import { INITIAL_QUIZ_RESULTS, QuizProblem, QuizResults, SCREENS } from "../../_constants/constants";
+import { INITIAL_QUIZ_RESULTS, Options, QuizProblem, QuizResults, SCREENS } from "../../_constants/constants";
 import { MediumButton } from "../components/Buttons";
 
 
 interface Props {
     screen: number;
     setScreen: React.Dispatch<React.SetStateAction<number>>;
+    options: Options;
     current_quiz: number;
     setCurrentQuiz: React.Dispatch<React.SetStateAction<number>>;
     quiz_problems: QuizProblem[];
@@ -62,10 +63,12 @@ function Result(props: Props) {
                 p-4'>
                 <MediumButton
                     click={exitQuiz}
-                    text="問題設定に戻る" />
+                    text="問題設定に戻る" 
+                    animation={props.options.animation} />
                 <MediumButton
                     click={() => props.setScreen(SCREENS.TITLE)}
-                    text='タイトルに戻る' />
+                    text='タイトルに戻る' 
+                    animation={props.options.animation} />
             </div>
         </>
     );

@@ -1,11 +1,12 @@
 import React from 'react';
-import { SCREENS } from '../../_constants/constants';
+import { Options, SCREENS } from '../../_constants/constants';
 import { LargeButton } from '../components/Buttons';
 
 
 interface Props {
     screen: number;
     setScreen: React.Dispatch<React.SetStateAction<number>>;
+    options: Options;
 }
 
 
@@ -25,13 +26,16 @@ function Title(props: Props) {
                 flex-col items-center justify-center p-4'>
                 <LargeButton
                     click={() => props.setScreen(SCREENS.GAME0)}
-                    text="スタート" />
+                    text="スタート" 
+                    animation={props.options.animation} />
                 <LargeButton
                     click={() => props.setScreen(SCREENS.LIST0)}
-                    text="図鑑" />
+                    text="図鑑" 
+                    animation={props.options.animation} />
                 <LargeButton
                     click={() => props.setScreen(SCREENS.OPTION)}
-                    text="ゲーム設定" />
+                    text="ゲーム設定" 
+                    animation={props.options.animation} />
             </div>
         </>
     );

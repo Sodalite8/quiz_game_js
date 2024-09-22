@@ -1,5 +1,5 @@
 import React from "react";
-import { QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_constants/constants";
+import { Options, QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_constants/constants";
 import { changeValues, limitToRange } from "../../_scripts/func";
 import { createProblems } from "../scripts/createProblems";
 import { MediumButton } from "../components/Buttons";
@@ -9,6 +9,7 @@ import { RangeAndText } from "../components/Ranges";
 interface Props {
     screen: number;
     setScreen: React.Dispatch<React.SetStateAction<number>>;
+    options: Options;
     quiz_options: QuizOptions;
     setQuizOptions: React.Dispatch<React.SetStateAction<QuizOptions>>;
     current_quiz: number;
@@ -116,7 +117,7 @@ function QuizOption(props: Props) {
                 <div className="mt-8 flex w-full flex-col
                     items-center justify-center p-4">
                     <MediumButton click={startQuiz}
-                        text="クイズスタート" />
+                        text="クイズスタート" animation={props.options.animation} />
                 </div>
             </div>
 
@@ -126,7 +127,7 @@ function QuizOption(props: Props) {
                 border-yellow-400/60 p-4'>
                 <MediumButton
                     click={() => props.setScreen(SCREENS.TITLE)}
-                    text='タイトルに戻る' />
+                    text='タイトルに戻る' animation={props.options.animation} />
             </div>
         </>
     );
