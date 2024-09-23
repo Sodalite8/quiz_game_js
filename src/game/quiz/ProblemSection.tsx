@@ -21,7 +21,8 @@ function ProblemSection(props: Props) {
                     className='h-flag-h border-4 border-yellow-400/60 
                     object-cover'
                     src={`./images/flags/flag${props.quiz_problems[props.current_quiz].problem_id}.png`}
-                    alt="problem_img" />
+                    alt="problem_img"
+                />
             </div>
         </div>
     );

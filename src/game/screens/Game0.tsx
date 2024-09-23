@@ -30,51 +30,48 @@ function Game0(props: Props) {
     const renderGame = () => {
         if (current_quiz == -1) {
             return (
-                <>
-                    <QuizOption
-                        screen={props.screen}
-                        setScreen={props.setScreen}
-                        options={props.options}
-                        quiz_options={props.quiz_options}
-                        setQuizOptions={props.setQuizOptions}
-                        current_quiz={current_quiz}
-                        setCurrentQuiz={setCurrentQuiz}
-                        quiz_problems={quiz_problems}
-                        setQuizProblems={setQuizProblems} />
-                </>
+                <QuizOption
+                    screen={props.screen}
+                    setScreen={props.setScreen}
+                    options={props.options}
+                    quiz_options={props.quiz_options}
+                    setQuizOptions={props.setQuizOptions}
+                    current_quiz={current_quiz}
+                    setCurrentQuiz={setCurrentQuiz}
+                    quiz_problems={quiz_problems}
+                    setQuizProblems={setQuizProblems}
+                />
             );
         }
 
         else if (current_quiz >= 0 && current_quiz < props.quiz_options.problems_num) {
             return (
-                <>
-                    <Quiz
-                        options={props.options}
-                        quiz_options={props.quiz_options}
-                        current_quiz={current_quiz}
-                        setCurrentQuiz={setCurrentQuiz}
-                        quiz_problems={quiz_problems}
-                        setQuizProblems={setQuizProblems}
-                        quiz_results={quiz_results}
-                        setQuizResults={setQuizResults} />
-                </>
+                <Quiz
+                    options={props.options}
+                    quiz_options={props.quiz_options}
+                    current_quiz={current_quiz}
+                    setCurrentQuiz={setCurrentQuiz}
+                    quiz_problems={quiz_problems}
+                    setQuizProblems={setQuizProblems}
+                    quiz_results={quiz_results}
+                    setQuizResults={setQuizResults}
+                />
             );
         }
 
         else if (current_quiz === props.quiz_options.problems_num) {
             return (
-                <>
-                    <Result
-                        screen={props.screen}
-                        setScreen={props.setScreen}
-                        options={props.options}
-                        current_quiz={current_quiz}
-                        setCurrentQuiz={setCurrentQuiz}
-                        quiz_problems={quiz_problems}
-                        setQuizProblems={setQuizProblems}
-                        quiz_results={quiz_results}
-                        setQuizResults={setQuizResults} />
-                </>
+                <Result
+                    screen={props.screen}
+                    setScreen={props.setScreen}
+                    options={props.options}
+                    current_quiz={current_quiz}
+                    setCurrentQuiz={setCurrentQuiz}
+                    quiz_problems={quiz_problems}
+                    setQuizProblems={setQuizProblems}
+                    quiz_results={quiz_results}
+                    setQuizResults={setQuizResults}
+                />
             );
         }
 

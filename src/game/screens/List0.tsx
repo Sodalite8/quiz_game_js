@@ -27,7 +27,8 @@ function List0(props: Props) {
                 <>
                     <div
                         className='relative flex h-32 w-full items-center 
-                        justify-center border-b-4 border-yellow-400/60'>
+                        justify-center border-b-4 border-yellow-400/60'
+                    >
                         <h2 className='text-center text-4xl font-bold'>
                             分類を選択
                         </h2>
@@ -37,21 +38,25 @@ function List0(props: Props) {
                     <div className='flex w-full justify-center'>
                         <CategorySelect
                             options={props.options}
-                            setCurrentCategory={setCurrentCategory} />
+                            setCurrentCategory={setCurrentCategory}
+                        />
                     </div>
 
 
                     <div
                         className='absolute top-full flex w-full 
                         -translate-y-full flex-col items-center 
-                        justify-center border-t-4 border-yellow-400/60'>
+                        justify-center border-t-4 border-yellow-400/60'
+                    >
                         <div
                             className='flex w-full items-center justify-center 
-                            py-4'>
+                            py-4'
+                        >
                             <MediumButton
                                 text='タイトルに戻る'
                                 click={() => props.setScreen(SCREENS.TITLE)}
-                                animation={props.options.animation} />
+                                animation={props.options.animation}
+                            />
                         </div>
                     </div>
                 </>
@@ -64,7 +69,8 @@ function List0(props: Props) {
                 <>
                     <div
                         className='relative flex h-32 w-full items-center 
-                        justify-center border-b-4 border-yellow-400/60'>
+                        justify-center border-b-4 border-yellow-400/60'
+                    >
                         <h2 className='text-center text-4xl font-bold'>
                             旗を選択
                         </h2>
@@ -77,22 +83,26 @@ function List0(props: Props) {
                             current_category={current_category}
                             setCurrentFlag={setCurrentFlag}
                             flag_selected={flag_selected}
-                            setFlagSelected={setFlagSelected} />
+                            setFlagSelected={setFlagSelected}
+                        />
                     </div>
 
 
                     <div
                         className='absolute top-full flex w-full 
                         -translate-y-full flex-col items-center 
-                        justify-center border-t-4 border-yellow-400/60'>
+                        justify-center border-t-4 border-yellow-400/60'
+                    >
                         <div
                             className='flex w-full items-center justify-center 
-                            py-4'>
+                            py-4'
+                        >
                             <MediumButton
                                 text='分類選択に戻る'
                                 disable={flag_selected}
                                 click={() => setCurrentCategory(-1)}
-                                animation={props.options.animation} />
+                                animation={props.options.animation}
+                            />
                         </div>
                     </div>
 

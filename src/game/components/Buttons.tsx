@@ -33,7 +33,8 @@ export function SmallButton(props: Props) {
             border-orange-300 bg-orange-400 p-1 text-lg font-bold 
             text-white`}
             disabled={props.disable}
-            onClick={props.click}>
+            onClick={props.click}
+        >
             {insertLineBreak(props.text)}
         </button>
     );
@@ -48,7 +49,8 @@ export function MediumButton(props: Props) {
             border-orange-300 bg-orange-400 p-2 text-xl font-bold 
             text-white`}
             disabled={props.disable}
-            onClick={props.click}>
+            onClick={props.click}
+        >
             {insertLineBreak(props.text)}
         </button>
     );
@@ -63,7 +65,8 @@ export function LargeButton(props: Props) {
             border-orange-300 bg-orange-400 p-4 text-2xl font-bold 
             text-white`}
             disabled={props.disable}
-            onClick={props.click}>
+            onClick={props.click}
+        >
             {insertLineBreak(props.text)}
         </button>
     );
@@ -78,7 +81,8 @@ export function CategoryButton(props: Props) {
             rounded-lg border-2 border-orange-300 bg-orange-400 p-2 
             text-xl font-bold text-white`}
             disabled={props.disable}
-            onClick={props.click}>
+            onClick={props.click}
+        >
             {insertLineBreak(props.text)}
         </button>
     );
@@ -103,7 +107,8 @@ export function AnswerButton(props: Props1) {
             text-xl font-bold text-white`}
             name={props.name}
             disabled={props.disable}
-            onClick={props.click}>
+            onClick={props.click}
+        >
             {insertLineBreak(props.text)}
         </button>
     );
@@ -119,7 +124,8 @@ export function FlagButton(props: Props1) {
             text-xl font-bold text-white`}
             name={props.name}
             disabled={props.disable}
-            onClick={props.click}>
+            onClick={props.click}
+        >
             {insertLineBreak(props.text)}
         </button>
     );

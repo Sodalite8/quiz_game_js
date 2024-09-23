@@ -19,7 +19,8 @@ function FlagScreen(props: Props) {
             <div>
                 <img
                     src={`./images/flags/flag${flag_data.id}.png`}
-                    alt="flag" />
+                    alt="flag"
+                />
             </div>
             <div>
                 <h2>

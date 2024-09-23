@@ -30,7 +30,8 @@ function Result(props: Props) {
         <>
             <div
                 className="relative flex h-32 w-full items-center 
-                justify-center border-b-4 border-yellow-400/60">
+                justify-center border-b-4 border-yellow-400/60"
+            >
                 <h2 className="text-4xl font-bold">
                     リザルト
                 </h2>
@@ -39,7 +40,8 @@ function Result(props: Props) {
 
             <div
                 className="relative flex w-full items-center 
-                justify-around px-8">
+                justify-around px-8"
+            >
                 <div className="flex flex-col items-center justify-center p-4">
                     <h3 className="p-2 text-2xl font-bold">
                         スコア
@@ -63,15 +65,18 @@ function Result(props: Props) {
             <div
                 className='absolute top-full flex w-full -translate-y-full 
                 items-center justify-center border-t-4 border-yellow-400/60 
-                p-4'>
+                p-4'
+            >
                 <MediumButton
                     text="問題設定に戻る"
                     click={exitQuiz}
-                    animation={props.options.animation} />
+                    animation={props.options.animation}
+                />
                 <MediumButton
                     text='タイトルに戻る'
                     click={() => props.setScreen(SCREENS.TITLE)}
-                    animation={props.options.animation} />
+                    animation={props.options.animation}
+                />
             </div>
         </>
     );

@@ -39,7 +39,8 @@ function Quiz(props: Props) {
             <div className='relative flex w-full flex-col items-center px-8'>
                 <ProblemSection
                     current_quiz={props.current_quiz}
-                    quiz_problems={props.quiz_problems} />
+                    quiz_problems={props.quiz_problems}
+                />
                 <AnswerSection
                     options={props.options}
                     quiz_options={props.quiz_options}
@@ -51,19 +52,22 @@ function Quiz(props: Props) {
                     answered={answered}
                     setAnswered={setAnswered}
                     correct={correct}
-                    setCorrect={setCorrect} />
+                    setCorrect={setCorrect}
+                />
             </div>
 
 
             <div
                 className='absolute top-full flex w-full -translate-y-full 
                 items-center justify-center border-t-4 border-yellow-400/60 
-                p-4'>
+                p-4'
+            >
                 <SmallButton
                     text='クイズを終了'
                     disable={answered}
                     click={exitQuiz}
-                    animation={props.options.animation} />
+                    animation={props.options.animation}
+                />
             </div>
         </>
     );

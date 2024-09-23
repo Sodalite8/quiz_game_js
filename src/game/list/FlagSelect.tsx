@@ -27,7 +27,8 @@ function FlagSelect(props: Props) {
                 name={String(value.id)}
                 disable={props.flag_selected}
                 click={openFlagScreen}
-                animation={props.options.animation} />
+                animation={props.options.animation}
+            />
         );
     })
 

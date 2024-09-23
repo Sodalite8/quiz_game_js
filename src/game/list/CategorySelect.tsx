@@ -16,7 +16,8 @@ function CategorySelect(props: Props) {
                 key={index}
                 text={value}
                 click={() => props.setCurrentCategory(index)}
-                animation={props.options.animation} />
+                animation={props.options.animation}
+            />
         );
     });
 

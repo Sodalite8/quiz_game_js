@@ -77,7 +77,8 @@ function QuizOption(props: Props) {
         <>
             <div
                 className='relative flex h-32 w-full items-center 
-                justify-center border-b-4 border-yellow-400/60'>
+                justify-center border-b-4 border-yellow-400/60'
+            >
                 <h2 className='text-4xl font-bold'>
                     クイズ設定
                 </h2>
@@ -86,16 +87,19 @@ function QuizOption(props: Props) {
 
             <div
                 className="relative flex w-full flex-col items-center 
-                justify-center px-8">
+                justify-center px-8"
+            >
                 <div className="flex w-full items-center justify-between 
-                    p-4">
+                    p-4"
+                >
                     <span className="p-2 text-lg font-bold">
                         難易度
                     </span>
                     <select
                         name="sel_difficulty"
                         value={props.quiz_options.difficulty}
-                        onChange={changeDifficulty}>
+                        onChange={changeDifficulty}
+                    >
                         <option value="0">Easycore</option>
                         <option value="1">Easy</option>
                         <option value="2">Normal</option>
@@ -107,7 +111,8 @@ function QuizOption(props: Props) {
 
                 <div
                     className="flex w-full items-center justify-between 
-                    p-4">
+                    p-4"
+                >
                     <span className="p-2 text-lg font-bold">
                         問題数
                     </span>
@@ -119,28 +124,33 @@ function QuizOption(props: Props) {
                         range_change={changeProblemsNumInRange}
                         text_value={temp_problems_num}
                         text_change={changeProblemsNumInText}
-                        text_blur={validateProblemsNumInText} />
+                        text_blur={validateProblemsNumInText}
+                    />
                 </div>
 
                 <div
                     className="mt-8 flex w-full flex-col items-center 
-                    justify-center p-4">
+                    justify-center p-4"
+                >
                     <MediumButton
                         click={startQuiz}
                         text="クイズスタート"
-                        animation={props.options.animation} />
+                        animation={props.options.animation}
+                    />
                 </div>
             </div>
 
 
-            <div 
+            <div
                 className='absolute top-full flex w-full -translate-y-full 
                 flex-col items-center justify-center border-t-4 
-                border-yellow-400/60 p-4'>
+                border-yellow-400/60 p-4'
+            >
                 <MediumButton
                     click={() => props.setScreen(SCREENS.TITLE)}
                     text='タイトルに戻る'
-                    animation={props.options.animation} />
+                    animation={props.options.animation}
+                />
             </div>
         </>
     );

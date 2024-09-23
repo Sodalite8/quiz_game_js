@@ -86,7 +86,8 @@ function Option(props: Props) {
         <>
             <div
                 className='relative flex h-32 w-full items-center 
-                justify-center border-b-4 border-yellow-400/60'>
+                justify-center border-b-4 border-yellow-400/60'
+            >
                 <h2 className='text-4xl font-bold'>
                     ゲーム設定
                 </h2>
@@ -95,13 +96,16 @@ function Option(props: Props) {
 
             <div
                 className='relative flex w-full flex-col items-center 
-                justify-center px-8'>
+                justify-center px-8'
+            >
                 <div
                     className='flex w-full flex-col items-center 
-                    justify-center'>
+                    justify-center'
+                >
                     <div
                         className='flex w-full items-center justify-center 
-                        p-4'>
+                        p-4'
+                    >
                         <h3 className='text-2xl font-bold'>
                             音量
                         </h3>
@@ -118,7 +122,8 @@ function Option(props: Props) {
                     </div> */}
                     <div
                         className='flex w-full items-center justify-between 
-                        p-4'>
+                        p-4'
+                    >
                         <span className='text-lg'>
                             効果音
                         </span>
@@ -128,17 +133,20 @@ function Option(props: Props) {
                             range_change={changeEffectVolumeInRange}
                             text_value={temp_effect_volume}
                             text_change={changeEffectVolumeInText}
-                            text_blur={validateEffectVolumeInText} />
+                            text_blur={validateEffectVolumeInText}
+                        />
                     </div>
                 </div>
 
 
                 <div
                     className='my-4 flex w-full flex-col items-center 
-                    justify-center'>
+                    justify-center'
+                >
                     <div
                         className='flex w-full items-center justify-center 
-                        pb-4'>
+                        pb-4'
+                    >
                         <h3 className='text-2xl font-bold'>
                             アニメーション
                         </h3>
@@ -149,18 +157,21 @@ function Option(props: Props) {
                             type="checkbox"
                             name="check_enable_animation"
                             checked={props.options.animation}
-                            onChange={enableAnimation} />
+                            onChange={enableAnimation}
+                        />
                     </div>
                 </div>
 
 
                 <div
                     className='mt-8 flex w-full flex-col items-center 
-                    justify-center p-4'>
+                    justify-center p-4'
+                >
                     <SmallButton
                         text={'ゲーム設定\nリセット'}
                         click={resetOptions}
-                        animation={props.options.animation} />
+                        animation={props.options.animation}
+                    />
                 </div>
             </div>
 
@@ -168,11 +179,13 @@ function Option(props: Props) {
             <div
                 className='absolute top-full flex w-full -translate-y-full 
                 flex-col items-center justify-center border-t-4 
-                border-yellow-400/60 p-4'>
+                border-yellow-400/60 p-4'
+            >
                 <MediumButton
                     text='タイトルに戻る'
                     click={() => props.setScreen(SCREENS.TITLE)}
-                    animation={props.options.animation} />
+                    animation={props.options.animation}
+                />
             </div>
         </>
     );

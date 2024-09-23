@@ -23,19 +23,23 @@ function Title(props: Props) {
 
             <div
                 className='absolute top-full flex w-full -translate-y-full 
-                flex-col items-center justify-center p-4'>
+                flex-col items-center justify-center p-4'
+            >
                 <LargeButton
                     text="スタート"
                     click={() => props.setScreen(SCREENS.GAME0)}
-                    animation={props.options.animation} />
+                    animation={props.options.animation}
+                />
                 <LargeButton
                     text="図鑑"
                     click={() => props.setScreen(SCREENS.LIST0)}
-                    animation={props.options.animation} />
+                    animation={props.options.animation}
+                />
                 <LargeButton
                     text="ゲーム設定"
                     click={() => props.setScreen(SCREENS.OPTION)}
-                    animation={props.options.animation} />
+                    animation={props.options.animation}
+                />
             </div>
         </>
     );

@@ -60,7 +60,8 @@ function AnswerSection(props: Props) {
                 name={String(index)}
                 disable={props.answered}
                 click={answerProblem}
-                animation={props.options.animation} />
+                animation={props.options.animation}
+            />
         );
     });
 
@@ -72,9 +73,12 @@ function AnswerSection(props: Props) {
             </div>
             <div className="absolute">
                 {props.answered &&
-                    <img className="size-64 opacity-80"
+                    <img
+                        className="size-64 opacity-80"
                         src={((props.correct) ? "./images/ui/correct.svg" : "./images/ui/incorrect.svg")}
-                        alt="result_img" />}
+                        alt="result_img"
+                    />
+                }
             </div>
         </div>
     );

@@ -22,12 +22,14 @@ export function RangeAndText(props: Props) {
                 min={props.min} max={props.max} step={props.step}
                 value={props.range_value}
                 onChange={props.range_change}
-                onBlur={props.range_blur} />
+                onBlur={props.range_blur}
+            />
             <input
                 type="text"
                 value={props.text_value}
                 onChange={props.text_change}
-                onBlur={props.text_blur} />
+                onBlur={props.text_blur}
+            />
         </div>
     );
 }
