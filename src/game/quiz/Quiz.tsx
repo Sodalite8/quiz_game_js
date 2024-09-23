@@ -1,6 +1,6 @@
 import React from 'react';
-import ProblemSection from '../components/ProblemSection';
-import AnswerSection from '../components/AnswerSection';
+import ProblemSection from './ProblemSection';
+import AnswerSection from './AnswerSection';
 import { INITIAL_QUIZ_RESULTS, Options, QuizOptions, QuizProblem, QuizResults } from '../../_constants/constants';
 import { SmallButton } from '../components/Buttons';
 

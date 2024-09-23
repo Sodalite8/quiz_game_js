@@ -2,7 +2,7 @@ import React from "react";
 import { Options, OPTIONS_CONST, QuizOptions, QuizProblem, QuizResults } from "../../_constants/constants";
 import { changeValues, roundBy, waitFor } from "../../_scripts/func";
 import { FLAG_DATA_LIST } from "../scripts/readFlagData";
-import { AnswerButton } from "./Buttons";
+import { AnswerButton } from "../components/Buttons";
 import useSound from "use-sound";
 
 
