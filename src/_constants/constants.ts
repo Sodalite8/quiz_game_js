@@ -1,6 +1,5 @@
 // Screen numbers
 export const SCREENS = {
-    WAIT: -1,
     TITLE: 0,
     OPTION: 1,
     GAME0: 10,

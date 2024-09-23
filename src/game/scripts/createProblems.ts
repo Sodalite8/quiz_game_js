@@ -8,7 +8,7 @@ const existSameNameInArray = (str: string, arr: string[]): boolean => {
         if (str === value) {
             return true;
         }
-    })
+    });
     return false;
 };
 
@@ -19,27 +19,35 @@ export const createProblems = (quiz_options: QuizOptions): QuizProblem[] => {
         case 0:
             problems_num_by_level[0] = quiz_options.problems_num;
             break;
+
+
         case 1:
             problems_num_by_level[0] = Math.floor(quiz_options.problems_num * 0.6);
             problems_num_by_level[1] = quiz_options.problems_num - (problems_num_by_level[0] + problems_num_by_level[2]);
             break;
+
+
         case 2:
             problems_num_by_level[1] = Math.floor(quiz_options.problems_num * 0.6);
             problems_num_by_level[0] = Math.floor(quiz_options.problems_num * 0.2);
             problems_num_by_level[2] = quiz_options.problems_num - (problems_num_by_level[0] + problems_num_by_level[1]);
             break;
+
+
         case 3:
             problems_num_by_level[2] = Math.floor(quiz_options.problems_num * 0.6);
             problems_num_by_level[1] = quiz_options.problems_num - (problems_num_by_level[0] + problems_num_by_level[2]);
             break;
+
+
         case 4:
             problems_num_by_level[2] = quiz_options.problems_num;
             break;
+
+
         default:
             throw new Error("Error: Difficulty is invalid.");
     }
-
-
     const flag_ids_by_level: number[][] = FLAG_DATA_LIST_BY_LEVEL.map(list => { return list.map(value => value.id); });
     const flag_ids_by_category: number[][] = FLAG_DATA_LIST_BY_CATEGORY.map(list => { return list.map(value => value.id); });
 

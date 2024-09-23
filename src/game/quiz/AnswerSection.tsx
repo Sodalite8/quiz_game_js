@@ -43,6 +43,7 @@ function AnswerSection(props: Props) {
         else {
             playWrongAnswer();
         }
+
         props.setAnswered(true);
         await waitFor(1000);
 
@@ -71,6 +72,8 @@ function AnswerSection(props: Props) {
             <div className="grid grid-cols-2 gap-x-16 gap-y-4">
                 {answer_buttons}
             </div>
+
+
             <div className="absolute">
                 {props.answered &&
                     <img

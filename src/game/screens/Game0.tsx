@@ -44,6 +44,7 @@ function Game0(props: Props) {
             );
         }
 
+
         else if (current_quiz >= 0 && current_quiz < props.quiz_options.problems_num) {
             return (
                 <Quiz
@@ -58,6 +59,7 @@ function Game0(props: Props) {
                 />
             );
         }
+
 
         else if (current_quiz === props.quiz_options.problems_num) {
             return (
@@ -74,6 +76,7 @@ function Game0(props: Props) {
                 />
             );
         }
+
 
         else {
             return (

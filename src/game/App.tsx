@@ -32,6 +32,7 @@ function App() {
                     />
                 );
 
+
             case SCREENS.OPTION:    // Game options
                 return (
                     <Option
@@ -41,6 +42,7 @@ function App() {
                         setOptions={setOptions}
                     />
                 );
+
 
             case SCREENS.GAME0:     // Quiz
                 return (
@@ -52,6 +54,7 @@ function App() {
                         setQuizOptions={setQuizOptions}
                     />
                 );
+
 
             case SCREENS.LIST0:     // Flags lists
                 return (

@@ -23,4 +23,3 @@ export const FLAG_DATA_LIST_BY_CATEGORY: FlagData[][] = readFlagDataByKey("categ
 
 export const CATEGORIES_LIST: string[] = categories_data_json;
 export const CATEGORIES_NUM: number = categories_data_json.length;
-

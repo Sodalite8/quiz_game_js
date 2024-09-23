@@ -16,6 +16,8 @@ function ProblemSection(props: Props) {
                     問題{props.current_quiz + 1}
                 </h3>
             </div>
+
+
             <div className='flex w-full items-center justify-center'>
                 <img
                     className='h-flag-h border-4 border-yellow-400/60 

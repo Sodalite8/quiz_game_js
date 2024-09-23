@@ -75,7 +75,7 @@ export const limitToRange = (num: number, min_val: number, max_val: number) => {
     num = max(num, min_val);
     num = min(num, max_val);
     return num;
-}
+};
 
 
 // Validate obj[key] and update obj
@@ -105,4 +105,4 @@ export const waitFor = (millisec: number) => {
 export const roundBy = (num: number, place: number) => {
     Math.round(place);
     return Math.round(num * (10 ** 2)) / (10 ** 2);
-}
+};
