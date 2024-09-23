@@ -19,10 +19,9 @@ const insertLineBreak = (str: string | undefined) => {
 
 interface Props {
     text?: string;
-    name?: string;
-    click?: () => void;
-    disable?: boolean;
     animation?: boolean;
+    disable?: boolean;
+    click?: () => void;
 }
 
 
@@ -98,10 +97,10 @@ export function CategoryButton(props: Props) {
 
 interface Props1 {
     text?: string;
-    name?: string;
-    click?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-    disable?: boolean;
     animation?: boolean;
+    disable?: boolean;
+    click?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+    name?: string;
 }
 
 

@@ -21,8 +21,8 @@ function List0(props: Props) {
             <CategoryButton
                 key={index}
                 text={value}
-                click={() => setCurrentCategory(index)}
-                animation={props.options.animation} />
+                animation={props.options.animation}
+                click={() => setCurrentCategory(index)} />
         );
     });
 
@@ -55,9 +55,9 @@ function List0(props: Props) {
                             className='flex w-full items-center justify-center 
                             py-4'>
                             <MediumButton
-                                click={() => props.setScreen(SCREENS.TITLE)}
                                 text='タイトルに戻る'
-                                animation={props.options.animation} />
+                                animation={props.options.animation}
+                                click={() => props.setScreen(SCREENS.TITLE)} />
                         </div>
                     </div>
                 </>
@@ -68,7 +68,7 @@ function List0(props: Props) {
         else if (current_category > -1 && current_category < CATEGORIES_NUM) {
             return (
                 <>
-                    <div 
+                    <div
                         className='relative flex h-32 w-full items-center 
                         justify-center border-b-4 border-yellow-400/60'>
                         <h2 className='text-center text-4xl font-bold'>
@@ -82,17 +82,17 @@ function List0(props: Props) {
                     </div>
 
 
-                    <div 
+                    <div
                         className='absolute top-full flex w-full 
                         -translate-y-full flex-col items-center 
                         justify-center border-t-4 border-yellow-400/60'>
-                        <div 
+                        <div
                             className='flex w-full items-center justify-center 
                             py-4'>
                             <MediumButton
-                                click={() => setCurrentCategory(-1)}
                                 text='分類選択に戻る'
-                                animation={props.options.animation} />
+                                animation={props.options.animation}
+                                click={() => setCurrentCategory(-1)} />
                         </div>
                     </div>
 

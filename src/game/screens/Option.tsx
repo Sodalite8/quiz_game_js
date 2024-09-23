@@ -158,9 +158,9 @@ function Option(props: Props) {
                     className='mt-8 flex w-full flex-col items-center 
                     justify-center p-4'>
                     <SmallButton
-                        click={resetOptions}
                         text={'ゲーム設定\nリセット'}
-                        animation={props.options.animation} />
+                        animation={props.options.animation}
+                        click={resetOptions} />
                 </div>
             </div>
 
@@ -170,9 +170,9 @@ function Option(props: Props) {
                 flex-col items-center justify-center border-t-4 
                 border-yellow-400/60 p-4'>
                 <MediumButton
-                    click={() => props.setScreen(SCREENS.TITLE)}
                     text='タイトルに戻る'
-                    animation={props.options.animation} />
+                    animation={props.options.animation}
+                    click={() => props.setScreen(SCREENS.TITLE)} />
             </div>
         </>
     );

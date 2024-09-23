@@ -60,10 +60,10 @@ function Quiz(props: Props) {
                 items-center justify-center border-t-4 border-yellow-400/60 
                 p-4'>
                 <SmallButton
-                    disable={answered}
-                    click={exitQuiz}
                     text='クイズを終了'
-                    animation={props.options.animation} />
+                    disable={answered}
+                    animation={props.options.animation}
+                    click={exitQuiz} />
             </div>
         </>
     );
