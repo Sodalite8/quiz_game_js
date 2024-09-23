@@ -15,6 +15,8 @@ module.exports = {
                 "flag-h": "320px",
                 "answer-btn-w": "240px",
                 "answer-btn-h": "120px",
+                "category-btn-h": "80px",
+                "category-btn-w": "320px",
             },
         },
     },
