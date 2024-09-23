@@ -27,70 +27,60 @@ interface Props {
 
 export function SmallButton(props: Props) {
     return (
-        <>
-            <button
-                className={`${props.animation ? "animation-button" : ""} 
-                m-2 block w-small-btn-w cursor-pointer rounded-lg border-2 
-                border-orange-300 bg-orange-400 p-1 text-lg font-bold 
-                text-white`}
-                disabled={props.disable}
-                onClick={props.click}>
-                {insertLineBreak(props.text)}
-            </button>
-        </>
+        <button
+            className={`${props.animation ? "animation-button" : ""} 
+            m-2 block w-small-btn-w cursor-pointer rounded-lg border-2 
+            border-orange-300 bg-orange-400 p-1 text-lg font-bold 
+            text-white`}
+            disabled={props.disable}
+            onClick={props.click}>
+            {insertLineBreak(props.text)}
+        </button>
     );
 }
 
 
 export function MediumButton(props: Props) {
     return (
-        <>
-
-            <button
-                className={`${props.animation ? "animation-button" : ""} 
-                m-4 block w-medium-btn-w cursor-pointer rounded-lg border-2 
-                border-orange-300 bg-orange-400 p-2 text-xl font-bold 
-                text-white`}
-                disabled={props.disable}
-                onClick={props.click}>
-                {insertLineBreak(props.text)}
-            </button>
-        </>
+        <button
+            className={`${props.animation ? "animation-button" : ""} 
+            m-4 block w-medium-btn-w cursor-pointer rounded-lg border-2 
+            border-orange-300 bg-orange-400 p-2 text-xl font-bold 
+            text-white`}
+            disabled={props.disable}
+            onClick={props.click}>
+            {insertLineBreak(props.text)}
+        </button>
     );
 }
 
 
 export function LargeButton(props: Props) {
     return (
-        <>
-
-            <button
-                className={`${props.animation ? "animation-button" : ""} 
-                m-8 block w-large-btn-w cursor-pointer rounded-lg border-2 
-                border-orange-300 bg-orange-400 p-4 text-2xl font-bold 
-                text-white`}
-                disabled={props.disable}
-                onClick={props.click}>
-                {insertLineBreak(props.text)}
-            </button>
-        </>
+        <button
+            className={`${props.animation ? "animation-button" : ""} 
+            m-8 block w-large-btn-w cursor-pointer rounded-lg border-2 
+            border-orange-300 bg-orange-400 p-4 text-2xl font-bold 
+            text-white`}
+            disabled={props.disable}
+            onClick={props.click}>
+            {insertLineBreak(props.text)}
+        </button>
     );
 }
 
 
 export function CategoryButton(props: Props) {
     return (
-        <>
-            <button
-                className={`${props.animation ? "animation-button" : ""} 
-                m-2 block h-category-btn-h w-category-btn-w cursor-pointer 
-                rounded-lg border-2 border-orange-300 bg-orange-400 p-2 
-                text-xl font-bold text-white`}
-                disabled={props.disable}
-                onClick={props.click}>
-                {insertLineBreak(props.text)}
-            </button>
-        </>
+        <button
+            className={`${props.animation ? "animation-button" : ""} 
+            m-2 block h-category-btn-h w-category-btn-w cursor-pointer 
+            rounded-lg border-2 border-orange-300 bg-orange-400 p-2 
+            text-xl font-bold text-white`}
+            disabled={props.disable}
+            onClick={props.click}>
+            {insertLineBreak(props.text)}
+        </button>
     );
 }
 
@@ -121,17 +111,15 @@ interface Props1 {
 
 export function AnswerButton(props: Props1) {
     return (
-        <>
-            <button
-                className={`${props.animation ? "animation-button" : ""} 
-                m-2 block h-answer-btn-h w-answer-btn-w cursor-pointer 
-                rounded-lg border-2 border-orange-300 bg-orange-400 p-2 
-                text-xl font-bold text-white`}
-                name={props.name}
-                disabled={props.disable}
-                onClick={props.click}>
-                {insertLineBreak(props.text)}
-            </button>
-        </>
+        <button
+            className={`${props.animation ? "animation-button" : ""} 
+            m-2 block h-answer-btn-h w-answer-btn-w cursor-pointer 
+            rounded-lg border-2 border-orange-300 bg-orange-400 p-2 
+            text-xl font-bold text-white`}
+            name={props.name}
+            disabled={props.disable}
+            onClick={props.click}>
+            {insertLineBreak(props.text)}
+        </button>
     );
 }
