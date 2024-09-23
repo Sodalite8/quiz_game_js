@@ -95,6 +95,21 @@ export function CategoryButton(props: Props) {
 }
 
 
+export function FlagButton(props: Props) {
+    return (
+        <button
+            className={`${props.animation ? "animation-button" : ""} 
+            m-2 block h-category-btn-h w-category-btn-w cursor-pointer 
+            rounded-lg border-2 border-orange-300 bg-orange-400 p-2 
+            text-xl font-bold text-white`}
+            disabled={props.disable}
+            onClick={props.click}>
+            {insertLineBreak(props.text)}
+        </button>
+    );
+}
+
+
 interface Props1 {
     text?: string;
     name?: string;

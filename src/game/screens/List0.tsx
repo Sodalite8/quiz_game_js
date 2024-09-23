@@ -1,7 +1,7 @@
 import React from 'react';
 import { Options, SCREENS } from '../../_constants/constants';
-import { CategoryButton, MediumButton } from '../components/Buttons';
-import { CATEGORIES_LIST, CATEGORIES_NUM } from '../scripts/readFlagData';
+import { CategoryButton, FlagButton, MediumButton } from '../components/Buttons';
+import { CATEGORIES_LIST, CATEGORIES_NUM, FLAG_DATA_LIST_BY_CATEGORY } from '../scripts/readFlagData';
 
 
 interface Props {
@@ -27,6 +27,18 @@ function List0(props: Props) {
     });
 
 
+    const flag_buttons = FLAG_DATA_LIST_BY_CATEGORY.map((list, list_index) => {
+        return list.map((value, index) => {
+            return (
+                <FlagButton
+                    key={index}
+                    text={`${value.name} (${value.period})`}
+                    animation= {props.options.animation} />
+            );
+        });
+    })
+
+
     const renderList = () => {
         if (current_category === -1) {
             return (
@@ -39,12 +51,12 @@ function List0(props: Props) {
                         </h2>
                     </div>
 
+
                     <div className='flex w-full justify-center'>
                         <div className='grid grid-cols-2 gap-x-8 gap-y-4 p-4'>
                             {category_buttons}
                         </div>
                     </div>
-
 
 
                     <div
@@ -77,8 +89,10 @@ function List0(props: Props) {
                     </div>
 
 
-                    <div>
-
+                    <div className='flex w-full justify-center'>
+                        <div className='grid grid-cols-2 gap-x-8 gap-y-4 p-4'>
+                            {flag_buttons[current_category]}
+                        </div>
                     </div>
 
 
