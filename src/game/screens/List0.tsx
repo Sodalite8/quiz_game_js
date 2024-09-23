@@ -21,8 +21,8 @@ function List0(props: Props) {
             <CategoryButton
                 key={index}
                 text={value}
-                animation={props.options.animation}
-                click={() => setCurrentCategory(index)} />
+                click={() => setCurrentCategory(index)}
+                animation={props.options.animation} />
         );
     });
 
@@ -56,8 +56,8 @@ function List0(props: Props) {
                             py-4'>
                             <MediumButton
                                 text='タイトルに戻る'
-                                animation={props.options.animation}
-                                click={() => props.setScreen(SCREENS.TITLE)} />
+                                click={() => props.setScreen(SCREENS.TITLE)}
+                                animation={props.options.animation} />
                         </div>
                     </div>
                 </>
@@ -91,8 +91,8 @@ function List0(props: Props) {
                             py-4'>
                             <MediumButton
                                 text='分類選択に戻る'
-                                animation={props.options.animation}
-                                click={() => setCurrentCategory(-1)} />
+                                click={() => setCurrentCategory(-1)}
+                                animation={props.options.animation} />
                         </div>
                     </div>
 

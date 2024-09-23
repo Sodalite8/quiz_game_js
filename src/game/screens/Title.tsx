@@ -26,16 +26,16 @@ function Title(props: Props) {
                 flex-col items-center justify-center p-4'>
                 <LargeButton
                     text="スタート"
-                    animation={props.options.animation}
-                    click={() => props.setScreen(SCREENS.GAME0)} />
+                    click={() => props.setScreen(SCREENS.GAME0)}
+                    animation={props.options.animation} />
                 <LargeButton
                     text="図鑑"
-                    animation={props.options.animation}
-                    click={() => props.setScreen(SCREENS.LIST0)} />
+                    click={() => props.setScreen(SCREENS.LIST0)}
+                    animation={props.options.animation} />
                 <LargeButton
                     text="ゲーム設定"
-                    animation={props.options.animation}
-                    click={() => props.setScreen(SCREENS.OPTION)} />
+                    click={() => props.setScreen(SCREENS.OPTION)}
+                    animation={props.options.animation} />
             </div>
         </>
     );

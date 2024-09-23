@@ -159,8 +159,8 @@ function Option(props: Props) {
                     justify-center p-4'>
                     <SmallButton
                         text={'ゲーム設定\nリセット'}
-                        animation={props.options.animation}
-                        click={resetOptions} />
+                        click={resetOptions}
+                        animation={props.options.animation} />
                 </div>
             </div>
 
@@ -171,8 +171,8 @@ function Option(props: Props) {
                 border-yellow-400/60 p-4'>
                 <MediumButton
                     text='タイトルに戻る'
-                    animation={props.options.animation}
-                    click={() => props.setScreen(SCREENS.TITLE)} />
+                    click={() => props.setScreen(SCREENS.TITLE)}
+                    animation={props.options.animation} />
             </div>
         </>
     );

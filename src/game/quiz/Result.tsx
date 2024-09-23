@@ -65,12 +65,12 @@ function Result(props: Props) {
                 items-center justify-center border-t-4 border-yellow-400/60 
                 p-4'>
                 <MediumButton
-                    click={exitQuiz}
                     text="問題設定に戻る"
+                    click={exitQuiz}
                     animation={props.options.animation} />
                 <MediumButton
-                    click={() => props.setScreen(SCREENS.TITLE)}
                     text='タイトルに戻る'
+                    click={() => props.setScreen(SCREENS.TITLE)}
                     animation={props.options.animation} />
             </div>
         </>

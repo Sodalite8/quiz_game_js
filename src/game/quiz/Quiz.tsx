@@ -62,8 +62,8 @@ function Quiz(props: Props) {
                 <SmallButton
                     text='クイズを終了'
                     disable={answered}
-                    animation={props.options.animation}
-                    click={exitQuiz} />
+                    click={exitQuiz}
+                    animation={props.options.animation} />
             </div>
         </>
     );
