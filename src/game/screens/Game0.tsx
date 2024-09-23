@@ -31,11 +31,16 @@ function Game0(props: Props) {
         if (current_quiz == -1) {
             return (
                 <>
-                    <QuizOption screen={props.screen} setScreen={props.setScreen} 
+                    <QuizOption
+                        screen={props.screen}
+                        setScreen={props.setScreen}
                         options={props.options}
-                        quiz_options={props.quiz_options} setQuizOptions={props.setQuizOptions}
-                        current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz}
-                        quiz_problems={quiz_problems} setQuizProblems={setQuizProblems} />
+                        quiz_options={props.quiz_options}
+                        setQuizOptions={props.setQuizOptions}
+                        current_quiz={current_quiz}
+                        setCurrentQuiz={setCurrentQuiz}
+                        quiz_problems={quiz_problems}
+                        setQuizProblems={setQuizProblems} />
                 </>
             );
         }
@@ -43,11 +48,15 @@ function Game0(props: Props) {
         else if (current_quiz >= 0 && current_quiz < props.quiz_options.problems_num) {
             return (
                 <>
-                    <Quiz options={props.options} 
+                    <Quiz
+                        options={props.options}
                         quiz_options={props.quiz_options}
-                        current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz}
-                        quiz_problems={quiz_problems} setQuizProblems={setQuizProblems}
-                        quiz_results={quiz_results} setQuizResults={setQuizResults} />
+                        current_quiz={current_quiz}
+                        setCurrentQuiz={setCurrentQuiz}
+                        quiz_problems={quiz_problems}
+                        setQuizProblems={setQuizProblems}
+                        quiz_results={quiz_results}
+                        setQuizResults={setQuizResults} />
                 </>
             );
         }
@@ -55,11 +64,16 @@ function Game0(props: Props) {
         else if (current_quiz === props.quiz_options.problems_num) {
             return (
                 <>
-                    <Result screen={props.screen} setScreen={props.setScreen} 
+                    <Result
+                        screen={props.screen}
+                        setScreen={props.setScreen}
                         options={props.options}
-                        current_quiz={current_quiz} setCurrentQuiz={setCurrentQuiz}
-                        quiz_problems={quiz_problems} setQuizProblems={setQuizProblems}
-                        quiz_results={quiz_results} setQuizResults={setQuizResults} />
+                        current_quiz={current_quiz}
+                        setCurrentQuiz={setCurrentQuiz}
+                        quiz_problems={quiz_problems}
+                        setQuizProblems={setQuizProblems}
+                        quiz_results={quiz_results}
+                        setQuizResults={setQuizResults} />
                 </>
             );
         }
@@ -68,7 +82,7 @@ function Game0(props: Props) {
             return (
                 <>
                     <h2>不正な問題番号に設定されています</h2>
-                    <button onClick={() => { props.setScreen(SCREENS.TITLE) }}></button>
+                    <button onClick={() => { props.setScreen(SCREENS.TITLE) }} />
                 </>
             );
         }

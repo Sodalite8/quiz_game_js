@@ -1,4 +1,3 @@
-import React from 'react';
 import { QuizProblem } from '../../_constants/constants';
 
 
@@ -18,8 +17,10 @@ function ProblemSection(props: Props) {
                 </h3>
             </div>
             <div className='flex w-full items-center justify-center'>
-                <img className='h-flag-h border-4 border-yellow-400/60 object-cover' 
-                    src={`./images/flags/flag${props.quiz_problems[props.current_quiz].problem_id}.png`} 
+                <img
+                    className='h-flag-h border-4 border-yellow-400/60 
+                    object-cover'
+                    src={`./images/flags/flag${props.quiz_problems[props.current_quiz].problem_id}.png`}
                     alt="problem_img" />
             </div>
         </div>

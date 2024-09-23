@@ -24,24 +24,38 @@ function App() {
     const renderScreen = () => {
         switch (screen) {
             case SCREENS.TITLE:     // Game title
-                return <Title screen={screen} setScreen={setScreen}
+                return <Title
+                    screen={screen}
+                    setScreen={setScreen}
                     options={options} />;
+            
             case SCREENS.OPTION:    // Game options
-                return <Option screen={screen} setScreen={setScreen}
-                    options={options} setOptions={setOptions} />;
-            case SCREENS.GAME0:     // Quiz
-                return <Game0 screen={screen} setScreen={setScreen}
+                return <Option
+                    screen={screen}
+                    setScreen={setScreen}
                     options={options}
-                    quiz_options={quiz_options} setQuizOptions={setQuizOptions} />;
+                    setOptions={setOptions} />;
+            
+            case SCREENS.GAME0:     // Quiz
+                return <Game0
+                    screen={screen}
+                    setScreen={setScreen}
+                    options={options}
+                    quiz_options={quiz_options}
+                    setQuizOptions={setQuizOptions} />;
+            
             case SCREENS.LIST0:     // Flags lists
-                return <List0 screen={screen} setScreen={setScreen}
+                return <List0
+                    screen={screen}
+                    setScreen={setScreen}
                     options={options} />;
         }
     };
 
 
     return (
-        <div className='relative mx-auto my-8 box-content
+        <div
+            className='relative mx-auto my-8 box-content
             h-game-height w-game-width rounded-lg border-4
             border-yellow-400/60 bg-yellow-50'>
             {renderScreen()}

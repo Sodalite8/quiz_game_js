@@ -55,11 +55,12 @@ function AnswerSection(props: Props) {
     const answer_buttons = props.quiz_problems[props.current_quiz].choice_ids.map((id, index) => {
         return (
             <>
-                <AnswerButton key={4 * props.current_quiz + index} 
+                <AnswerButton
+                    key={4 * props.current_quiz + index}
                     text={`${FLAG_DATA_LIST[id].name}(${FLAG_DATA_LIST[id].period})`}
                     name={String(index)}
                     disable={props.answered}
-                    click={answerProblem} 
+                    click={answerProblem}
                     animation={props.options.animation} />
             </>
         );

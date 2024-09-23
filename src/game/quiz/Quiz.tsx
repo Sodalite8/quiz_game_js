@@ -37,28 +37,32 @@ function Quiz(props: Props) {
     return (
         <>
             <div className='relative flex w-full flex-col items-center px-8'>
-                <ProblemSection current_quiz={props.current_quiz}
+                <ProblemSection
+                    current_quiz={props.current_quiz}
                     quiz_problems={props.quiz_problems} />
-                <AnswerSection options={props.options} 
-                    quiz_options={props.quiz_options} 
+                <AnswerSection
+                    options={props.options}
+                    quiz_options={props.quiz_options}
                     current_quiz={props.current_quiz}
                     setCurrentQuiz={props.setCurrentQuiz}
                     quiz_problems={props.quiz_problems}
-                    quiz_results={props.quiz_results} 
-                    setQuizResults={props.setQuizResults} 
-                    answered={answered} 
+                    quiz_results={props.quiz_results}
+                    setQuizResults={props.setQuizResults}
+                    answered={answered}
                     setAnswered={setAnswered}
                     correct={correct}
                     setCorrect={setCorrect} />
             </div>
 
 
-            <div className='absolute top-full flex w-full -translate-y-full 
+            <div
+                className='absolute top-full flex w-full -translate-y-full 
                 items-center justify-center border-t-4 border-yellow-400/60 
                 p-4'>
-                <SmallButton disable={answered}
+                <SmallButton
+                    disable={answered}
                     click={exitQuiz}
-                    text='クイズを終了' 
+                    text='クイズを終了'
                     animation={props.options.animation} />
             </div>
         </>
