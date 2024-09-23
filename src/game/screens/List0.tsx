@@ -1,7 +1,10 @@
 import React from 'react';
 import { Options, SCREENS } from '../../_constants/constants';
-import { CategoryButton, FlagButton, MediumButton } from '../components/Buttons';
-import { CATEGORIES_LIST, CATEGORIES_NUM, FLAG_DATA_LIST_BY_CATEGORY } from '../scripts/readFlagData';
+import { MediumButton } from '../components/Buttons';
+import { CATEGORIES_NUM } from '../scripts/readFlagData';
+import CategorySelect from '../list/CategorySelect';
+import FlagSelect from '../list/FlagSelect';
+import FlagScreenSection from '../list/FlagScreenSection';
 
 
 interface Props {
@@ -14,29 +17,8 @@ interface Props {
 // Old flags` lists
 function List0(props: Props) {
     const [current_category, setCurrentCategory] = React.useState<number>(-1);
-
-
-    const category_buttons = CATEGORIES_LIST.map((value, index) => {
-        return (
-            <CategoryButton
-                key={index}
-                text={value}
-                click={() => setCurrentCategory(index)}
-                animation={props.options.animation} />
-        );
-    });
-
-
-    const flag_buttons = FLAG_DATA_LIST_BY_CATEGORY.map((list, list_index) => {
-        return list.map((value, index) => {
-            return (
-                <FlagButton
-                    key={index}
-                    text={`${value.name} (${value.period})`}
-                    animation= {props.options.animation} />
-            );
-        });
-    })
+    const [current_flag, setCurrentFlag] = React.useState<number>(-1);
+    const [flag_selected, setFlagSelected] = React.useState<boolean>(false);
 
 
     const renderList = () => {
@@ -53,9 +35,9 @@ function List0(props: Props) {
 
 
                     <div className='flex w-full justify-center'>
-                        <div className='grid grid-cols-2 gap-x-8 gap-y-4 p-4'>
-                            {category_buttons}
-                        </div>
+                        <CategorySelect
+                            options={props.options}
+                            setCurrentCategory={setCurrentCategory} />
                     </div>
 
 
@@ -90,9 +72,12 @@ function List0(props: Props) {
 
 
                     <div className='flex w-full justify-center'>
-                        <div className='grid grid-cols-2 gap-x-8 gap-y-4 p-4'>
-                            {flag_buttons[current_category]}
-                        </div>
+                        <FlagSelect
+                            options={props.options}
+                            current_category={current_category}
+                            setCurrentFlag={setCurrentFlag}
+                            flag_selected={flag_selected}
+                            setFlagSelected={setFlagSelected} />
                     </div>
 
 
@@ -105,11 +90,21 @@ function List0(props: Props) {
                             py-4'>
                             <MediumButton
                                 text='分類選択に戻る'
+                                disable={flag_selected}
                                 click={() => setCurrentCategory(-1)}
                                 animation={props.options.animation} />
                         </div>
                     </div>
 
+
+                    <div>
+                        <FlagScreenSection
+                            options={props.options}
+                            current_flag={current_flag}
+                            setCurrentFlag={setCurrentFlag}
+                            setFlagSelected={setFlagSelected}
+                        />
+                    </div>
                 </>
             );
         }
