@@ -584,9 +584,9 @@ video {
   margin-right: auto;
 }
 
-.my-32 {
-  margin-top: 8rem;
-  margin-bottom: 8rem;
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .my-4 {
@@ -597,11 +597,6 @@ video {
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.my-16 {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
 }
 
 .mt-8 {
@@ -661,6 +656,10 @@ video {
   height: 800px;
 }
 
+.h-flag-btn-h {
+  height: 120px;
+}
+
 .max-h-center-h {
   max-height: 556px;
 }
@@ -695,6 +694,10 @@ video {
 
 .w-small-btn-w {
   width: 160px;
+}
+
+.w-flag-btn-w {
+  width: 320px;
 }
 
 .-translate-y-full {

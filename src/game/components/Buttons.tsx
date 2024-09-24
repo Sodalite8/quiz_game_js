@@ -119,7 +119,7 @@ export function FlagButton(props: Props1) {
     return (
         <button
             className={`${props.animation ? "animation-button" : ""} 
-            m-2 block h-category-btn-h w-category-btn-w cursor-pointer 
+            m-2 block h-flag-btn-h w-flag-btn-w cursor-pointer 
             rounded-lg border-2 border-orange-300 bg-orange-400 p-2 
             text-xl font-bold text-white`}
             name={props.name}
