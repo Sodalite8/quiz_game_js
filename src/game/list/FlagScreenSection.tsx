@@ -7,6 +7,7 @@ interface Props {
     options: Options;
     current_flag: number;
     setCurrentFlag: React.Dispatch<React.SetStateAction<number>>;
+    flag_selected: boolean;
     setFlagSelected: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -26,6 +27,7 @@ function FlagScreenSection(props: Props) {
             return (
                 <FlagScreen
                     flag_id={props.current_flag}
+                    flag_selected={props.flag_selected}
                     closeFlagScreen={closeFlagScreen}
                     animation={props.options.animation}
                 />

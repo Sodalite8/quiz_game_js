@@ -35,7 +35,9 @@ function List0(props: Props) {
                     </div>
 
 
-                    <div className='flex w-full justify-center'>
+                    <div className='flex max-h-center-h flex-col items-center 
+                        overflow-auto'
+                    >
                         <CategorySelect
                             options={props.options}
                             setCurrentCategory={setCurrentCategory}
@@ -77,7 +79,9 @@ function List0(props: Props) {
                     </div>
 
 
-                    <div className='flex w-full justify-center'>
+                    <div className='flex max-h-center-h flex-col items-center 
+                        overflow-auto'
+                    >
                         <FlagSelect
                             options={props.options}
                             current_category={current_category}
@@ -107,11 +111,12 @@ function List0(props: Props) {
                     </div>
 
 
-                    <div>
+                    <div className='modal_class'>
                         <FlagScreenSection
                             options={props.options}
                             current_flag={current_flag}
                             setCurrentFlag={setCurrentFlag}
+                            flag_selected={flag_selected}
                             setFlagSelected={setFlagSelected}
                         />
                     </div>

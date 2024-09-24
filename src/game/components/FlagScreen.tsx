@@ -1,3 +1,4 @@
+import Modal from "react-modal";
 import { FlagData } from "../../_constants/constants";
 import { SmallButton } from "./Buttons";
 import { FLAG_DATA_LIST } from "../scripts/readFlagData";
@@ -6,6 +7,7 @@ import { FLAG_DATA_LIST } from "../scripts/readFlagData";
 interface Props {
     flag_id: number;
     closeFlagScreen: () => void;
+    flag_selected: boolean;
     animation: boolean;
 }
 
@@ -15,28 +17,40 @@ function FlagScreen(props: Props) {
 
 
     return (
-        <>
-            <div>
+        <Modal
+            isOpen={props.flag_selected}
+            onRequestClose={props.closeFlagScreen}
+            ariaHideApp={false}
+            className="relative mx-auto my-16 box-content flex h-flagscreen-h 
+            w-flagscreen-w flex-col items-center rounded-lg border-4 
+            border-yellow-400/60 bg-yellow-50"
+        >
+            <div className="flex w-full items-center justify-center p-8">
                 <img
+                    className="h-flagscreen-flag-h border-4 border-yellow-400/60 
+                    object-cover"
                     src={`./images/flags/flag${flag_data.id}.png`}
                     alt="flag"
                 />
             </div>
-            <div>
-                <h2>
-                    {flag_data.name}
+            <div className="flex w-full items-center justify-center p-8">
+                <h2 className="font-bold text-4xl text-center">
+                    {flag_data.name} ({flag_data.period})
                 </h2>
             </div>
 
 
-            <div>
+            <div className="absolute top-full flex w-full -translate-y-full 
+                items-center justify-center border-t-4 border-yellow-400/60 
+                p-4"
+            >
                 <SmallButton
                     text='戻る'
                     click={props.closeFlagScreen}
                     animation={props.animation}
                 />
             </div>
-        </>
+        </Modal>
     );
 }
 
