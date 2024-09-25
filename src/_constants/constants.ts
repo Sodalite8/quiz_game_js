@@ -99,9 +99,7 @@ export const INITIAL_FLAG_DATA: FlagData = {
 // Flag data constants
 export interface FlagDataConst {
     level_num: number;
-    category_num: number;
 }
 export const FLAG_DATA_CONST: FlagDataConst = {
-    level_num: 3,
-    category_num: 5
+    level_num: 3
 } as const;

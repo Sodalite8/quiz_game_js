@@ -42,7 +42,7 @@
     {
         "id": 5,
         "available": true,
-        "name": "フランス立憲王国 /\nフランス共和国",
+        "name": "フランス立憲王国 / フランス共和国",
         "period": "1791-1794",
         "level": 0,
         "category": 0
@@ -74,7 +74,7 @@
     {
         "id": 9,
         "available": true,
-        "name": "オーストリア帝国 /\nオーストリア＝ハンガリー帝国",
+        "name": "オーストリア帝国 / オーストリア＝ハンガリー帝国",
         "period": "1804-1918",
         "level": 0,
         "category": 0
@@ -650,7 +650,7 @@
     {
         "id": 81,
         "available": true,
-        "name": "スーダン共和国 /\nスーダン民主共和国",
+        "name": "スーダン共和国 / スーダン民主共和国",
         "period": "1956-1970",
         "level": 2,
         "category": 2
@@ -770,7 +770,7 @@
     {
         "id": 96,
         "available": true,
-        "name": "南アフリカ連邦 /\n南アフリカ共和国",
+        "name": "南アフリカ連邦 / 南アフリカ共和国",
         "period": "1928-1994",
         "level": 0,
         "category": 2
@@ -794,7 +794,7 @@
     {
         "id": 99,
         "available": true,
-        "name": "マリ連邦 /\nマリ共和国",
+        "name": "マリ連邦 / マリ共和国",
         "period": "1959-1961",
         "level": 2,
         "category": 2
@@ -1002,7 +1002,7 @@
     {
         "id": 125,
         "available": true,
-        "name": "ヌエバ・グラナダ共和国 /\nグラナダ連合",
+        "name": "ヌエバ・グラナダ共和国 / グラナダ連合",
         "period": "1834-1861",
         "level": 1,
         "category": 3
@@ -1281,7 +1281,7 @@
     },
     {
         "id": 160,
-        "available": false,
+        "available": true,
         "name": "イギリス領インド帝国",
         "period": "1880-1947",
         "level": 1,
@@ -1289,7 +1289,7 @@
     },
     {
         "id": 161,
-        "available": false,
+        "available": true,
         "name": "イギリス領ビルマ",
         "period": "1939-1941, 1945-1948",
         "level": 2,
@@ -1297,7 +1297,7 @@
     },
     {
         "id": 162,
-        "available": false,
+        "available": true,
         "name": "イギリス領香港",
         "period": "1876-1941, 1945-1955",
         "level": 2,
@@ -1305,7 +1305,7 @@
     },
     {
         "id": 163,
-        "available": false,
+        "available": true,
         "name": "イギリス領香港",
         "period": "1955-1959",
         "level": 2,
@@ -1313,7 +1313,7 @@
     },
     {
         "id": 164,
-        "available": false,
+        "available": true,
         "name": "イギリス領香港",
         "period": "1959-1997",
         "level": 0,
@@ -1321,7 +1321,7 @@
     },
     {
         "id": 165,
-        "available": false,
+        "available": true,
         "name": "海峡植民地",
         "period": "1925-1946",
         "level": 2,
@@ -1329,15 +1329,15 @@
     },
     {
         "id": 166,
-        "available": false,
-        "name": "マレー連合州, マラヤ連合, マラヤ連邦,",
+        "available": true,
+        "name": "マレー連合州 / マラヤ連合 / マラヤ連邦",
         "period": "1896-1942, 1945-1950",
         "level": 2,
         "category": 4
     },
     {
         "id": 167,
-        "available": false,
+        "available": true,
         "name": "イギリス領北ボルネオ",
         "period": "1902-1942, 1945-1946",
         "level": 2,
@@ -1345,7 +1345,7 @@
     },
     {
         "id": 168,
-        "available": false,
+        "available": true,
         "name": "北ボルネオ直轄植民地",
         "period": "1948-1963",
         "level": 2,
@@ -1353,7 +1353,7 @@
     },
     {
         "id": 169,
-        "available": false,
+        "available": true,
         "name": "アデン植民地",
         "period": "1937-1963",
         "level": 2,
@@ -1361,7 +1361,7 @@
     },
     {
         "id": 170,
-        "available": false,
+        "available": true,
         "name": "南アラビア連邦",
         "period": "1962-1967",
         "level": 2,
@@ -1369,131 +1369,131 @@
     },
     {
         "id": 171,
-        "available": false,
-        "name": "イギリス・エジプト領スーダン",
-        "period": "1922-1956",
-        "level": 2,
-        "category": 4
-    },
-    {
-        "id": 172,
-        "available": false,
+        "available": true,
         "name": "イギリス保護領東アフリカ",
         "period": "1895-1921",
         "level": 2,
         "category": 4
     },
     {
-        "id": 173,
-        "available": false,
+        "id": 172,
+        "available": true,
         "name": "ケニア植民地及び保護領",
         "period": "1921-1963",
         "level": 2,
         "category": 4
     },
     {
-        "id": 174,
-        "available": false,
+        "id": 173,
+        "available": true,
         "name": "イギリス領タンガニーカ",
         "period": "1923-1961",
         "level": 2,
         "category": 4
     },
     {
-        "id": 175,
-        "available": false,
+        "id": 174,
+        "available": true,
         "name": "イギリス保護領ウガンダ",
         "period": "1914-1962",
         "level": 2,
         "category": 4
     },
     {
-        "id": 176,
-        "available": false,
+        "id": 175,
+        "available": true,
         "name": "イギリス保護領ソマリランド",
         "period": "1903-1950",
         "level": 2,
         "category": 4
     },
     {
+        "id": 176,
+        "available": true,
+        "name": "イギリス保護領中央アフリカ",
+        "period": "1893-1914",
+        "level": 2,
+        "category": 4
+    },
+    {
         "id": 177,
-        "available": false,
+        "available": true,
         "name": "イギリス保護領ニヤサランド",
-        "period": "1925-1964",
+        "period": "1925-1953, 1963-1964",
         "level": 2,
         "category": 4
     },
     {
         "id": 178,
-        "available": false,
+        "available": true,
         "name": "イギリス保護領北ローデシア",
-        "period": "1924-1964",
+        "period": "1924-1953, 1963-1964",
         "level": 2,
         "category": 4
     },
     {
         "id": 179,
-        "available": false,
+        "available": true,
         "name": "イギリス領南ローデシア",
-        "period": "1924-1964",
+        "period": "1924-1953, 1963-1964",
         "level": 2,
         "category": 4
     },
     {
         "id": 180,
-        "available": false,
+        "available": true,
+        "name": "ローデシア・ニヤサランド連邦",
+        "period": "1953-1963",
+        "level": 2,
+        "category": 4
+    },
+    {
+        "id": 181,
+        "available": true,
         "name": "イギリス領西アフリカ",
         "period": "1821-1850, 1866-1888",
         "level": 0,
         "category": 4
     },
     {
-        "id": 181,
-        "available": false,
+        "id": 182,
+        "available": true,
         "name": "ガンビア植民地及び保護領",
         "period": "1889-1965",
         "level": 1,
         "category": 4
     },
     {
-        "id": 182,
-        "available": false,
+        "id": 183,
+        "available": true,
         "name": "シエラレオネ植民地及び保護領",
         "period": "1916-1961",
         "level": 2,
         "category": 4
     },
     {
-        "id": 183,
-        "available": false,
+        "id": 184,
+        "available": true,
         "name": "イギリス領ゴールドコースト",
         "period": "1821-1957",
         "level": 0,
         "category": 4
     },
     {
-        "id": 184,
-        "available": false,
+        "id": 185,
+        "available": true,
         "name": "ナイジェリア植民地及び保護領",
-        "period": "1914-1952",
+        "period": "1952-1960",
         "level": 0,
         "category": 4
     },
     {
-        "id": 185,
-        "available": false,
+        "id": 186,
+        "available": true,
         "name": "イギリス領キプロス",
         "period": "1922-1960",
         "level": 2,
         "category": 4
-    },
-    {
-        "id": 186,
-        "available": false,
-        "name": "",
-        "period": "",
-        "level": -1,
-        "category": -1
     },
     {
         "id": 187,
@@ -1601,7 +1601,7 @@
     },
     {
         "id": 200,
-        "available": false,
+        "available": true,
         "name": "ソビエト社会主義共和国連邦",
         "period": "1955-1991",
         "level": 0,
@@ -1609,7 +1609,7 @@
     },
     {
         "id": 201,
-        "available": false,
+        "available": true,
         "name": "ドイツ民主共和国",
         "period": "1959-1990",
         "level": 0,
@@ -1617,7 +1617,7 @@
     },
     {
         "id": 202,
-        "available": false,
+        "available": true,
         "name": "ルーマニア社会主義共和国",
         "period": "1965-1989",
         "level": 0,
@@ -1625,7 +1625,7 @@
     },
     {
         "id": 203,
-        "available": false,
+        "available": true,
         "name": "ユーゴスラビア社会主義連邦共和国",
         "period": "1946-1992",
         "level": 0,
@@ -1633,7 +1633,7 @@
     },
     {
         "id": 204,
-        "available": false,
+        "available": true,
         "name": "ロシア・ソビエト連邦社会主義共和国",
         "period": "1954-1991",
         "level": 2,
@@ -1641,7 +1641,7 @@
     },
     {
         "id": 205,
-        "available": false,
+        "available": true,
         "name": "ウクライナ・ソビエト社会主義共和国",
         "period": "1950-1992",
         "level": 2,
@@ -1649,7 +1649,7 @@
     },
     {
         "id": 206,
-        "available": false,
+        "available": true,
         "name": "白ロシア・ソビエト社会主義共和国",
         "period": "1951-1991",
         "level": 2,
@@ -1657,15 +1657,15 @@
     },
     {
         "id": 207,
-        "available": false,
+        "available": true,
         "name": "ザカフカース社会主義連邦ソビエト共和国",
-        "period": "1922-1936",
+        "period": "1925-1936",
         "level": 2,
         "category": 5
     },
     {
         "id": 208,
-        "available": false,
+        "available": true,
         "name": "アゼルバイジャン・ソビエト社会主義共和国",
         "period": "1952-1991",
         "level": 2,
@@ -1673,7 +1673,7 @@
     },
     {
         "id": 209,
-        "available": false,
+        "available": true,
         "name": "アルメニア・ソビエト社会主義共和国",
         "period": "1952-1990",
         "level": 2,
@@ -1681,7 +1681,7 @@
     },
     {
         "id": 210,
-        "available": false,
+        "available": true,
         "name": "グルジア・ソビエト社会主義共和国",
         "period": "1951-1990",
         "level": 2,
@@ -1689,7 +1689,7 @@
     },
     {
         "id": 211,
-        "available": false,
+        "available": true,
         "name": "ウズベク・ソビエト社会主義共和国",
         "period": "1952-1991",
         "level": 2,
@@ -1697,7 +1697,7 @@
     },
     {
         "id": 212,
-        "available": false,
+        "available": true,
         "name": "カザフ・ソビエト社会主義共和国",
         "period": "1953-1991",
         "level": 2,
@@ -1705,7 +1705,7 @@
     },
     {
         "id": 213,
-        "available": false,
+        "available": true,
         "name": "キルギス・ソビエト社会主義共和国",
         "period": "1952-1991",
         "level": 2,
@@ -1713,7 +1713,7 @@
     },
     {
         "id": 214,
-        "available": false,
+        "available": true,
         "name": "タジク・ソビエト社会主義共和国",
         "period": "1953-1991",
         "level": 2,
@@ -1721,7 +1721,7 @@
     },
     {
         "id": 215,
-        "available": false,
+        "available": true,
         "name": "トルクメン・ソビエト社会主義共和国",
         "period": "1973-1991",
         "level": 2,
@@ -1729,7 +1729,7 @@
     },
     {
         "id": 216,
-        "available": false,
+        "available": true,
         "name": "モルダヴィア・ソビエト社会主義共和国",
         "period": "1952-1990",
         "level": 2,
@@ -1737,7 +1737,7 @@
     },
     {
         "id": 217,
-        "available": false,
+        "available": true,
         "name": "エストニア・ソビエト社会主義共和国",
         "period": "1953-1990",
         "level": 2,
@@ -1745,7 +1745,7 @@
     },
     {
         "id": 218,
-        "available": false,
+        "available": true,
         "name": "ラトビア・ソビエト社会主義共和国",
         "period": "1953-1990",
         "level": 2,
@@ -1753,7 +1753,7 @@
     },
     {
         "id": 219,
-        "available": false,
+        "available": true,
         "name": "リトアニア・ソビエト社会主義共和国",
         "period": "1953-1988",
         "level": 2,
