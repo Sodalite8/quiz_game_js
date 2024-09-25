@@ -20,8 +20,7 @@ function ProblemSection(props: Props) {
 
             <div className='flex w-full items-center justify-center'>
                 <img
-                    className='h-flag-h border-4 border-yellow-400/60 
-                    object-cover'
+                    className='gold-border silver-bg h-flag-h object-cover'
                     src={`./images/flags/flag${props.quiz_problems[props.current_quiz].problem_id}.png`}
                     alt="problem_img"
                 />

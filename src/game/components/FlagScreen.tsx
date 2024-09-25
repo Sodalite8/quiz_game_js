@@ -27,8 +27,7 @@ function FlagScreen(props: Props) {
         >
             <div className="flex w-full items-center justify-center p-8">
                 <img
-                    className="h-flagscreen-flag-h border-4 border-yellow-400/60 
-                    object-cover"
+                    className="gold-border silver-bg h-flagscreen-flag-h object-cover"
                     src={`./images/flags/flag${flag_data.id}.png`}
                     alt="flag"
                 />

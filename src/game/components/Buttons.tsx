@@ -127,7 +127,7 @@ export function FlagButton(props: Props1) {
             onClick={props.click}
         >
             <img
-                className="gold-border silver-bg h-flag-btn-flag-h border-4 object-cover "
+                className="gold-border silver-bg h-flag-btn-flag-h object-cover"
                 src={`./images/flags/flag${props.name}.png`}
                 alt="flag"
             />
