@@ -111,7 +111,7 @@ function List0(props: Props) {
                     </div>
 
 
-                    <div className='modal_class'>
+                    <div>
                         <FlagScreenSection
                             options={props.options}
                             current_flag={current_flag}

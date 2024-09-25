@@ -555,6 +555,14 @@ video {
   top: 4px;
 }
 
+.gold-border {
+  border-image: linear-gradient(30deg, #fcc200 0%, #ffcc33 30%, #ffdb58 50%, #fafad2 70%, #fcc200 100%)1;
+}
+
+.silver-bg {
+  background-color: #e5e4e2;
+}
+
 .absolute {
   position: absolute;
 }
@@ -640,6 +648,14 @@ video {
   height: 80px;
 }
 
+.h-flag-btn-flag-h {
+  height: 160px;
+}
+
+.h-flag-btn-h {
+  height: 280px;
+}
+
 .h-flag-h {
   height: 320px;
 }
@@ -656,10 +672,6 @@ video {
   height: 800px;
 }
 
-.h-flag-btn-h {
-  height: 120px;
-}
-
 .max-h-center-h {
   max-height: 556px;
 }
@@ -669,6 +681,10 @@ video {
 }
 
 .w-category-btn-w {
+  width: 320px;
+}
+
+.w-flag-btn-w {
   width: 320px;
 }
 
@@ -694,10 +710,6 @@ video {
 
 .w-small-btn-w {
   width: 160px;
-}
-
-.w-flag-btn-w {
-  width: 320px;
 }
 
 .-translate-y-full {

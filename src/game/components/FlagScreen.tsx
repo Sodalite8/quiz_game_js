@@ -34,7 +34,7 @@ function FlagScreen(props: Props) {
                 />
             </div>
             <div className="flex w-full items-center justify-center p-8">
-                <h2 className="font-bold text-4xl text-center">
+                <h2 className="text-center text-4xl font-bold">
                     {flag_data.name} ({flag_data.period})
                 </h2>
             </div>

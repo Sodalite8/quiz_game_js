@@ -119,14 +119,21 @@ export function FlagButton(props: Props1) {
     return (
         <button
             className={`${props.animation ? "animation-button" : ""} 
-            m-2 block h-flag-btn-h w-flag-btn-w cursor-pointer 
-            rounded-lg border-2 border-orange-300 bg-orange-400 p-2 
-            text-xl font-bold text-white`}
+            m-2 flex h-flag-btn-h w-flag-btn-w cursor-pointer flex-col 
+            items-center justify-between rounded-lg border-2 
+            border-orange-300 bg-orange-400 p-4`}
             name={props.name}
             disabled={props.disable}
             onClick={props.click}
         >
-            {insertLineBreak(props.text)}
+            <img
+                className="gold-border silver-bg h-flag-btn-flag-h border-4 object-cover "
+                src={`./images/flags/flag${props.name}.png`}
+                alt="flag"
+            />
+            <span className="text-xl font-bold text-white">
+                {insertLineBreak(props.text)}
+            </span>
         </button>
     );
 }

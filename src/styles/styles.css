@@ -13,4 +13,12 @@
         position: relative;
         top: 4px;
     }
+
+    .gold-border {
+        border-image: linear-gradient(30deg, #fcc200 0%, #ffcc33 30%, #ffdb58 50%, #fafad2 70%, #fcc200 100%)1;
+    }
+
+    .silver-bg {
+        background-color: #e5e4e2;
+    }
 }
