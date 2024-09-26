@@ -44,12 +44,12 @@ export const INITIAL_QUIZ_OPTIONS: QuizOptions = {
 
 // Quiz options constants
 export interface QuizOptionsConst {
-    max_problems_num: number;
     min_problems_num: number;
+    max_problems_num: number;
 }
 export const QUIZ_OPTIONS_CONST: QuizOptionsConst = {
-    max_problems_num: 40,
-    min_problems_num: 10
+    min_problems_num: 10,
+    max_problems_num: 20
 } as const;
 
 
