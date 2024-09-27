@@ -8,22 +8,22 @@ import Game0 from "./screens/Game0";
 import List0 from "./screens/List0";
 
 
-// App, The top level component of the quiz game
+// クイズゲームの最上位コンポーネント
 function App() {
     /*
-    screen      : Screen number
-    options     : Game options (such as sound volume and animation)
-    quiz_options: Quiz options (such as difficulty and the number of problems)
+    screen      : スクリーン番号
+    options     : ゲーム設定（音量やアニメーションの有効無効化など）
+    quiz_options: クイズ設定（難易度や問題数など）
     */
     const [screen, setScreen] = React.useState<number>(SCREENS.TITLE);
     const [options, setOptions] = React.useState<Options>(INITIAL_OPTIONS);
     const [quiz_options, setQuizOptions] = React.useState<QuizOptions>(INITIAL_QUIZ_OPTIONS);
 
 
-    // Change the screen by var screen
+    // screenによって映し出す画面を変更
     const renderScreen = () => {
         switch (screen) {
-            case SCREENS.TITLE:     // Game title
+            case SCREENS.TITLE:     // タイトル
                 return (
                     <Title
                         screen={screen}
@@ -33,7 +33,7 @@ function App() {
                 );
 
 
-            case SCREENS.OPTION:    // Game options
+            case SCREENS.OPTION:    // ゲーム設定
                 return (
                     <Option
                         screen={screen}
@@ -44,7 +44,7 @@ function App() {
                 );
 
 
-            case SCREENS.GAME0:     // Quiz
+            case SCREENS.GAME0:     // ゲーム画面
                 return (
                     <Game0
                         screen={screen}
@@ -56,7 +56,7 @@ function App() {
                 );
 
 
-            case SCREENS.LIST0:     // Flags lists
+            case SCREENS.LIST0:     // 図鑑
                 return (
                     <List0
                         screen={screen}

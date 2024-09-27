@@ -3,6 +3,7 @@ import { fisherYatesShuffle, getRandomInt } from "../../_scripts/func";
 import { FLAG_DATA_LIST, FLAG_DATA_LIST_BY_CATEGORY, FLAG_DATA_LIST_BY_LEVEL } from "./readFlagData";
 
 
+// arr内にstrと一致する要素が存在した場合true、しない場合falseを返す
 const existSameNameInArray = (str: string, arr: string[]): boolean => {
     arr.forEach((value) => {
         if (str === value) {
@@ -13,8 +14,14 @@ const existSameNameInArray = (str: string, arr: string[]): boolean => {
 };
 
 
+// クイズを作成
 export const createProblems = (quiz_options: QuizOptions): QuizProblem[] => {
-    const problems_num_by_level = Array(3).fill(0);
+    // レベル番号ごとの出題数
+    const problems_num_by_level: number[] = Array(3).fill(0);
+
+
+    // クイズ設定の難易度ごとにレベル番号ごとの出題数を変更することで、
+    // 問題の難易度を調整
     switch (quiz_options.difficulty) {
         case 0:
             problems_num_by_level[0] = quiz_options.problems_num;
@@ -48,6 +55,12 @@ export const createProblems = (quiz_options: QuizOptions): QuizProblem[] => {
         default:
             throw new Error("Error: Difficulty is invalid.");
     }
+
+
+    // レベルごとにidを振り分け
+    // flag_ids_by_level[i]はレベルiの旗のidを持つ
+    // 分類ごとにidを振り分け
+    // flag_ids_by_category[i]は分類iの旗のidを持つ
     const flag_ids_by_level: number[][] = FLAG_DATA_LIST_BY_LEVEL.map(list => { return list.map(value => value.id); });
     const flag_ids_by_category: number[][] = FLAG_DATA_LIST_BY_CATEGORY.map(list => { return list.map(value => value.id); });
 
