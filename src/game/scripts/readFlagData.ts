@@ -16,7 +16,9 @@ const readFlagDataByKey = (key: "level" | "category", size: number): FlagData[][
 };
 
 
+// 旗の分類名リスト
 export const CATEGORIES_LIST: string[] = categories_data_json;
+// 旗の分類名の数
 export const CATEGORIES_NUM: number = categories_data_json.length;
 
 

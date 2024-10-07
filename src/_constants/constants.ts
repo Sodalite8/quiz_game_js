@@ -1,3 +1,4 @@
+// プロジェクト内で使用する定数や型定義
 // Screen numbers
 export const SCREENS = {
     TITLE: 0,

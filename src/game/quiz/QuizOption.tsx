@@ -100,7 +100,7 @@ function QuizOption(props: Props) {
                         value={props.quiz_options.difficulty}
                         onChange={changeDifficulty}
                     >
-                        <option value="0">Easycore</option>
+                        <option value="0">Very Easy</option>
                         <option value="1">Easy</option>
                         <option value="2">Normal</option>
                         <option value="3">Hard</option>
