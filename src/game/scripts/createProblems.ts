@@ -101,8 +101,7 @@ export const createProblems = (quiz_options: QuizOptions): QuizProblem[] => {
             }
 
             // 国名が一致する選択肢を同一問題中に同時に現れないように、スキップ
-            while (FLAG_DATA_LIST[shuffled_list[k]].name === FLAG_DATA_LIST[problem_ids[i]].name ||
-                existSameNameInArray(FLAG_DATA_LIST[shuffled_list[k]].name, Array.from(Array(j), (_, ii) => FLAG_DATA_LIST[choice_ids_list[i][ii]].name))) {
+            while ((FLAG_DATA_LIST[shuffled_list[k]].name === FLAG_DATA_LIST[problem_ids[i]].name) || existSameNameInArray(FLAG_DATA_LIST[shuffled_list[k]].name, Array.from(Array(j), (_, ii) => FLAG_DATA_LIST[choice_ids_list[i][ii]].name))) {
                 k++;
             }
             choice_ids_list[i][j] = shuffled_list[k++];
