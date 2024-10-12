@@ -1,5 +1,11 @@
 // プロジェクト内で使用する定数や型定義
-// Screen numbers
+/**
+ *  スクリーン番号
+ *  TITLE:  タイトル
+ *  OPTION: ゲーム設定
+ *  GAME0:  クイズゲーム
+ *  LIST0:  図巻
+ */
 export const SCREENS = {
     TITLE: 0,
     OPTION: 1,
@@ -8,7 +14,12 @@ export const SCREENS = {
 } as const;
 
 
-// Game options
+/**
+ *  ゲーム設定
+ *  music_volume:   BGM音量
+ *  effect_volume:  効果音音量
+ *  animation:      アニメーション
+ */
 export interface Options {
     music_volume: number;
     effect_volume: number;
@@ -21,10 +32,14 @@ export const INITIAL_OPTIONS: Options = {
 } as const;
 
 
-// Game options constants
+/**
+ *  ゲーム設定定数
+ *  min_volume: 最小音量
+ *  max_volume: 最大音量
+ */
 export interface OptionsConst {
-    max_volume: number;
     min_volume: number;
+    max_volume: number;
 }
 export const OPTIONS_CONST: OptionsConst = {
     min_volume: 0,
@@ -32,7 +47,11 @@ export const OPTIONS_CONST: OptionsConst = {
 } as const;
 
 
-// Quiz options
+/**
+ *  クイズ設定
+ *  difficulty:     難易度
+ *  problems_num:   問題数
+ */
 export interface QuizOptions {
     difficulty: number;
     problems_num: number;
@@ -43,7 +62,11 @@ export const INITIAL_QUIZ_OPTIONS: QuizOptions = {
 } as const;
 
 
-// Quiz options constants
+/**
+ *  クイズ設定定数
+ *  min_problems_num:   最小問題数
+ *  max_problems_num:   最大問題数
+ */
 export interface QuizOptionsConst {
     min_problems_num: number;
     max_problems_num: number;
@@ -54,7 +77,13 @@ export const QUIZ_OPTIONS_CONST: QuizOptionsConst = {
 } as const;
 
 
-// Quiz problem format
+/**
+ *  問題フォーマット
+ *  problem_id:     問題の旗id
+ *  choice_ids:     選択肢の旗id
+ *  correct_choice: 正解の選択肢のindex
+ */
+// 問題フォーマット
 export interface QuizProblem {
     problem_id: number;
     choice_ids: number[];
@@ -67,7 +96,11 @@ export const INITIAL_QUIZ_PROBLEM: QuizProblem = {
 };
 
 
-// Quiz results
+/**
+ *  クイズ結果
+ *  score:                  スコア
+ *  correct_answer_rate:    正答率
+ */
 export interface QuizResults {
     score: number;
     correct_answer_rate: number;
@@ -78,7 +111,16 @@ export const INITIAL_QUIZ_RESULTS: QuizResults = {
 } as const;
 
 
-// Flag data format
+/**
+ *  旗データフォーマット
+ *  id:         旗id
+ *  available:  データが有効であるか無効であるか
+ *  name:       国名
+ *  period:     使用されていた期間
+ *  level:      旗のレベル
+ *  category:   旗の分類id
+ */
+// 旗データフォーマット
 export interface FlagData {
     id: number;
     available: boolean,
@@ -97,7 +139,11 @@ export const INITIAL_FLAG_DATA: FlagData = {
 } as const;
 
 
-// Flag data constants
+// 旗データ定数
+/**
+ *  旗データ定数
+ *  level_num:  レベル数
+ */
 export interface FlagDataConst {
     level_num: number;
 }
