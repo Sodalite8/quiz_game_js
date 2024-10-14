@@ -1,6 +1,6 @@
 import React from "react";
 import { Options, QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_constants/constants";
-import { changeValues, limitToRange } from "../../_scripts/func";
+import { changeValues, limitToRange, roundBy } from "../../_scripts/func";
 import { createProblems } from "../scripts/createProblems";
 import { MediumButton } from "../components/Buttons";
 import { RangeAndText } from "../components/Ranges";
@@ -59,6 +59,7 @@ function QuizOption(props: Props) {
 
         input_num = limitToRange(input_num, QUIZ_OPTIONS_CONST.min_problems_num,
             QUIZ_OPTIONS_CONST.max_problems_num);
+        input_num = Math.floor(input_num / QUIZ_OPTIONS_CONST.step_problems_num) * QUIZ_OPTIONS_CONST.step_problems_num;
         input_str = String(input_num);
         changeValues<QuizOptions>(props.quiz_options, props.setQuizOptions,
             ["problems_num"], [input_num]);
@@ -119,7 +120,7 @@ function QuizOption(props: Props) {
                     <RangeAndText
                         min={QUIZ_OPTIONS_CONST.min_problems_num}
                         max={QUIZ_OPTIONS_CONST.max_problems_num}
-                        step={1}
+                        step={QUIZ_OPTIONS_CONST.step_problems_num}
                         range_value={props.quiz_options.problems_num}
                         range_change={changeProblemsNumInRange}
                         text_value={temp_problems_num}

@@ -113,7 +113,7 @@ export const waitFor = (millisec: number) => {
 };
 
 
-// numを小数点以下第place位以下で切り捨て
+// numを小数点以下第place位以下で四捨五入
 export const roundBy = (num: number, place: number) => {
     Math.round(place);
     return Math.round(num * (10 ** 2)) / (10 ** 2);

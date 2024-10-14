@@ -57,8 +57,8 @@ export interface QuizOptions {
     problems_num: number;
 }
 export const INITIAL_QUIZ_OPTIONS: QuizOptions = {
-    difficulty: 2,
-    problems_num: 10
+    difficulty: 0,
+    problems_num: 5
 } as const;
 
 
@@ -70,10 +70,12 @@ export const INITIAL_QUIZ_OPTIONS: QuizOptions = {
 export interface QuizOptionsConst {
     min_problems_num: number;
     max_problems_num: number;
+    step_problems_num: number;
 }
 export const QUIZ_OPTIONS_CONST: QuizOptionsConst = {
-    min_problems_num: 10,
-    max_problems_num: 20
+    min_problems_num: 5,
+    max_problems_num: 20,
+    step_problems_num: 5
 } as const;
 
 
