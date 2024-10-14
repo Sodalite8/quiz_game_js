@@ -1,6 +1,8 @@
+// プロジェクト内で用いる汎用ボタンの定義
 import React from "react";
 
 
+// str内の改行文字がある位置でで改行を行う
 const insertLineBreak = (str: string | undefined) => {
     if (str === undefined) {
         return null;
@@ -25,6 +27,8 @@ interface Props {
 }
 
 
+// 小さめのボタン
+// メニューなどの下端にあるボタンとして使用
 export function SmallButton(props: Props) {
     return (
         <button
@@ -41,6 +45,8 @@ export function SmallButton(props: Props) {
 }
 
 
+// 中くらいのボタン
+// メニューなどの設定用のボタンとして使用
 export function MediumButton(props: Props) {
     return (
         <button
@@ -57,6 +63,8 @@ export function MediumButton(props: Props) {
 }
 
 
+// 大きめのボタン
+// タイトルで使用
 export function LargeButton(props: Props) {
     return (
         <button
@@ -73,6 +81,7 @@ export function LargeButton(props: Props) {
 }
 
 
+// 図鑑の分類選択で使用
 export function CategoryButton(props: Props) {
     return (
         <button
@@ -98,6 +107,7 @@ interface Props1 {
 }
 
 
+// クイズの解答ボタンとして使用
 export function AnswerButton(props: Props1) {
     return (
         <button
@@ -115,6 +125,7 @@ export function AnswerButton(props: Props1) {
 }
 
 
+// 図鑑の旗選択で使用
 export function FlagButton(props: Props1) {
     return (
         <button

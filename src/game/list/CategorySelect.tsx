@@ -9,7 +9,9 @@ interface Props {
 }
 
 
+// 図鑑の分類選択画面
 function CategorySelect(props: Props) {
+    // 分類選択ボタンの配列
     const category_buttons = CATEGORIES_LIST.map((value, index) => {
         return (
             <CategoryButton

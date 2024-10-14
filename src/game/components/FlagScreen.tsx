@@ -12,6 +12,7 @@ interface Props {
 }
 
 
+// 旗の情報をモーダルウィンドウで表示
 function FlagScreen(props: Props) {
     const flag_data: FlagData = FLAG_DATA_LIST[props.flag_id];
 

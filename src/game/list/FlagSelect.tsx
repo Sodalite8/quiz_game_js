@@ -12,13 +12,16 @@ interface Props {
 }
 
 
+// 図鑑の旗選択画面
 function FlagSelect(props: Props) {
+    // 旗情報のモーダルウィンドウを開く関数
     const openFlagScreen = (e: React.MouseEvent<HTMLButtonElement>) => {
         props.setFlagSelected(true);
         props.setCurrentFlag(parseInt(e.currentTarget.name));
     };
 
 
+    // 旗選択ボタンの配列
     const flag_buttons = FLAG_DATA_LIST_BY_CATEGORY[props.current_category].map(value => {
         return (
             <FlagButton
@@ -32,6 +35,7 @@ function FlagSelect(props: Props) {
         );
     })
 
+    
     return (
         <div className='grid grid-cols-2 gap-x-8 gap-y-4 p-4'>
             {flag_buttons}

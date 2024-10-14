@@ -1,3 +1,4 @@
+// プロジェクト内で用いる汎用レンジスライダーの定義
 import React from "react";
 
 
@@ -14,6 +15,7 @@ interface Props {
 }
 
 
+// レンジスライダーとテキストボックスのセット
 export function RangeAndText(props: Props) {
     return (
         <div>

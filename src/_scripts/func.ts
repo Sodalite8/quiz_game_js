@@ -1,7 +1,8 @@
+// プロジェクト内で汎用的に用いる関数の定義
 import React from "react";
 
 
-// The union of the primitive types
+// プリミティブ型のユニオン
 type Primitive = number | boolean | string | symbol | null | undefined;
 
 
