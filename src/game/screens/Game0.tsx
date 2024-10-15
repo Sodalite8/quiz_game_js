@@ -14,20 +14,19 @@ interface Props {
 }
 
 
-// Display the quiz game
+// ゲーム画面
 function Game0(props: Props) {
-    /*
-    current_quiz    : The current quiz number
-    quiz_problems   : The problems of the current game
-    quiz_results    : The results of the current game
-    */
+    // 現在のクイズ番号
+    // 問題のリスト
+    // 解答結果のリスト
     const [current_quiz, setCurrentQuiz] = React.useState<number>(-1);
     const [quiz_problems, setQuizProblems] = React.useState<QuizProblem[]>([]);
     const [quiz_results, setQuizResults] = React.useState<QuizResults>(INITIAL_QUIZ_RESULTS);
 
 
-    // About rendering the quiz options and changing problems
+    // current_quizの値により、ゲーム画面を切り替え
     const renderGame = () => {
+        // クイズ設定
         if (current_quiz == -1) {
             return (
                 <QuizOption
@@ -45,6 +44,7 @@ function Game0(props: Props) {
         }
 
 
+        // 問題表示
         else if (current_quiz >= 0 && current_quiz < props.quiz_options.problems_num) {
             return (
                 <Quiz
@@ -61,6 +61,7 @@ function Game0(props: Props) {
         }
 
 
+        // 結果表示
         else if (current_quiz === props.quiz_options.problems_num) {
             return (
                 <Result

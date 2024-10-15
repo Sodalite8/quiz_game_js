@@ -3,6 +3,7 @@ import flag_data_list_json from "../texts/flags.json";
 import categories_data_json from "../texts/categories.json";
 
 
+// レベルまたは分類で旗データを振り分け
 const readFlagDataByKey = (key: "level" | "category", size: number): FlagData[][] => {
     const read_data: FlagData[][] = Array.from({ length: size }, () => []);
     flag_data_list_json.forEach(value => {
@@ -16,12 +17,15 @@ const readFlagDataByKey = (key: "level" | "category", size: number): FlagData[][
 };
 
 
-// 旗の分類名リスト
+// 分類データリスト
+// 分類データの数
 export const CATEGORIES_LIST: string[] = categories_data_json;
-// 旗の分類名の数
 export const CATEGORIES_NUM: number = categories_data_json.length;
 
 
+// 旗データリスト
+// レベル別旗データリスト
+// 分類別旗データリスト
 export const FLAG_DATA_LIST: FlagData[] = flag_data_list_json;
 export const FLAG_DATA_LIST_BY_LEVEL: FlagData[][] = readFlagDataByKey("level", FLAG_DATA_CONST.level_num);
 export const FLAG_DATA_LIST_BY_CATEGORY: FlagData[][] = readFlagDataByKey("category", CATEGORIES_NUM);

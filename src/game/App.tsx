@@ -10,11 +10,9 @@ import List0 from "./screens/List0";
 
 // クイズゲームの最上位コンポーネント
 function App() {
-    /*
-    screen      : スクリーン番号（タイトル画面や設定画面、ゲーム画面などの切り替え）
-    options     : ゲーム設定（音量やアニメーションの有効無効化など）
-    quiz_options: クイズ設定（難易度や問題数など）
-    */
+    // スクリーン番号（タイトル画面や設定画面、ゲーム画面などの切り替え）
+    // ゲーム設定（音量やアニメーションの有効無効化など）
+    // クイズ設定（難易度や問題数など）
     const [screen, setScreen] = React.useState<number>(SCREENS.TITLE);
     const [options, setOptions] = React.useState<Options>(INITIAL_OPTIONS);
     const [quiz_options, setQuizOptions] = React.useState<QuizOptions>(INITIAL_QUIZ_OPTIONS);

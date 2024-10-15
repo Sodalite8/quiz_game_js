@@ -10,7 +10,7 @@ interface Props {
 }
 
 
-// Game title
+// タイトル画面
 function Title(props: Props) {
     return (
         <>

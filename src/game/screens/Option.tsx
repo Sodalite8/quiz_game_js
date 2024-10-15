@@ -13,7 +13,7 @@ interface Props {
 }
 
 
-// Game options
+// 設定画面
 function Option(props: Props) {
     const [temp_effect_volume, setTempEffectVolume] =
         React.useState<string>(String(props.options.effect_volume));
@@ -31,7 +31,8 @@ function Option(props: Props) {
     // };
 
 
-    // About effect volume
+    // 効果音の設定
+    // レンジスライダーの値を変更
     const changeEffectVolumeInRange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const input_str: string = e.target.value,
             input_num: number = parseInt(e.target.value);
@@ -40,17 +41,23 @@ function Option(props: Props) {
             ["effect_volume"], [input_num]);
         setTempEffectVolume(input_str);
     };
+
+    // テキストボックスの値を変更
     const changeEffectVolumeInText = (e: React.ChangeEvent<HTMLInputElement>) => {
         const input: string = e.target.value;
 
+        // 数字のみ入力を許可
         if (/^\d*$/.test(input)) {
             setTempEffectVolume(input);
         }
     };
+
+    // テキストボックス内の値を校正
     const validateEffectVolumeInText = () => {
         let input_str: string = temp_effect_volume,
             input_num: number = parseInt(temp_effect_volume);
 
+        // 入力値が数字でない場合、元の値にリセット
         if (isNaN(input_num)) {
             setTempEffectVolume(String(props.options.effect_volume));
             return;
@@ -65,14 +72,15 @@ function Option(props: Props) {
     };
 
 
-    // About animation
+    // アニメーションの設定
+    // アニメーションの有効無効の切り替え
     const enableAnimation = () => {
         changeValues<Options>(props.options, props.setOptions,
             ["animation"], [!props.options.animation]);
     };
 
 
-    // Reset game options
+    // ゲーム設定のリセット
     const resetOptions = () => {
         const ans: boolean = window.confirm("本当にリセットしますか？");
         if (ans == false) {

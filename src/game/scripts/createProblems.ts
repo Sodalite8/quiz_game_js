@@ -20,10 +20,11 @@ export const createProblems = (quiz_options: QuizOptions): QuizProblem[] => {
     const problems_num_by_level: number[] = Array(3).fill(0);
 
 
-    /* 
-    クイズ設定の難易度により、全出題数に対するレベル番号ごとの出題数の割合を変化させることで、
-    問題の難易度を調整
-    */
+    /**
+     *  クイズ設定の難易度によって、
+     *  全出題数に対するレベル番号ごとの出題数の割合を変化させることで、
+     *  問題の難易度を調整
+     */
     switch (quiz_options.difficulty) {
         case 0:     // Very Easy
             problems_num_by_level[0] = quiz_options.problems_num;
@@ -59,20 +60,18 @@ export const createProblems = (quiz_options: QuizOptions): QuizProblem[] => {
     }
 
 
-    // レベルごとにidを振り分け
-    // flag_ids_by_level[i]はレベルiの旗のidを持つ
-    // 分類ごとにidを振り分け
-    // flag_ids_by_category[i]は分類iの旗のidを持つ
+    // レベル別idリスト
+    // 分類別idリスト
     const flag_ids_by_level: number[][] = FLAG_DATA_LIST_BY_LEVEL.map(list => { return list.map(value => value.id); });
     const flag_ids_by_category: number[][] = FLAG_DATA_LIST_BY_CATEGORY.map(list => { return list.map(value => value.id); });
 
 
-    // problem_idsは出題する旗のidのリスト
+    // 出題する旗のidリスト
     let problem_ids: number[] = Array(quiz_options.problems_num).fill(0), k: number = 0;
-    /*
-    各レベル番号の個数分、旗のidを無作為に、重複なしに選択する
-    旗の数が足りない場合、id0が不足分入れられ、エラーを回避
-    */
+    /**
+     *  各レベル番号の個数分、旗のidを無作為に、重複なしに選択する
+     *  旗の数が足りない場合、id0が不足分入れられ、エラーを回避
+     */
     flag_ids_by_level.forEach((list, i) => {
         const shuffled_list: number[] = fisherYatesShuffle<number>(list).slice(0, problems_num_by_level[i]);
         shuffled_list.forEach(value => {
@@ -87,9 +86,7 @@ export const createProblems = (quiz_options: QuizOptions): QuizProblem[] => {
     const correct_choices: number[] = Array.from(Array(quiz_options.problems_num), () => getRandomInt(0, 3));
 
 
-    /*
-    各問題の選択肢を無作為に指定
-    */
+    // 各問題の選択肢を、分類が同じ旗の中から無作為に指定
     const choice_ids_list: number[][] = Array.from(Array(quiz_options.problems_num), () => Array(4).fill(0));
     problem_ids.forEach((value, i) => {
         const shuffled_list: number[] = fisherYatesShuffle<number>(flag_ids_by_category[FLAG_DATA_LIST[value].category]);
@@ -100,7 +97,7 @@ export const createProblems = (quiz_options: QuizOptions): QuizProblem[] => {
                 continue;
             }
 
-            // 国名が一致する選択肢を同一問題中に同時に現れないように、スキップ
+            // 国名が一致する選択肢が同一問題中に同時に現れないように、スキップ
             while ((FLAG_DATA_LIST[shuffled_list[k]].name === FLAG_DATA_LIST[problem_ids[i]].name) || existSameNameInArray(FLAG_DATA_LIST[shuffled_list[k]].name, Array.from(Array(j), (_, ii) => FLAG_DATA_LIST[choice_ids_list[i][ii]].name))) {
                 k++;
             }

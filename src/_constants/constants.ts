@@ -85,7 +85,6 @@ export const QUIZ_OPTIONS_CONST: QuizOptionsConst = {
  *  choice_ids:     選択肢の旗id
  *  correct_choice: 正解の選択肢のindex
  */
-// 問題フォーマット
 export interface QuizProblem {
     problem_id: number;
     choice_ids: number[];
@@ -122,7 +121,6 @@ export const INITIAL_QUIZ_RESULTS: QuizResults = {
  *  level:      旗のレベル
  *  category:   旗の分類id
  */
-// 旗データフォーマット
 export interface FlagData {
     id: number;
     available: boolean,
@@ -141,7 +139,6 @@ export const INITIAL_FLAG_DATA: FlagData = {
 } as const;
 
 
-// 旗データ定数
 /**
  *  旗データ定数
  *  level_num:  レベル数

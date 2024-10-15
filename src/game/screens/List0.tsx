@@ -14,7 +14,7 @@ interface Props {
 }
 
 
-// Old flags` lists
+// 図鑑画面
 function List0(props: Props) {
     const [current_category, setCurrentCategory] = React.useState<number>(-1);
     const [current_flag, setCurrentFlag] = React.useState<number>(-1);
