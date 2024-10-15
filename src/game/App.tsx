@@ -14,9 +14,11 @@ function App() {
     // クッキー
     // クッキーが存在するか
     // 初期メッセージを表示するか
-    const [cookies, setCookie, removeCookie] = useCookies(['options', 'quiz_options']);
+    // クッキーの確認が終わっているか
+    const [cookies, setCookies, removeCookies] = useCookies(['options', 'quiz_options']);
     const [accept_cookies, setAcceptCookies] = React.useState<boolean>(false);
     const [reject_cookies, setRejectCookies] = React.useState<boolean>(false);
+    const [confirmed, setConfirmed] = React.useState<boolean>(false);
 
 
     // スクリーン番号（タイトル画面や設定画面、ゲーム画面などの切り替え）
@@ -32,8 +34,8 @@ function App() {
         setAcceptCookies(true);
 
         // 設定を読み込む
-        setCookie('options', INITIAL_OPTIONS);
-        setCookie('quiz_options', INITIAL_QUIZ_OPTIONS);
+        setCookies('options', INITIAL_OPTIONS);
+        setCookies('quiz_options', INITIAL_QUIZ_OPTIONS);
     };
 
 
@@ -53,7 +55,7 @@ function App() {
     const isRejected = (): boolean => {
         const temp_time: string | null = localStorage.getItem('cookieRejected');
         // 拒否されていない場合
-        if(temp_time === null) {
+        if (temp_time === null) {
             return false;
         }
 
@@ -76,17 +78,26 @@ function App() {
             setOptions(cookies.options);
             setQuizOptions(cookies.quiz_options);
         }
-        
+
         // クッキーが供されていた場合
         else if (isRejected()) {
             setRejectCookies(true);
         }
+
+        setConfirmed(true);
     }, []);
 
 
     // screenによって映し出す画面を変更
     const renderScreen = () => {
-        // クッキーをまだ許可しておらず、かつ拒否もしていない場合にのみ確認する
+        // 上記のクッキーの確認がまだ終わっていない場合
+        if (!confirmed) {
+            return (
+                <></>
+            );
+        }
+
+        // クッキーをまだ許可しておらず、かつ拒否もしていない場合
         if (!accept_cookies && !reject_cookies) {
             return (
                 <div className='relative flex size-full flex-col items-center'>
@@ -122,6 +133,7 @@ function App() {
         }
 
 
+        // アプリ画面の表示切替
         switch (screen) {
             case SCREENS.TITLE:     // タイトル
                 return (
