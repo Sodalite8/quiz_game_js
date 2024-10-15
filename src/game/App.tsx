@@ -1,5 +1,5 @@
 import React from 'react';
-// import { useCookies } from "react-cookie";
+import { useCookies } from "react-cookie";
 import '../styles/tailwind.css';
 import { SCREENS, Options, INITIAL_OPTIONS, QuizOptions, INITIAL_QUIZ_OPTIONS } from "../_constants/constants";
 import Title from "./screens/Title";
@@ -10,22 +10,43 @@ import List0 from "./screens/List0";
 
 // クイズゲームの最上位コンポーネント
 function App() {
+    // クッキー
+    // クッキーが存在するか
+    // 初期メッセージを表示するか
+    // 初期メッセージの表示時間
+    const [cookies, setCookie, removeCookie] = useCookies(['options', 'quiz_options']);
+    const [exist_cookies, setExistCookies] = React.useState<boolean>(false);
+    const [show_message, setShowMessage] = React.useState<boolean>(true);
+    const time_show_message: number = 3000;
+
+    // クッキーが存在するか確認
+    React.useEffect(() => {
+        if (cookies.options && cookies.quiz_options) {
+            setExistCookies(true);
+            setShowMessage(false);
+        }
+        else {
+            setCookie('options', INITIAL_OPTIONS);
+            setCookie('quiz_options', INITIAL_QUIZ_OPTIONS);
+        }
+    });
+
+    // 初期メッセージ表示用のタイマー
+    React.useEffect(() => {
+        const startTimer = setTimeout(() => {
+            setShowMessage(false);
+        }, time_show_message);
+
+        return () => clearTimeout(startTimer);
+    }, []);
+
+
     // スクリーン番号（タイトル画面や設定画面、ゲーム画面などの切り替え）
     // ゲーム設定（音量やアニメーションの有効無効化など）
     // クイズ設定（難易度や問題数など）
     const [screen, setScreen] = React.useState<number>(SCREENS.TITLE);
     const [options, setOptions] = React.useState<Options>(INITIAL_OPTIONS);
     const [quiz_options, setQuizOptions] = React.useState<QuizOptions>(INITIAL_QUIZ_OPTIONS);
-    const [show_message, setShowMessage] = React.useState<boolean>(true);
-
-
-    React.useEffect(() => {
-        const startTimer = setTimeout(() => {
-            setShowMessage(false);
-        }, 2000);
-
-        return () => clearTimeout(startTimer);
-    }, []);
 
 
     // screenによって映し出す画面を変更
@@ -49,7 +70,7 @@ function App() {
             );
         }
 
-        
+
 
 
         switch (screen) {

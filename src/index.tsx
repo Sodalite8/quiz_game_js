@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "./styles/tailwind.css";
 import App from './game/App';
+import { CookiesProvider } from 'react-cookie';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -10,7 +11,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <App />
+        <CookiesProvider>
+            <App />
+        </CookiesProvider>
     </React.StrictMode>
 );
 
