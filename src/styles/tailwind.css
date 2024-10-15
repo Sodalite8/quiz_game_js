@@ -593,6 +593,10 @@ video {
   top: 100%;
 }
 
+.top-2\/3 {
+  top: 66.666667%;
+}
+
 .m-2 {
   margin: 0.5rem;
 }
@@ -870,6 +874,11 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .pb-4 {
