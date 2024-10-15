@@ -1,6 +1,6 @@
 import React from "react";
-import { Options, OPTIONS_CONST, QuizOptions, QuizProblem, QuizResults } from "../../_constants/constants";
-import { changeValues, roundBy, waitFor } from "../../_scripts/func";
+import { Options, OPTIONS_CONST, PATH_SOUNDS_ANSWER_FEEDBACK, QuizAnswer, QuizOptions, QuizProblem, QuizResults } from "../../_constants/constants";
+import { changeArray, changeValues, roundBy, waitFor } from "../../_scripts/func";
 import { FLAG_DATA_LIST } from "../scripts/readFlagData";
 import { AnswerButton } from "../components/Buttons";
 import useSound from "use-sound";
@@ -14,42 +14,69 @@ interface Props {
     quiz_problems: QuizProblem[];
     quiz_results: QuizResults;
     setQuizResults: React.Dispatch<React.SetStateAction<QuizResults>>;
+    quiz_answers: QuizAnswer[];
+    setQuizAnswers: React.Dispatch<React.SetStateAction<QuizAnswer[]>>;
     answered: boolean;
     setAnswered: React.Dispatch<React.SetStateAction<boolean>>;
-    correct: boolean;
-    setCorrect: React.Dispatch<React.SetStateAction<boolean>>;
+    display_feedbacks: boolean[];
+    setDisplayFeedbacks: React.Dispatch<React.SetStateAction<boolean[]>>;
 }
 
 
 // Place the buttons to answer the problems
 function AnswerSection(props: Props) {
-    const [playCorrectAnswer] = useSound("./audio/correct_answer.mp3",
+    const [playCorrectAnswer] = useSound(PATH_SOUNDS_ANSWER_FEEDBACK.correct,
         { volume: props.options.effect_volume / OPTIONS_CONST.max_volume }),
-        [playWrongAnswer] = useSound("./audio/wrong_answer.mp3",
+        [playWrongAnswer] = useSound(PATH_SOUNDS_ANSWER_FEEDBACK.wrong,
             { volume: props.options.effect_volume / OPTIONS_CONST.max_volume });
 
 
     const answerProblem = async (e: React.MouseEvent<HTMLButtonElement>) => {
-        const ans = parseInt(e.currentTarget.name);
+        const ans: number = parseInt(e.currentTarget.name);
+
+        props.setAnswered(true);
 
         if (ans === props.quiz_problems[props.current_quiz].correct_choice) {
-            changeValues<QuizResults>(props.quiz_results, props.setQuizResults,
+            changeValues<QuizResults>(
+                props.quiz_results, props.setQuizResults,
                 ["score", "correct_answer_rate"],
                 [props.quiz_results.score + 1,
-                roundBy((props.quiz_results.score + 1) * 100 / (props.quiz_options.problems_num), 2)]);
-            props.setCorrect(true);
+                roundBy((props.quiz_results.score + 1) * 100 / (props.quiz_options.problems_num), 2)]
+            );
+
+            const new_quiz_answers = [...props.quiz_answers];
+            new_quiz_answers.push(
+                {
+                    answer: ans,
+                    correct: ans === props.quiz_problems[props.current_quiz].correct_choice
+                }
+            );
+
             playCorrectAnswer();
         }
         else {
             playWrongAnswer();
         }
 
-        props.setAnswered(true);
-        await waitFor(1000);
+        changeArray<boolean>(
+            props.display_feedbacks,
+            props.setDisplayFeedbacks,
+            [props.quiz_problems[props.current_quiz].correct_choice, ans],
+            [false, false]
+        );
 
-        props.setAnswered(false);
-        props.setCorrect(false);
+
+        await waitFor(1500);
+
+
+        changeArray<boolean>(
+            props.display_feedbacks,
+            props.setDisplayFeedbacks,
+            [props.quiz_problems[props.current_quiz].correct_choice, ans],
+            [true, true]
+        );
         props.setCurrentQuiz(props.current_quiz + 1);
+        props.setAnswered(false);
     };
 
 
@@ -62,6 +89,8 @@ function AnswerSection(props: Props) {
                 disable={props.answered}
                 click={answerProblem}
                 animation={props.options.animation}
+                correct={index === props.quiz_problems[props.current_quiz].correct_choice}
+                img_disable={props.display_feedbacks[index]}
             />
         );
     });
@@ -71,17 +100,6 @@ function AnswerSection(props: Props) {
         <div className="relative flex flex-col items-center justify-center p-4">
             <div className="grid grid-cols-2 gap-x-16 gap-y-4">
                 {answer_buttons}
-            </div>
-
-
-            <div className="absolute">
-                {props.answered &&
-                    <img
-                        className="size-64 opacity-80"
-                        src={((props.correct) ? "./images/ui/correct.svg" : "./images/ui/incorrect.svg")}
-                        alt="result_img"
-                    />
-                }
             </div>
         </div>
     );
