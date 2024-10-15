@@ -1,7 +1,7 @@
 import React from 'react';
 import ProblemSection from './ProblemSection';
 import AnswerSection from './AnswerSection';
-import { INITIAL_QUIZ_RESULTS, Options, QuizOptions, QuizProblem, QuizResults } from '../../_constants/constants';
+import { CHOICES_NUM, INITIAL_QUIZ_RESULTS, Options, QuizAnswer, QuizOptions, QuizProblem, QuizResults } from '../../_constants/constants';
 import { SmallButton } from '../components/Buttons';
 
 
@@ -14,6 +14,8 @@ interface Props {
     setQuizProblems: React.Dispatch<React.SetStateAction<QuizProblem[]>>;
     quiz_results: QuizResults;
     setQuizResults: React.Dispatch<React.SetStateAction<QuizResults>>;
+    quiz_answers: QuizAnswer[];
+    setQuizAnswers: React.Dispatch<React.SetStateAction<QuizAnswer[]>>;
 }
 
 
@@ -22,7 +24,7 @@ function Quiz(props: Props) {
     // 解答済みか
     // 正答か
     const [answered, setAnswered] = React.useState<boolean>(false);
-    const [correct, setCorrect] = React.useState<boolean>(false);
+    const [display_feedbacks, setDisplayFeedbacks] = React.useState<boolean[]>(Array(CHOICES_NUM).fill(true));
 
 
     // About finishing the quiz in the middle
@@ -51,10 +53,12 @@ function Quiz(props: Props) {
                     quiz_problems={props.quiz_problems}
                     quiz_results={props.quiz_results}
                     setQuizResults={props.setQuizResults}
+                    quiz_answers={props.quiz_answers}
+                    setQuizAnswers={props.setQuizAnswers}
                     answered={answered}
                     setAnswered={setAnswered}
-                    correct={correct}
-                    setCorrect={setCorrect}
+                    display_feedbacks={display_feedbacks}
+                    setDisplayFeedbacks={setDisplayFeedbacks}
                 />
             </div>
 

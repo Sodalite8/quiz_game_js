@@ -1,5 +1,6 @@
 // プロジェクト内で用いる汎用ボタンの定義
 import React from "react";
+import { PATH_IMAGES_ANSWER_FEEDBACK } from "../../_constants/constants";
 
 
 // str内の改行文字がある位置でで改行を行う
@@ -104,23 +105,34 @@ interface Props1 {
     disable?: boolean;
     click?: (e: React.MouseEvent<HTMLButtonElement>) => void;
     animation?: boolean;
+    correct?: boolean;
+    img_disable?: boolean;
 }
 
 
 // クイズの解答ボタンとして使用
 export function AnswerButton(props: Props1) {
     return (
-        <button
-            className={`${props.animation ? "animation-button" : ""} 
-            m-2 block h-answer-btn-h w-answer-btn-w cursor-pointer 
-            rounded-lg border-2 border-orange-300 bg-orange-400 p-2 
-            text-xl font-bold text-white`}
-            name={props.name}
-            disabled={props.disable}
-            onClick={props.click}
-        >
-            {insertLineBreak(props.text)}
-        </button>
+        <div className="relative">
+            <button
+                className={`${props.animation ? "animation-button" : ""} 
+                    m-2 block h-answer-btn-h w-answer-btn-w cursor-pointer 
+                    rounded-lg border-2 border-orange-300 bg-orange-400 p-2 
+                    text-xl font-bold text-white`}
+                name={props.name}
+                disabled={props.disable}
+                onClick={props.click}
+            >
+                {insertLineBreak(props.text)}
+            </button>
+            <img
+                className={`${props.img_disable ? "hidden" : ""}
+                absolute left-1/2 top-1/2 size-40 -translate-x-1/2 
+                -translate-y-1/2 opacity-70`}
+                src={props.correct ? PATH_IMAGES_ANSWER_FEEDBACK.correct : PATH_IMAGES_ANSWER_FEEDBACK.wrong}
+                alt="result_img"
+            />
+        </div>
     );
 }
 

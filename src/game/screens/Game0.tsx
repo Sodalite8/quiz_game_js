@@ -1,5 +1,5 @@
 import React from 'react';
-import { INITIAL_QUIZ_RESULTS, Options, QuizOptions, QuizProblem, QuizResults, SCREENS } from '../../_constants/constants';
+import { INITIAL_QUIZ_RESULTS, Options, QuizAnswer, QuizOptions, QuizProblem, QuizResults, SCREENS } from '../../_constants/constants';
 import Quiz from '../quiz/Quiz';
 import QuizResult from '../quiz/QuizResult';
 import QuizOption from '../quiz/QuizOption';
@@ -18,10 +18,12 @@ interface Props {
 function Game0(props: Props) {
     // 現在のクイズ番号
     // 問題のリスト
-    // 解答結果のリスト
+    // クイズ結果（総得点や正答率）
+    // 解答のリスト
     const [current_quiz, setCurrentQuiz] = React.useState<number>(-1);
     const [quiz_problems, setQuizProblems] = React.useState<QuizProblem[]>([]);
     const [quiz_results, setQuizResults] = React.useState<QuizResults>(INITIAL_QUIZ_RESULTS);
+    const [quiz_answers, setQuizAnswers] = React.useState<QuizAnswer[]>([]);
 
 
     // current_quizの値により、ゲーム画面を切り替え
@@ -56,6 +58,8 @@ function Game0(props: Props) {
                     setQuizProblems={setQuizProblems}
                     quiz_results={quiz_results}
                     setQuizResults={setQuizResults}
+                    quiz_answers={quiz_answers}
+                    setQuizAnswers={setQuizAnswers}
                 />
             );
         }

@@ -1,4 +1,24 @@
 // プロジェクト内で使用する定数や型定義
+
+
+// 選択肢の数
+export const CHOICES_NUM: number = 4;
+
+
+// 解答の正誤を示す画像のパス
+export const PATH_IMAGES_ANSWER_FEEDBACK = {
+    correct: "./images/ui/correct_answer.svg",
+    wrong: "./images/ui/wrong_answer.svg"
+} as const;
+
+
+// 解答の正誤を示すサウンドのパス
+export const PATH_SOUNDS_ANSWER_FEEDBACK = {
+    correct: "./audio/correct_answer.mp3",
+    wrong: "./audio/wrong_answer.mp3"
+} as const
+
+
 /**
  *  スクリーン番号
  *  TITLE:  タイトル
@@ -109,6 +129,21 @@ export interface QuizResults {
 export const INITIAL_QUIZ_RESULTS: QuizResults = {
     score: 0,
     correct_answer_rate: 0
+} as const;
+
+
+/**
+ *  クイズ解答
+ *  answer:     解答番号
+ *  correct:    正解か
+ */
+export interface QuizAnswer {
+    answer: number;
+    correct: boolean;
+}
+export const INITIAL_QUIZ_ANSWERS: QuizAnswer = {
+    answer: -1,
+    correct: false
 } as const;
 
 

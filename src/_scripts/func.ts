@@ -36,10 +36,12 @@ export const fisherYatesShuffle = <T extends Primitive>(array: T[]): T[] => {
 
 
 // obj[keys[i]]をvalues[i]に書き換え、setObjで更新
-export const changeValues = <T extends object>(obj: T,
+export const changeValues = <T extends object>(
+    obj: T,
     setObj: React.Dispatch<React.SetStateAction<T>>,
-    keys: (keyof T)[], values: (number | string | boolean)[]) => {
-
+    keys: (keyof T)[],
+    values: (number | string | boolean)[]
+) => {
     const new_obj: T = { ...obj };
 
     keys.forEach((key, index) => {
@@ -77,6 +79,23 @@ export const changeValues = <T extends object>(obj: T,
     });
 
     setObj(new_obj);
+};
+
+
+// array[indexes[i]]をvalues[i]に書き換え、setArrayで更新
+export const changeArray = <T extends Primitive>(
+    array: T[],
+    setArray: React.Dispatch<React.SetStateAction<T[]>>,
+    indexes: number[],
+    values: T[]
+) => {
+    const new_array: T[] = [...array];
+
+    indexes.forEach((array_index, values_index) => {
+        new_array[array_index] = values[values_index];
+    });
+
+    setArray(new_array);
 };
 
 
