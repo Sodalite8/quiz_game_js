@@ -61,13 +61,9 @@ function App() {
         const time_now: number = new Date().getTime();
         const validity_period: number = 60 * 60 * 24 * 3 * 1000;
 
-        // タイプスタンプの期限が切れている場合
-        if (time_now - time_reject_cookies > validity_period) {
-            return false;
-        }
 
-        // タイムスタンプが有効である場合
-        return true;
+        // タイプスタンプの期限が切れている場合true、有効な場合false
+        return time_now - time_reject_cookies <= validity_period;
     };
 
 
@@ -80,6 +76,7 @@ function App() {
             setOptions(cookies.options);
             setQuizOptions(cookies.quiz_options);
         }
+        
         // クッキーが供されていた場合
         else if (isRejected()) {
             setRejectCookies(true);
