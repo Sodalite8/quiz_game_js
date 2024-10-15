@@ -1,6 +1,10 @@
 // プロジェクト内で使用する定数や型定義
 
 
+// 選択肢の数
+export const CHOICES_NUM: number = 4;
+
+
 // 解答の正誤を示す画像のパス
 export const PATH_IMAGES_ANSWER_FEEDBACK = {
     correct: "./images/ui/correct_answer.svg",
@@ -8,6 +12,7 @@ export const PATH_IMAGES_ANSWER_FEEDBACK = {
 } as const;
 
 
+// 解答の正誤を示すサウンドのパス
 export const PATH_SOUNDS_ANSWER_FEEDBACK = {
     correct: "./audio/correct_answer.mp3",
     wrong: "./audio/wrong_answer.mp3"
