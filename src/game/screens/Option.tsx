@@ -1,11 +1,13 @@
 import React from 'react';
-import { SCREENS, Options, INITIAL_OPTIONS, OPTIONS_CONST } from '../../_constants/constants';
+import { SCREENS, Options, INITIAL_OPTIONS, OPTIONS_CONST, QuizOptions, CookieKeys } from '../../_constants/constants';
 import { changeValues, limitToRange } from '../../_scripts/func';
 import { MediumButton, SmallButton } from '../components/Buttons';
 import { RangeAndText } from '../components/Ranges';
 
 
 interface Props {
+    changeCookies: (key: CookieKeys, value: Options | QuizOptions) => void;
+    deleteCookies: () => void;
     screen: number;
     setScreen: React.Dispatch<React.SetStateAction<number>>;
     options: Options;

@@ -1,4 +1,14 @@
 // プロジェクト内で使用する定数や型定義
+
+
+// クッキーで用いる型
+export type CookieKeys = 'options' | 'quiz_options';
+export type CookieValues = {
+    options: Options;
+    quiz_options: QuizOptions;
+};
+
+
 /**
  *  スクリーン番号
  *  TITLE:  タイトル

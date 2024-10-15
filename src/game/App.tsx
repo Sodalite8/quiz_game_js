@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCookies } from "react-cookie";
 import '../styles/tailwind.css';
-import { SCREENS, Options, INITIAL_OPTIONS, QuizOptions, INITIAL_QUIZ_OPTIONS } from "../_constants/constants";
+import { SCREENS, Options, INITIAL_OPTIONS, QuizOptions, INITIAL_QUIZ_OPTIONS, CookieKeys, CookieValues } from "../_constants/constants";
 import Title from "./screens/Title";
 import Option from "./screens/Option";
 import Game0 from "./screens/Game0";
@@ -15,10 +15,23 @@ function App() {
     // クッキーが存在するか
     // 初期メッセージを表示するか
     // クッキーの確認が終わっているか
-    const [cookies, setCookies, removeCookies] = useCookies(['options', 'quiz_options']);
+    const [cookies, setCookies, removeCookies] = useCookies<CookieKeys, CookieValues>(['options', 'quiz_options']);
     const [accept_cookies, setAcceptCookies] = React.useState<boolean>(false);
     const [reject_cookies, setRejectCookies] = React.useState<boolean>(false);
     const [confirmed, setConfirmed] = React.useState<boolean>(false);
+
+
+    const changeCookies = (key: CookieKeys, value: Options | QuizOptions): void => {
+        setCookies(key, value);
+        return;
+    };
+
+
+    const deleteCookies = (): void => {
+        removeCookies('options');
+        removeCookies('quiz_options');
+        return;
+    }
 
 
     // スクリーン番号（タイトル画面や設定画面、ゲーム画面などの切り替え）
@@ -148,6 +161,8 @@ function App() {
             case SCREENS.OPTION:    // ゲーム設定
                 return (
                     <Option
+                        changeCookies={changeCookies}
+                        deleteCookies={deleteCookies}
                         screen={screen}
                         setScreen={setScreen}
                         options={options}
