@@ -1,4 +1,19 @@
 // プロジェクト内で使用する定数や型定義
+
+
+// 解答の正誤を示す画像のパス
+export const PATH_IMAGES_ANSWER_FEEDBACK = {
+    correct: "./images/ui/correct_answer.svg",
+    wrong: "./images/ui/wrong_answer.svg"
+} as const;
+
+
+export const PATH_SOUNDS_ANSWER_FEEDBACK = {
+    correct: "./audio/correct_answer.mp3",
+    wrong: "./audio/wrong_answer.mp3"
+} as const
+
+
 /**
  *  スクリーン番号
  *  TITLE:  タイトル
