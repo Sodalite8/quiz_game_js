@@ -16,12 +16,16 @@ interface Props {
 
 // 図鑑画面
 function List0(props: Props) {
+    // 現在選択されている分類
+    // 現在選択されている旗
+    // 旗が選択されているか
     const [current_category, setCurrentCategory] = React.useState<number>(-1);
     const [current_flag, setCurrentFlag] = React.useState<number>(-1);
     const [flag_selected, setFlagSelected] = React.useState<boolean>(false);
 
 
     const renderList = () => {
+        // 分類選択画面
         if (current_category === -1) {
             return (
                 <>
@@ -66,6 +70,7 @@ function List0(props: Props) {
         }
 
 
+        // 旗選択画面
         else if (current_category > -1 && current_category < CATEGORIES_NUM) {
             return (
                 <>

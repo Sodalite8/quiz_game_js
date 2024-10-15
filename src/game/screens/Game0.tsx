@@ -1,7 +1,7 @@
 import React from 'react';
 import { INITIAL_QUIZ_RESULTS, Options, QuizOptions, QuizProblem, QuizResults, SCREENS } from '../../_constants/constants';
 import Quiz from '../quiz/Quiz';
-import Result from '../quiz/Result';
+import QuizResult from '../quiz/QuizResult';
 import QuizOption from '../quiz/QuizOption';
 
 
@@ -64,7 +64,7 @@ function Game0(props: Props) {
         // 結果表示
         else if (current_quiz === props.quiz_options.problems_num) {
             return (
-                <Result
+                <QuizResult
                     screen={props.screen}
                     setScreen={props.setScreen}
                     options={props.options}

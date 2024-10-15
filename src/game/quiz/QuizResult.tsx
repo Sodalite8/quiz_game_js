@@ -17,7 +17,7 @@ interface Props {
 
 
 // Show the results of games
-function Result(props: Props) {
+function QuizResult(props: Props) {
     // About finishing the quiz
     const exitQuiz = () => {
         props.setCurrentQuiz(-1);
@@ -83,4 +83,4 @@ function Result(props: Props) {
 }
 
 
-export default Result;
+export default QuizResult;

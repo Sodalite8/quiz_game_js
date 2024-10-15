@@ -31,7 +31,7 @@ function Option(props: Props) {
     // };
 
 
-    // 効果音の設定
+    // 効果音
     // レンジスライダーの値を変更
     const changeEffectVolumeInRange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const input_str: string = e.target.value,
@@ -52,7 +52,7 @@ function Option(props: Props) {
         }
     };
 
-    // テキストボックス内の値を校正
+    // テキストボックスの値を校正
     const validateEffectVolumeInText = () => {
         let input_str: string = temp_effect_volume,
             input_num: number = parseInt(temp_effect_volume);
@@ -72,7 +72,7 @@ function Option(props: Props) {
     };
 
 
-    // アニメーションの設定
+    // アニメーション
     // アニメーションの有効無効の切り替え
     const enableAnimation = () => {
         changeValues<Options>(props.options, props.setOptions,

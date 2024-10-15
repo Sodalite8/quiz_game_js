@@ -19,6 +19,8 @@ interface Props {
 
 // The unit of quiz game components like button and image
 function Quiz(props: Props) {
+    // 解答済みか
+    // 正答か
     const [answered, setAnswered] = React.useState<boolean>(false);
     const [correct, setCorrect] = React.useState<boolean>(false);
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Options, QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_constants/constants";
-import { changeValues, limitToRange, roundBy } from "../../_scripts/func";
+import { changeValues, limitToRange } from "../../_scripts/func";
 import { createProblems } from "../scripts/createProblems";
 import { MediumButton } from "../components/Buttons";
 import { RangeAndText } from "../components/Ranges";
@@ -19,20 +19,22 @@ interface Props {
 }
 
 
-// Quiz options
+// クイズ設定画面
 function QuizOption(props: Props) {
     const [temp_problems_num, setTempProblemsNum] =
         React.useState<string>(String(props.quiz_options.problems_num));
 
 
-    // About quiz difficulty
+    // クイズ難易度
+    // セレクトボックス内の値を変更
     const changeDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) => {
         changeValues<QuizOptions>(props.quiz_options, props.setQuizOptions,
             ["difficulty"], [parseInt(e.target.value)]);
     };
 
 
-    // About the number of problems in the quiz
+    // 問題数
+    // レンジスライダーの値を変更
     const changeProblemsNumInRange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const input_str: string = e.target.value,
             input_num: number = parseInt(e.target.value);
@@ -41,17 +43,23 @@ function QuizOption(props: Props) {
             ["problems_num"], [input_num]);
         setTempProblemsNum(input_str);
     };
+
+    // テキストボックスの値を変更
     const changeProblemsNumInText = (e: React.ChangeEvent<HTMLInputElement>) => {
         const input: string = e.target.value;
 
+        // 数字のみ入力を許可
         if (/^\d*$/.test(input)) {
             setTempProblemsNum(input);
         }
     };
+
+    // テキストボックスの値を校正
     const validateProblemsNumInText = () => {
         let input_str: string = temp_problems_num,
             input_num: number = parseInt(temp_problems_num);
 
+        // 入力値が数字でない場合、元の値にリセット
         if (isNaN(input_num)) {
             setTempProblemsNum(String(props.quiz_options.problems_num));
             return;
@@ -67,7 +75,7 @@ function QuizOption(props: Props) {
     };
 
 
-    // About creating the problems and starting the quiz
+    // クイズ開始と同時に問題作成
     const startQuiz = () => {
         props.setQuizProblems(createProblems(props.quiz_options));
         props.setCurrentQuiz(0);
