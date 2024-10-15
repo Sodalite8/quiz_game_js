@@ -113,6 +113,21 @@ export const INITIAL_QUIZ_RESULTS: QuizResults = {
 
 
 /**
+ *  クイズ解答
+ *  answer:     解答番号
+ *  correct:    正解か
+ */
+export interface QuizAnswer {
+    answer: number;
+    correct: boolean;
+}
+export const INITIAL_QUIZ_ANSWERS: QuizAnswer = {
+    answer: -1,
+    correct: false
+} as const;
+
+
+/**
  *  旗データフォーマット
  *  id:         旗id
  *  available:  データが有効であるか無効であるか
