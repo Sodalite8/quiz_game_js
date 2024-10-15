@@ -28,8 +28,14 @@ function App() {
 
 
     const deleteCookies = (): void => {
+        const ans: boolean = window.confirm("本当にクッキーをリセットしますか？");
+        if (ans == false) {
+            return;
+        }
+
         removeCookies('options');
         removeCookies('quiz_options');
+        localStorage.removeItem('cookieRejected');
         return;
     }
 
