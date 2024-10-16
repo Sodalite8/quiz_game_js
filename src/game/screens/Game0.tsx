@@ -1,9 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
-import { INITIAL_QUIZ_RESULTS, Options, QuizAnswer, QuizOptions, QuizProblem, QuizResults, SCREENS } from '../../_constants/constants';
-=======
-import { CookieKeys, INITIAL_QUIZ_RESULTS, Options, QuizOptions, QuizProblem, QuizResults, SCREENS } from '../../_constants/constants';
->>>>>>> cookie
+import { CookieKeys, INITIAL_QUIZ_RESULTS, Options, QuizAnswer, QuizOptions, QuizProblem, QuizResults, SCREENS } from '../../_constants/constants';
 import Quiz from '../quiz/Quiz';
 import QuizResult from '../quiz/QuizResult';
 import QuizOption from '../quiz/QuizOption';

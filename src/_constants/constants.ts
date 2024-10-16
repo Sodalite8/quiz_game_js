@@ -1,7 +1,6 @@
 // プロジェクト内で使用する定数や型定義
 
 
-<<<<<<< HEAD
 // 選択肢の数
 export const CHOICES_NUM: number = 4;
 
@@ -18,14 +17,14 @@ export const PATH_SOUNDS_ANSWER_FEEDBACK = {
     correct: "./audio/correct_answer.mp3",
     wrong: "./audio/wrong_answer.mp3"
 } as const
-=======
+
+
 // クッキーで用いる型
 export type CookieKeys = 'options' | 'quiz_options';
 export type CookieValues = {
     options: Options;
     quiz_options: QuizOptions;
 };
->>>>>>> cookie
 
 
 /**
