@@ -573,12 +573,28 @@ video {
   position: relative;
 }
 
+.bottom-32 {
+  bottom: 8rem;
+}
+
 .left-1\/2 {
   left: 50%;
 }
 
 .top-1\/2 {
   top: 50%;
+}
+
+.top-32 {
+  top: 8rem;
+}
+
+.top-48 {
+  top: 12rem;
+}
+
+.top-80 {
+  top: 20rem;
 }
 
 .top-full {

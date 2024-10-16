@@ -120,17 +120,17 @@ function App() {
         if (!accept_cookies && !reject_cookies) {
             return (
                 <div className='relative flex size-full flex-col items-center'>
-                    <h2 className='relative text-center text-4xl font-bold'>
+                    <h2 className='relative top-32 text-center text-4xl font-bold'>
                         クッキーについて
                     </h2>
 
-                    <h3 className='relative text-center text-2xl font-bold px-16'>
+                    <h3 className='absolute top-48 px-16 text-center text-2xl font-bold'>
                         本ゲームではユーザーエクスペリエンス向上のため、<br />
                         クッキーを使用しています<br />
                         許可する場合は次のボタンを押してください
                     </h3>
 
-                    <div className='relative '>
+                    <div className='absolute top-80'>
                         <MediumButton
                             text='許可する'
                             click={() => acceptCookies()}
@@ -143,7 +143,7 @@ function App() {
                         />
                     </div>
 
-                    <h3 className='relative text-center text-2xl font-bold'>
+                    <h3 className='absolute bottom-32 text-center text-2xl font-bold'>
                         本ゲームでは音が出ます<br />
                         周囲の環境と音量に注意してお楽しみください
                     </h3>
