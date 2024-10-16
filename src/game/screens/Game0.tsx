@@ -1,11 +1,18 @@
 import React from 'react';
+<<<<<<< HEAD
 import { INITIAL_QUIZ_RESULTS, Options, QuizAnswer, QuizOptions, QuizProblem, QuizResults, SCREENS } from '../../_constants/constants';
+=======
+import { CookieKeys, INITIAL_QUIZ_RESULTS, Options, QuizOptions, QuizProblem, QuizResults, SCREENS } from '../../_constants/constants';
+>>>>>>> cookie
 import Quiz from '../quiz/Quiz';
 import QuizResult from '../quiz/QuizResult';
 import QuizOption from '../quiz/QuizOption';
 
 
 interface Props {
+    changeCookies: (key: CookieKeys, value: Options | QuizOptions) => void;
+    deleteCookies: () => void;
+    accept_cookies: boolean;
     screen: number;
     setScreen: React.Dispatch<React.SetStateAction<number>>;
     options: Options;
@@ -32,6 +39,9 @@ function Game0(props: Props) {
         if (current_quiz == -1) {
             return (
                 <QuizOption
+                    changeCookies={props.changeCookies}
+                    deleteCookies={props.deleteCookies}
+                    accept_cookies={props.accept_cookies}
                     screen={props.screen}
                     setScreen={props.setScreen}
                     options={props.options}

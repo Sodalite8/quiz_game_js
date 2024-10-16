@@ -573,6 +573,7 @@ video {
   position: relative;
 }
 
+<<<<<<< HEAD
 .left-1\/2 {
   left: 50%;
 }
@@ -589,6 +590,8 @@ video {
   top: 25%;
 }
 
+=======
+>>>>>>> cookie
 .top-full {
   top: 100%;
 }
@@ -623,6 +626,10 @@ video {
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .mt-8 {
@@ -860,6 +867,11 @@ video {
 
 .p-8 {
   padding: 2rem;
+}
+
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .px-8 {

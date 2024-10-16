@@ -1,57 +1,158 @@
 import React from 'react';
-// import { useCookies } from "react-cookie";
+import { useCookies } from "react-cookie";
 import '../styles/tailwind.css';
-import { SCREENS, Options, INITIAL_OPTIONS, QuizOptions, INITIAL_QUIZ_OPTIONS } from "../_constants/constants";
+import { SCREENS, Options, INITIAL_OPTIONS, QuizOptions, INITIAL_QUIZ_OPTIONS, CookieKeys, CookieValues } from "../_constants/constants";
 import Title from "./screens/Title";
 import Option from "./screens/Option";
 import Game0 from "./screens/Game0";
 import List0 from "./screens/List0";
+import { MediumButton } from './components/Buttons';
 
 
 // クイズゲームの最上位コンポーネント
 function App() {
+    // クッキー
+    // クッキーが存在するか
+    // 初期メッセージを表示するか
+    // クッキーの確認が終わっているか
+    const [cookies, setCookies, removeCookies] = useCookies<CookieKeys, CookieValues>(['options', 'quiz_options']);
+    const [accept_cookies, setAcceptCookies] = React.useState<boolean>(false);
+    const [reject_cookies, setRejectCookies] = React.useState<boolean>(false);
+    const [confirmed, setConfirmed] = React.useState<boolean>(false);
+
+
+    const changeCookies = (key: CookieKeys, value: Options | QuizOptions): void => {
+        setCookies(key, value);
+        return;
+    };
+
+
+    const deleteCookies = (): void => {
+        const ans: boolean = window.confirm("本当にクッキーをリセットしますか？");
+        if (ans == false) {
+            return;
+        }
+
+        removeCookies('options');
+        removeCookies('quiz_options');
+        localStorage.removeItem('cookieRejected');
+        return;
+    }
+
+
     // スクリーン番号（タイトル画面や設定画面、ゲーム画面などの切り替え）
     // ゲーム設定（音量やアニメーションの有効無効化など）
     // クイズ設定（難易度や問題数など）
     const [screen, setScreen] = React.useState<number>(SCREENS.TITLE);
     const [options, setOptions] = React.useState<Options>(INITIAL_OPTIONS);
     const [quiz_options, setQuizOptions] = React.useState<QuizOptions>(INITIAL_QUIZ_OPTIONS);
-    const [show_message, setShowMessage] = React.useState<boolean>(true);
 
 
+    // クッキーが許可された際の処理
+    const acceptCookies = (): void => {
+        setAcceptCookies(true);
+
+        // 設定を読み込む
+        setCookies('options', INITIAL_OPTIONS);
+        setCookies('quiz_options', INITIAL_QUIZ_OPTIONS);
+    };
+
+
+    // クッキーが拒否された際の処理
+    const rejectCookies = (): void => {
+        setRejectCookies(true);
+
+        // 拒否した時間のタイプスタンプを記録
+        localStorage.setItem('cookieRejected', new Date().getTime().toString());
+    };
+
+
+    /**
+     *  タイプスタンプから、クッキーが拒否されているか判定
+     *  タイプスタンプは3日間有効
+     */
+    const isRejected = (): boolean => {
+        const temp_time: string | null = localStorage.getItem('cookieRejected');
+        // 拒否されていない場合
+        if (temp_time === null) {
+            return false;
+        }
+
+        const time_reject_cookies: number = parseInt(temp_time, 10);
+        const time_now: number = new Date().getTime();
+        const validity_period: number = 60 * 60 * 24 * 3 * 1000;
+
+
+        // タイプスタンプの期限が切れている場合true、有効な場合false
+        return time_now - time_reject_cookies <= validity_period;
+    };
+
+
+    // クッキーがすでに許可されているか、拒否されているか確認
     React.useEffect(() => {
-        const startTimer = setTimeout(() => {
-            setShowMessage(false);
-        }, 2000);
+        // クッキーが許可されており、存在する場合
+        if (cookies.options && cookies.quiz_options) {
+            setAcceptCookies(true);
 
-        return () => clearTimeout(startTimer);
+            setOptions(cookies.options);
+            setQuizOptions(cookies.quiz_options);
+        }
+
+        // クッキーが供されていた場合
+        else if (isRejected()) {
+            setRejectCookies(true);
+        }
+
+        setConfirmed(true);
     }, []);
 
 
     // screenによって映し出す画面を変更
     const renderScreen = () => {
-        // ページに入ってから数秒間表示するメッセージ
-        if (show_message) {
+        // 上記のクッキーの確認がまだ終わっていない場合
+        if (!confirmed) {
             return (
-                <>
-                    <div className='relative flex size-full flex-col items-center'>
-                        <h1 className='relative top-1/4 text-center text-6xl font-bold'>
-                            注意！
-                        </h1>
-
-                        <h2 className='relative top-1/3 text-center text-4xl font-bold'>
-                            本ゲームは音が出ます<br />
-                            周囲の環境と音量に注意してお楽しみください
-                        </h2>
-                    </div>
-
-                </>
+                <></>
             );
         }
 
-        
+        // クッキーをまだ許可しておらず、かつ拒否もしていない場合
+        if (!accept_cookies && !reject_cookies) {
+            return (
+                <div className='relative flex size-full flex-col items-center'>
+                    <h2 className='relative text-center text-4xl font-bold'>
+                        クッキーについて
+                    </h2>
+
+                    <h3 className='relative text-center text-2xl font-bold px-16'>
+                        本ゲームではユーザーエクスペリエンス向上のため、<br />
+                        クッキーを使用しています<br />
+                        許可する場合は次のボタンを押してください
+                    </h3>
+
+                    <div className='relative '>
+                        <MediumButton
+                            text='許可する'
+                            click={() => acceptCookies()}
+                            animation={options.animation}
+                        />
+                        <MediumButton
+                            text='拒否する'
+                            click={() => rejectCookies()}
+                            animation={options.animation}
+                        />
+                    </div>
+
+                    <h3 className='relative text-center text-2xl font-bold'>
+                        本ゲームでは音が出ます<br />
+                        周囲の環境と音量に注意してお楽しみください
+                    </h3>
+                </div>
+            );
+        }
 
 
+        // アプリ画面の表示切替
         switch (screen) {
             case SCREENS.TITLE:     // タイトル
                 return (
@@ -66,6 +167,9 @@ function App() {
             case SCREENS.OPTION:    // ゲーム設定
                 return (
                     <Option
+                        changeCookies={changeCookies}
+                        deleteCookies={deleteCookies}
+                        accept_cookies={accept_cookies}
                         screen={screen}
                         setScreen={setScreen}
                         options={options}
@@ -77,6 +181,9 @@ function App() {
             case SCREENS.GAME0:     // ゲーム画面
                 return (
                     <Game0
+                        changeCookies={changeCookies}
+                        deleteCookies={deleteCookies}
+                        accept_cookies={accept_cookies}
                         screen={screen}
                         setScreen={setScreen}
                         options={options}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Options, QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_constants/constants";
+import { CookieKeys, Options, QUIZ_OPTIONS_CONST, QuizOptions, QuizProblem, SCREENS } from "../../_constants/constants";
 import { changeValues, limitToRange } from "../../_scripts/func";
 import { createProblems } from "../scripts/createProblems";
 import { MediumButton } from "../components/Buttons";
@@ -7,6 +7,9 @@ import { RangeAndText } from "../components/Ranges";
 
 
 interface Props {
+    changeCookies: (key: CookieKeys, value: Options | QuizOptions) => void;
+    deleteCookies: () => void;
+    accept_cookies: boolean;
     screen: number;
     setScreen: React.Dispatch<React.SetStateAction<number>>;
     options: Options;
@@ -28,8 +31,20 @@ function QuizOption(props: Props) {
     // クイズ難易度
     // セレクトボックス内の値を変更
     const changeDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        changeValues<QuizOptions>(props.quiz_options, props.setQuizOptions,
-            ["difficulty"], [parseInt(e.target.value)]);
+        const input_num: number = parseInt(e.target.value);
+
+        changeValues<QuizOptions>(
+            props.quiz_options,
+            props.setQuizOptions,
+            ["difficulty"],
+            [input_num]
+        );
+        if (props.accept_cookies) {
+            props.changeCookies(
+                'quiz_options',
+                { ...props.quiz_options, difficulty: input_num }
+            );
+        }
     };
 
 
@@ -39,8 +54,18 @@ function QuizOption(props: Props) {
         const input_str: string = e.target.value,
             input_num: number = parseInt(e.target.value);
 
-        changeValues<QuizOptions>(props.quiz_options, props.setQuizOptions,
-            ["problems_num"], [input_num]);
+        changeValues<QuizOptions>(
+            props.quiz_options,
+            props.setQuizOptions,
+            ["problems_num"],
+            [input_num]
+        );
+        if (props.accept_cookies) {
+            props.changeCookies(
+                'quiz_options',
+                { ...props.quiz_options, problems_num: input_num }
+            );
+        }
         setTempProblemsNum(input_str);
     };
 
@@ -65,12 +90,25 @@ function QuizOption(props: Props) {
             return;
         }
 
-        input_num = limitToRange(input_num, QUIZ_OPTIONS_CONST.min_problems_num,
-            QUIZ_OPTIONS_CONST.max_problems_num);
+        input_num = limitToRange(
+            input_num,
+            QUIZ_OPTIONS_CONST.min_problems_num,
+            QUIZ_OPTIONS_CONST.max_problems_num
+        );
         input_num = Math.floor(input_num / QUIZ_OPTIONS_CONST.step_problems_num) * QUIZ_OPTIONS_CONST.step_problems_num;
         input_str = String(input_num);
-        changeValues<QuizOptions>(props.quiz_options, props.setQuizOptions,
-            ["problems_num"], [input_num]);
+        changeValues<QuizOptions>(
+            props.quiz_options,
+            props.setQuizOptions,
+            ["problems_num"],
+            [input_num]
+        );
+        if (props.accept_cookies) {
+            props.changeCookies(
+                'quiz_options',
+                { ...props.quiz_options, problems_num: input_num }
+            );
+        }
         setTempProblemsNum(input_str);
     };
 

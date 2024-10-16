@@ -1,11 +1,14 @@
 import React from 'react';
-import { SCREENS, Options, INITIAL_OPTIONS, OPTIONS_CONST } from '../../_constants/constants';
+import { SCREENS, Options, INITIAL_OPTIONS, OPTIONS_CONST, QuizOptions, CookieKeys } from '../../_constants/constants';
 import { changeValues, limitToRange } from '../../_scripts/func';
 import { MediumButton, SmallButton } from '../components/Buttons';
 import { RangeAndText } from '../components/Ranges';
 
 
 interface Props {
+    changeCookies: (key: CookieKeys, value: Options | QuizOptions) => void;
+    deleteCookies: () => void;
+    accept_cookies: boolean;
     screen: number;
     setScreen: React.Dispatch<React.SetStateAction<number>>;
     options: Options;
@@ -37,8 +40,18 @@ function Option(props: Props) {
         const input_str: string = e.target.value,
             input_num: number = parseInt(e.target.value);
 
-        changeValues<Options>(props.options, props.setOptions,
-            ["effect_volume"], [input_num]);
+        changeValues<Options>(
+            props.options,
+            props.setOptions,
+            ["effect_volume"],
+            [input_num]
+        );
+        if (props.accept_cookies) {
+            props.changeCookies(
+                'options',
+                { ...props.options, effect_volume: input_num }
+            );
+        }
         setTempEffectVolume(input_str);
     };
 
@@ -66,8 +79,18 @@ function Option(props: Props) {
         input_num = limitToRange(input_num, OPTIONS_CONST.min_volume,
             OPTIONS_CONST.max_volume);
         input_str = String(input_num);
-        changeValues<Options>(props.options, props.setOptions,
-            ["effect_volume"], [input_num]);
+        changeValues<Options>(
+            props.options,
+            props.setOptions,
+            ["effect_volume"],
+            [input_num]
+        );
+        if (props.accept_cookies) {
+            props.changeCookies(
+                'options',
+                { ...props.options, effect_volume: input_num }
+            );
+        }
         setTempEffectVolume(input_str);
     };
 
@@ -75,14 +98,24 @@ function Option(props: Props) {
     // アニメーション
     // アニメーションの有効無効の切り替え
     const enableAnimation = () => {
-        changeValues<Options>(props.options, props.setOptions,
-            ["animation"], [!props.options.animation]);
+        changeValues<Options>(
+            props.options,
+            props.setOptions,
+            ["animation"],
+            [!props.options.animation]
+        );
+        if (props.accept_cookies) {
+            props.changeCookies(
+                'options',
+                { ...props.options, animation: !props.options.animation }
+            );
+        }
     };
 
 
     // ゲーム設定のリセット
     const resetOptions = () => {
-        const ans: boolean = window.confirm("本当にリセットしますか？");
+        const ans: boolean = window.confirm("本当にゲーム設定をリセットしますか？");
         if (ans == false) {
             return;
         }
@@ -172,12 +205,24 @@ function Option(props: Props) {
 
 
                 <div
-                    className='mt-8 flex w-full flex-col items-center 
+                    className='mt-4 flex w-full flex-col items-center 
                     justify-center p-4'
                 >
                     <SmallButton
                         text={'ゲーム設定\nリセット'}
                         click={resetOptions}
+                        animation={props.options.animation}
+                    />
+                </div>
+
+
+                <div
+                    className='mt-8 flex w-full flex-col items-center 
+                    justify-center p-4'
+                >
+                    <SmallButton
+                        text={'クッキー関連\nリセット'}
+                        click={props.deleteCookies}
                         animation={props.options.animation}
                     />
                 </div>
