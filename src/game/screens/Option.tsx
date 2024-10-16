@@ -8,6 +8,7 @@ import { RangeAndText } from '../components/Ranges';
 interface Props {
     changeCookies: (key: CookieKeys, value: Options | QuizOptions) => void;
     deleteCookies: () => void;
+    accept_cookies: boolean;
     screen: number;
     setScreen: React.Dispatch<React.SetStateAction<number>>;
     options: Options;
@@ -45,7 +46,12 @@ function Option(props: Props) {
             ["effect_volume"],
             [input_num]
         );
-        props.changeCookies('options', { ...props.options, effect_volume: input_num });
+        if (props.accept_cookies) {
+            props.changeCookies(
+                'options',
+                { ...props.options, effect_volume: input_num }
+            );
+        }
         setTempEffectVolume(input_str);
     };
 
@@ -79,7 +85,12 @@ function Option(props: Props) {
             ["effect_volume"],
             [input_num]
         );
-        props.changeCookies('options', { ...props.options, effect_volume: input_num });
+        if (props.accept_cookies) {
+            props.changeCookies(
+                'options',
+                { ...props.options, effect_volume: input_num }
+            );
+        }
         setTempEffectVolume(input_str);
     };
 
@@ -93,7 +104,12 @@ function Option(props: Props) {
             ["animation"],
             [!props.options.animation]
         );
-        props.changeCookies('options', { ...props.options, animation: !props.options.animation });
+        if (props.accept_cookies) {
+            props.changeCookies(
+                'options',
+                { ...props.options, animation: !props.options.animation }
+            );
+        }
     };
 
 

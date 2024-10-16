@@ -169,6 +169,7 @@ function App() {
                     <Option
                         changeCookies={changeCookies}
                         deleteCookies={deleteCookies}
+                        accept_cookies={accept_cookies}
                         screen={screen}
                         setScreen={setScreen}
                         options={options}
@@ -180,6 +181,9 @@ function App() {
             case SCREENS.GAME0:     // ゲーム画面
                 return (
                     <Game0
+                        changeCookies={changeCookies}
+                        deleteCookies={deleteCookies}
+                        accept_cookies={accept_cookies}
                         screen={screen}
                         setScreen={setScreen}
                         options={options}
