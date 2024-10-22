@@ -23,19 +23,23 @@ interface Props {
 }
 
 
-// Place the buttons to answer the problems
+// 解答ボタンセクション
 function AnswerSection(props: Props) {
+    // 正答誤答表示の際に鳴らすサウンド
     const [playCorrectAnswer] = useSound(PATH_SOUNDS_ANSWER_FEEDBACK.correct,
         { volume: props.options.effect_volume / OPTIONS_CONST.max_volume }),
         [playWrongAnswer] = useSound(PATH_SOUNDS_ANSWER_FEEDBACK.wrong,
             { volume: props.options.effect_volume / OPTIONS_CONST.max_volume });
 
 
+    // 解答ボタンを押し、解答した際の処理
     const answerProblem = async (e: React.MouseEvent<HTMLButtonElement>) => {
         const ans: number = parseInt(e.currentTarget.name);
 
+        // 解答済みのフラグを立てる
         props.setAnswered(true);
 
+        // 正答の場合
         if (ans === props.quiz_problems[props.current_quiz].correct_choice) {
             changeValues<QuizResults>(
                 props.quiz_results, props.setQuizResults,
@@ -54,6 +58,7 @@ function AnswerSection(props: Props) {
 
             playCorrectAnswer();
         }
+        // 正答の場合
         else {
             playWrongAnswer();
         }
@@ -66,6 +71,7 @@ function AnswerSection(props: Props) {
         );
 
 
+        // 結果表示のため停止
         await waitFor(1500);
 
 
@@ -80,6 +86,7 @@ function AnswerSection(props: Props) {
     };
 
 
+    // 解答ボタンの配列
     const answer_buttons = props.quiz_problems[props.current_quiz].choice_ids.map((id, index) => {
         return (
             <AnswerButton

@@ -7,7 +7,7 @@ interface Props {
 }
 
 
-// Show problems images
+// 問題表示セクション
 function ProblemSection(props: Props) {
     return (
         <div className='flex flex-col items-center'>

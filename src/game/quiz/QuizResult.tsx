@@ -16,9 +16,10 @@ interface Props {
 }
 
 
-// Show the results of games
+// クイズ結果
 function QuizResult(props: Props) {
     // About finishing the quiz
+    // クイズを終了し、クイズ設定画面に戻る
     const exitQuiz = () => {
         props.setCurrentQuiz(-1);
         props.setQuizProblems([]);

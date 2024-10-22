@@ -19,15 +19,15 @@ interface Props {
 }
 
 
-// The unit of quiz game components like button and image
+// クイズ画面
 function Quiz(props: Props) {
-    // 解答済みか
-    // 正答か
+    // 解答済みのフラグ
+    // 結果表示のフラグ
     const [answered, setAnswered] = React.useState<boolean>(false);
     const [display_feedbacks, setDisplayFeedbacks] = React.useState<boolean[]>(Array(CHOICES_NUM).fill(true));
 
 
-    // About finishing the quiz in the middle
+    // クイズを途中で止める
     const exitQuiz = () => {
         const ans: boolean = window.confirm("本当に終了しますか？");
         if (ans) {
