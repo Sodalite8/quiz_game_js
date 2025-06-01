@@ -1,0 +1,24 @@
+{
+    "name": "React Development",
+    "dockerComposeFile": "./../docker-compose.yml",
+    "service": "react-dev",
+    "workspaceFolder": "/app",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ritwickdey.liveserver",
+                "bradlc.vscode-tailwindcss",
+                "dbaeumer.vscode-eslint"
+            ]
+        }
+    },
+    "portsAttributes": {
+        "3000": {
+            "label": "React",
+            "onAutoForward": "notify"
+        }
+    },
+    "otherPortsAttributes": {
+        "onAutoForward": "ignore"
+    }
+}
