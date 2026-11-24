@@ -29,7 +29,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "yarn build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "browserslist": {
@@ -56,6 +56,5 @@
     "tailwindcss": "^3.4.19",
     "typescript-eslint": "^8.73.0"
   },
-  "homepage": "https://Sodalite8.github.io/quiz_game_js",
-  "packageManager": "yarn@4.19.0"
+  "homepage": "https://Sodalite8.github.io/quiz_game_js"
 }
